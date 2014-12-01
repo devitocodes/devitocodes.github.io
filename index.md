@@ -1,6 +1,11 @@
 ---
 layout: archive
 permalink: /
+image:
+  feature: "Above_the_Clouds.png"
+
+excerpt: "Be patient - the project is just bootstrapping..."
+
 title: "Latest Posts"
 ---
 
