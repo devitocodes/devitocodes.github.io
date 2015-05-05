@@ -39,7 +39,7 @@ This initiative the focus of an [Intel Parallel Computing Center](https://softwa
 * Marcos de Aguiar
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) (UK Principle Investigator)
 * [David Ham](http://www.imperial.ac.uk/people/david.ham)
-* [Christian Jabobs](http://www.imperial.ac.uk/people/c.jacobs10) (Funded researcher)
+* [Christian Jacobs](http://www.imperial.ac.uk/people/c.jacobs10) (Funded researcher)
 * [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/)
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange) (Funded researcher)
 * Renato Miceli (Brazilian Principle Investigator)
