@@ -27,13 +27,27 @@ abstraction that allows rapid research, development and deployment.
 Wherever possible we use other open source components as building blocks.
 Projects we are collaborating on include:
 
+* [OPESCI](https://github.com/opesci)
 * [Firedrake](http://www.firedrakeproject.org)
 * [FInAT](https://github.com/FInAT/FInAT)
 * [PRAgMaTIc](https://github.com/ggorman/pragmatic)
 
-**Partners**
+**People**
 
-This initiative the focus of an [Intel Parallel Computing Center](https://software.intel.com/en-us/ipcc) in partnership with [BG Group](http://www.bg-group.com/) in Brazil. It is a collaborative project between researchers [Imperial College London](http://www.imperial.ac.uk) and [SENAI CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html).
+This initiative the focus of an [Intel Parallel Computing Center](https://software.intel.com/en-us/ipcc) in partnership with [BG Group](http://www.bg-group.com/) in Brazil. It is a collaborative project between researchers [Imperial College London](http://www.imperial.ac.uk) and [SENAI CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html). The project investigators and collaborators are:
+
+* Marcos de Aguiar
+* [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) (UK Principle Investigator)
+* [David Ham](http://www.imperial.ac.uk/people/david.ham)
+* [Christian Jabobs](http://www.imperial.ac.uk/people/c.jacobs10) (Funded researcher)
+* [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/)
+* [Michael Lange](http://www.imperial.ac.uk/people/michael.lange) (Funded researcher)
+* Renato Miceli (Brazilian Principle Investigator)
+* [Chris Pain](http://www.imperial.ac.uk/people/c.pain)
+* [Matthew Piggott](http://www.imperial.ac.uk/people/m.d.piggott)
+* [Spencer Sherwin](http://www.imperial.ac.uk/people/s.sherwin)
+* Felippe Vieira Zacarias
+* [Mike Warner](http://www.imperial.ac.uk/people/m.warner)
 
 **Contact**
 
