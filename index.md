@@ -39,15 +39,16 @@ This initiative the focus of an [Intel Parallel Computing Center](https://softwa
 * Marcos de Aguiar
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) (UK Principle Investigator)
 * [David Ham](http://www.imperial.ac.uk/people/david.ham)
+* [Felix Herrmann](ihttps://www.slim.eos.ubc.ca/felix)
 * [Christian Jacobs](http://www.imperial.ac.uk/people/c.jacobs10) (Funded researcher)
 * [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/)
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange) (Funded researcher)
 * Renato Miceli (Brazilian Principle Investigator)
 * [Chris Pain](http://www.imperial.ac.uk/people/c.pain)
-* [Matthew Piggott](http://www.imperial.ac.uk/people/m.d.piggott)
-* [Spencer Sherwin](http://www.imperial.ac.uk/people/s.sherwin)
+* [Matthew Piggott](http://www.imperial.ac.uk/people/m.d.piggott) - [EPSRC Software for the Future: A new simulation and optimisation platform for marine technology](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/M011054/1)
+* [Spencer Sherwin](http://www.imperial.ac.uk/people/s.sherwin) - [PRISM: Platform for Research In Simulation Methods](http://prism.ac.uk/)
 * Felippe Vieira Zacarias
-* [Mike Warner](http://www.imperial.ac.uk/people/m.warner)
+* [Mike Warner](http://www.imperial.ac.uk/people/m.warner) - [FULLWAVE3d](http://fullwave3d.github.io/)
 
 **Contact**
 
