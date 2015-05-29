@@ -2,15 +2,20 @@
 // --------------------------------------------------
 
 #masthead {
+	position: fixed;
+	top: 0px;
+	width: 100%;
 	padding: $gutter;
 	z-index: 5;
+	text-align: center;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
 	&.slide {
 		@include transform(translate(-1600px,0));
 	}
 	.inner-wrap {
-		@include outer-container;
+		/*@include outer-container;*/
+		margin: 0px auto;
 	}
 }
 .site-title {
@@ -115,6 +120,7 @@
 // --------------------------------------------------
 
 #page-wrapper {
+	margin: 100px auto;
 	padding: 0 $gutter; // add white space for smaller screens
 	@include size(100% 100%);
 	-webkit-overflow-scrolling: touch;
