@@ -1,8 +1,6 @@
 ---
 layout: media
 permalink: /
-image:
-  feature: "seismic_banner.png"
 
 #excerpt: "Be patient - the project is just bootstrapping..."
 #title: "Next generation subsurface imaging software"

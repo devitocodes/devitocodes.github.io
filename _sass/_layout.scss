@@ -5,9 +5,8 @@
 	position: fixed;
 	top: 0px;
 	width: 100%;
-	padding: $gutter;
+	/*padding: $gutter;*/
 	z-index: 5;
-	text-align: center;
 	@include transform(translate(0,0));
 	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
 	&.slide {
@@ -15,7 +14,17 @@
 	}
 	.inner-wrap {
 		/*@include outer-container;*/
-		margin: 0px auto;
+		/*margin: 0px auto;*/
+		#homelogo{
+			max-width: 15%;
+			max-height: 15%;
+		}
+	}
+}
+#topbannerpicture{
+	text-align: center;
+	img{
+		width: 90%
 	}
 }
 .site-title {
@@ -120,8 +129,8 @@
 // --------------------------------------------------
 
 #page-wrapper {
-	margin: 100px auto;
-	padding: 0 $gutter; // add white space for smaller screens
+	margin: 20px 40px 50px 60px;
+	/*padding: 0 $gutter; // add white space for smaller screens*/
 	@include size(100% 100%);
 	-webkit-overflow-scrolling: touch;
 	z-index: 2;
