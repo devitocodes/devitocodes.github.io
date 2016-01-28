@@ -34,14 +34,13 @@ Projects we are collaborating on include:
 
 This initiative the focus of an [Intel Parallel Computing Center](https://software.intel.com/en-us/ipcc) in partnership with [BG Group](http://www.bg-group.com/) in Brazil. It is a collaborative project between researchers [Imperial College London](http://www.imperial.ac.uk) and [SENAI CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html). The project investigators and collaborators are:
 
-* Marcos de Aguiar
+* Marcos de Aguiar (Brazilian Principle Investigator)
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) (UK Principle Investigator)
 * [David Ham](http://www.imperial.ac.uk/people/david.ham)
 * [Felix Herrmann](https://www.slim.eos.ubc.ca/felix)
 * [Christian Jacobs](http://www.christianjacobs.uk) (Funded researcher)
 * [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/)
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange) (Funded researcher)
-* Renato Miceli (Brazilian Principle Investigator)
 * [Chris Pain](http://www.imperial.ac.uk/people/c.pain)
 * [Matthew Piggott](http://www.imperial.ac.uk/people/m.d.piggott) - [EPSRC Software for the Future: A new simulation and optimisation platform for marine technology](http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/M011054/1)
 * [Spencer Sherwin](http://www.imperial.ac.uk/people/s.sherwin) - [PRISM: Platform for Research In Simulation Methods](http://prism.ac.uk/)
@@ -55,7 +54,7 @@ Feel free to get involved via GitHub or by <a href="mailto:g.gorman@imperial.ac.
 <table>
 <tr>
 <th><a href="http://www.imperial.ac.uk"><img src="/images/logo_imperial_college_london.png" style="max-height:100px"></a></th>
-<th><a href="http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html"><img src="/images/logo_senai_cimatec.jpg" style="max-height:100px"></a></th>
+<th><a href="http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html"><img src="/images/logo_senai_cimatec.png" style="max-height:100px"></a></th>
 </tr>
 <tr> 
 <th><a href="http://www.intel.com"><img src="/images/IntelLogo.png"></a></th>
