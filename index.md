@@ -30,6 +30,13 @@ Projects we are collaborating on include:
 * [FInAT](https://github.com/FInAT/FInAT)
 * [PRAgMaTIc](https://github.com/ggorman/pragmatic)
 
+**Documentation**
+
+To know more about OPESCI components and browse their documentation,
+please follow these links:
+
+* [Devito](devito) - Fast Finite Difference Computation
+
 **People**
 
 This initiative the focus of an [Intel Parallel Computing Center](https://software.intel.com/en-us/ipcc) in partnership with [BG Group](http://www.bg-group.com/) in Brazil. It is a collaborative project between researchers [Imperial College London](http://www.imperial.ac.uk) and [SENAI CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html). The project investigators and collaborators are:
