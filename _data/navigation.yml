@@ -1,23 +1,28 @@
 # Site navigation links
 
-- title: In collaboration with &#58
-
-- title: OPESCI
-  url: https://github.com/opesci
+- title: About
+  url: http://127.0.0.1:4000
   excerpt:
   image:
 
-- title: Firedrake
-  url: http://www.firedrakeproject.org
+- title: Contributions
+  url: http://127.0.0.1:4000/contributions
   excerpt:
   image:
 
-- title: FInAT
-  url: https://github.com/FInAT/FInAT
+- title: Collaborations
+  url: http://127.0.0.1:4000/collaborations
   excerpt:
   image:
 
-- title: PRAgMaTIc
-  url: https://github.com/ggorman/pragmatic
+- title: Documentation
+  url: http://127.0.0.1:4000/devito
   excerpt:
   image:
+
+- title: Publications
+  url: http://127.0.0.1:4000/publications
+  excerpt:
+  image:
+
+
