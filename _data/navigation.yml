@@ -1,27 +1,37 @@
 # Site navigation links
 
 - title: About
-  url: http://127.0.0.1:4000
-  excerpt:
-  image:
-
-- title: Contributions
-  url: http://127.0.0.1:4000/contributions
+  url: /
   excerpt:
   image:
 
 - title: Collaborations
-  url: http://127.0.0.1:4000/collaborations
+  url: /collaborations
+  excerpt:
+  image:
+
+- title: Contributions
+  url: /contributions
   excerpt:
   image:
 
 - title: Documentation
-  url: http://127.0.0.1:4000/devito
+  url: /devito
+  excerpt:
+  image:
+
+- title: GitHub
+  url: http://github.com/opesci
   excerpt:
   image:
 
 - title: Publications
-  url: http://127.0.0.1:4000/publications
+  url: /publications
+  excerpt:
+  image:
+
+- title: Travis
+  url: https://travis-ci.org/opesci/devito/
   excerpt:
   image:
 

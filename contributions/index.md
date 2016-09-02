@@ -29,11 +29,11 @@ This initiative the focus of an [Intel Parallel Computing Center](https://softwa
 
 ***Other***
 
-* Peng Peng (summer intern)
 * [Paulius Kazakas](https://github.com/sheino) (summer intern)
-* Paulius Velesko (summer intern)
-* Shuhao Zhang (summer intern)
-* Vincenzo Pandolfo (summer intern)
+* [Paulius Velesko](https://github.com/pvelesko) (summer intern)
+* [Peng Peng](https://github.com/pp1336) (summer intern)
+* [Shuhao Zhang](https://github.com/Richard-zhang) (summer intern)
+* [Vincenzo Pandolfo](https://github.com/vincepandolfo) (summer intern)
 
 
 
