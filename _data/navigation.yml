@@ -1,23 +1,38 @@
 # Site navigation links
 
-- title: In collaboration with &#58
-
-- title: OPESCI
-  url: https://github.com/opesci
+- title: About
+  url: /
   excerpt:
   image:
 
-- title: Firedrake
-  url: http://www.firedrakeproject.org
+- title: Collaborations
+  url: /collaborations
   excerpt:
   image:
 
-- title: FInAT
-  url: https://github.com/FInAT/FInAT
+- title: Contributions
+  url: /contributions
   excerpt:
   image:
 
-- title: PRAgMaTIc
-  url: https://github.com/ggorman/pragmatic
+- title: Documentation
+  url: /devito
   excerpt:
   image:
+
+- title: GitHub
+  url: http://github.com/opesci
+  excerpt:
+  image:
+
+- title: Publications
+  url: /publications
+  excerpt:
+  image:
+
+- title: Travis
+  url: https://travis-ci.org/opesci/devito/
+  excerpt:
+  image:
+
+
