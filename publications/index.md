@@ -23,7 +23,7 @@ prediction of finite-difference solvers for different computer architectures_. S
 to Computers & Geosciences, 2016, [arxiv:1608.03984](https://arxiv.org/abs/1608.03984)
 * M. Lange, C. Jacobs, F. Luporini, L. Mitchell, D. Ham, and G. Gorman. _Seigen:
 Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
-[figshare:seigen-poster.pdf](https://figshare.com/articles/Seigen_Seismic_modelling_through_code_generation/3798984)
+[doi:10.6084/m9.figshare.3798984.v1](https://dx.doi.org/10.6084/m9.figshare.3798984.v1)
 
 **Contacts**
 {% include contact.html %}
