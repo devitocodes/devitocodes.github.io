@@ -24,6 +24,9 @@ to Computers & Geosciences, 2016, [arxiv:1608.03984](https://arxiv.org/abs/1608.
 * M. Lange, C. Jacobs, F. Luporini, L. Mitchell, D. Ham, and G. Gorman. _Seigen:
 Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
 [doi:10.6084/m9.figshare.3798984.v1](https://dx.doi.org/10.6084/m9.figshare.3798984.v1)
+* M. Aguiar, G. Gorman, F. Herrmann, N. Kukreja, M. Lange, M. Louboutin, F. Vieira, _Devito:
+Fast finite difference computation._ Poster accepted at SC 2016
+[doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
 
 **Contacts**
 {% include contact.html %}
