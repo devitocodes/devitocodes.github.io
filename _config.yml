@@ -5,8 +5,8 @@ description: Open Performance portablE SeismiC Imaging
 logo: images/OpesciLogo-twitter-summary-card.png # 120x120 px default image used for Twitter summary card
 teaser: images/OpesciLogo-teaser.png # 400x250 px default teaser image used in image archive grid
 locale:
-baseurl: http://opesci.github.io
-production_url : http://opesci.github.io
+baseurl:
+production_url : http://opesci.org
 
 # Jekyll configuration
 
