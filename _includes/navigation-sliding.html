@@ -1,8 +1,10 @@
 <nav role="navigation" class="js-menu sliding-menu-content">
 	<ul class="menu-item">
 		{% for link in site.data.navigation %}<li>
-      {% unless link.url contains 'http' %}
-        {% assign domain = site.url %}
+	{% unless link.url contains 'http' %}
+	    {% assign domain = site.url %}
+	{% else %}
+	    {% assign domain = '' %}
       {% endunless %}
 			{% if link.image %}<a href="{{ domain }}{{ link.url }}"><img src="{{ site.url }}/images/{{ link.image }}" alt="teaser" class="teaser"></a>{% endif %}
 			<a href="{{ domain }}{{ link.url }}" class="title">{{ link.title }}</a>
