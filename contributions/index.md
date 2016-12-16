@@ -40,7 +40,3 @@ CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.h
 * [Peng Peng](https://github.com/pp1336)
 * [Shuhao Zhang](https://github.com/Richard-zhang)
 * [Vincenzo Pandolfo](https://github.com/vincepandolfo)
-
-**Contact**
-
-{% include contact.html %}

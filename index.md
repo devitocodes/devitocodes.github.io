@@ -28,7 +28,3 @@ To know more about OPESCI components and browse their documentation,
 please follow these links:
 
 * [Devito](devito) - Fast Finite Difference Computation
-
-**Contact**
-
-{% include contact.html %}
