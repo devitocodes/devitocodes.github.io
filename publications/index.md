@@ -1,5 +1,5 @@
 ---
-layout: media
+layout: default
 permalink: publications
 
 #excerpt: "Be patient - the project is just bootstrapping..."

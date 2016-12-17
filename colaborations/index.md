@@ -1,5 +1,5 @@
 ---
-layout: media
+layout: default
 permalink: collaborations
 
 #excerpt: "Be patient - the project is just bootstrapping..."
