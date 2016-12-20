@@ -1,5 +1,5 @@
 ---
-layout: media
+layout: default
 permalink: /
 
 #excerpt: "Be patient - the project is just bootstrapping..."
@@ -28,7 +28,3 @@ To know more about OPESCI components and browse their documentation,
 please follow these links:
 
 * [Devito](devito) - Fast Finite Difference Computation
-
-**Contact**
-
-{% include contact.html %}

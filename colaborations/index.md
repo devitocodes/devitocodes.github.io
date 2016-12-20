@@ -1,5 +1,5 @@
 ---
-layout: media
+layout: default
 permalink: collaborations
 
 #excerpt: "Be patient - the project is just bootstrapping..."
@@ -15,6 +15,3 @@ Projects we are collaborating with include:
 * [Firedrake](http://www.firedrakeproject.org)
 * [PRAgMaTIc](https://github.com/ggorman/pragmatic)
 * [Seismic Laboratory for Imaging and Modelling - SLIM, University of British Columbia](https://www.slim.eos.ubc.ca/)
-
-**Contacts**
-{% include contact.html %}

@@ -1,11 +1,19 @@
 # Site wide configuration
 
-title: Open Performance-portablE SeismiC Imaging
-description: Open Performance portablE SeismiC Imaging
-logo: images/OpesciLogo-twitter-summary-card.png # 120x120 px default image used for Twitter summary card
-teaser: images/OpesciLogo-teaser.png # 400x250 px default teaser image used in image archive grid
+title: OPESCI
+
+description: Open Performance-portable Seismic Imaging
+
+# 120x120 px default image used for Twitter summary card
+logo: images/OpesciLogo-twitter-summary-card.png
+
+# 400x250 px default teaser image used in image archive grid
+teaser: images/OpesciLogo-teaser.png
+
 locale:
+
 baseurl:
+
 production_url : http://opesci.org
 
 # Jekyll configuration
