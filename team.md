@@ -1,8 +1,7 @@
 ---
 layout: default
-permalink: /contributions
+permalink: /team
 
-#excerpt: "Be patient - the project is just bootstrapping..."
 #title: "Next generation subsurface imaging software"
 
 ---
@@ -26,17 +25,27 @@ CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.h
 
 **Developers**
 
-* [Christian Jacobs](http://www.christianjacobs.uk)
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange)
 * [Mathias Louboutin](https://www.slim.eos.ubc.ca/content/mathias-louboutin)
-* [Fabio Luprini](https://www.doc.ic.ac.uk/~fl1612)
+* [Fabio Luporini](https://www.doc.ic.ac.uk/~fl1612)
 * [Navjot Kukreja](https://github.com/navjotk)
 * Felippe Vieira Zacarias
 
-***Interns 2016***
 
+**Other contributors**
+
+* [Christian Jacobs](http://www.christianjacobs.uk)
 * [Paulius Kazakas](https://github.com/sheino)
 * [Paulius Velesko](https://github.com/pvelesko)
 * [Peng Peng](https://github.com/pp1336)
 * [Shuhao Zhang](https://github.com/Richard-zhang)
 * [Vincenzo Pandolfo](https://github.com/vincepandolfo)
+
+**Collaborations**
+
+Wherever possible we use other open source components as building blocks.
+Projects we are collaborating with include:
+
+* [Firedrake](http://www.firedrakeproject.org)
+* [PRAgMaTIc](https://github.com/ggorman/pragmatic)
+* [Seismic Laboratory for Imaging and Modelling - SLIM, University of British Columbia](https://www.slim.eos.ubc.ca/)
