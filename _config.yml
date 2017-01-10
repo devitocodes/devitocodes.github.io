@@ -43,8 +43,11 @@ disqus-shortname: opescigithubio
 # Navigation bar entries and links
 navigation:
 
-- title: Documentation
+- title: Devito
   url: /devito
+
+- title: Documentation
+  url: /devito-docs
 
 - title: Team
   url: /team
