@@ -20,7 +20,7 @@ CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.h
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principle investigator
 * [David Ham](http://www.imperial.ac.uk/people/david.ham) - [Firedrake](http://firedrakeproject.org)
 * [Felix Herrmann](https://www.slim.eos.ubc.ca/felix) - [Seismic Laboratory for Imaging and Modeling](https://www.slim.eos.ubc.ca)
-* [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/) - [Software Performance Optimisation research group](https://spo.doc.ic.ac.uk/twiki/bin/view.cgi/External)
+* [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/) - [Software Performance Optimisation research group](https://wwwhomes.doc.ic.ac.uk/~phjk/SPO-Webpages/index.html)
 * [Mike Warner](http://www.imperial.ac.uk/people/m.warner) - Director of [FULLWAVE3d](http://fullwave3d.github.io/)
 
 **Developers**
