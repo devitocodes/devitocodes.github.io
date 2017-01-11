@@ -33,7 +33,7 @@ many-core computer architectures.
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
 <div class="col-sm-4 pull-right" markdown="1">
-![Some pretty pictures]()
+<img src="images/Marmousi3D.png" alt="Marmousi3D" style="width:100%;"/>
 </div>
 <div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
@@ -54,8 +54,11 @@ development effort. More information and examples can be found
 [here](devito).
 </div>
 
-<div class="col-sm-6 pull-left" markdown="1">
+<div class="col-sm-1 pull-right" markdown="1"></div>
+<div class="col-sm-4 pull-right" markdown="1">
+<img src="images/Marmousi2D-IWave-Devito.png" alt="DualShot" style="width:100%;"/>
 </div>
+<div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
 
 

@@ -40,8 +40,8 @@ finite difference operators in Devito can be found
 
 </div>
 
-<div class="col-sm-1 pull-right" markdown="1"></div>
-<div class="col-sm-4 pull-right" markdown="1">
+<div class="col-sm-1 pull-left" markdown="1"></div>
+<div class="col-sm-4 pull-left" markdown="1">
 ```
 from devito import TimeData, Operator
 from sympy.abc import s, h
@@ -63,7 +63,7 @@ Example code for a 2D diffusion operator from a symbolic
 definition. The full tutorial can be found
 [here](http://www.opesci.org/devito-docs/heat.html).
 </div>
-<div class="col-sm-1 pull-right" markdown="1"></div>
+<div class="col-sm-1 pull-left" markdown="1"></div>
 </div>  <!--End row-->
 
 <div class="row" markdown="1">
@@ -78,15 +78,16 @@ modelling operator using an acoustic wave equation can be found
 [here](http://www.opesci.org/devito-docs/wave.html) and a paper
 outlining the verification procedures of the acoustic operator can be
 found [here](https://arxiv.org/abs/1608.08658).
+<br/>
 
-![Another pretty picture]()
+<img src="images/ModelPerturbation.png" alt="ModelPerturbation" style="width:100%;"/>
+
+<img src="images/RTM.png" alt="RTM" style="width:100%;"/>
 </div>
 
-<div class="col-sm-1 pull-right" markdown="1"></div>
-<div class="col-sm-4 pull-right" markdown="1">
-![Oh sooooo pretty]()
+<div class="col-sm-6 pull-left" markdown="1">
+<img src="images/DualShot-eps-converted-to.png" alt="DualShot" style="width:90%;"/>
 </div>
-<div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
 
 <div class="row" markdown="1">
@@ -109,7 +110,11 @@ specification:
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
 <div class="col-sm-4 pull-right" markdown="1">
-![Performance graph]()
+<img src="images/acoustic_at_broadwell.png" alt="AcousticBroadwellAT" style="width:100%;"/>
+
+Performance of acoustic wave modelling operator with different stencil
+sizes and auto-tuning on single-socket E5-2697 v4 CPU (Broadwell, 16
+cores @ 2.3GHz).
 </div>
 <div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
