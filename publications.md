@@ -6,7 +6,7 @@ permalink: /publications
 
 ---
 
-**Paper publications**
+### Paper publications
 
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
 P. Kazakas, and G. Gorman. _Devito: Towards a generic Finite Difference DSL using
@@ -21,7 +21,7 @@ in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 prediction of finite-difference solvers for different computer architectures_. Submitted
 to Computers & Geosciences, 2016, [arxiv:1608.03984](https://arxiv.org/abs/1608.03984)
 
-**Poster presentations**
+### Poster presentations
 
 * M. Lange, C. Jacobs, F. Luporini, L. Mitchell, D. Ham, and G. Gorman. _Seigen:
 Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
