@@ -44,10 +44,10 @@ disqus-shortname: opescigithubio
 navigation:
 
 - title: Devito
-  url: /devito
+  url: /devito-public
 
 - title: Documentation
-  url: /devito-docs
+  url: /devito
 
 - title: Team
   url: /team

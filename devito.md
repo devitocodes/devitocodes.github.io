@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /devito
+permalink: /devito-public
 
 #title: "Devito: Fast Symbolic Finite Difference Computation"
 
