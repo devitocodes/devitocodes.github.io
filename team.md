@@ -6,15 +6,7 @@ permalink: /team
 
 ---
 
-This initiative supported by the Imperial College [Intel Parallel Computing
-Center](https://software.intel.com/en-us/ipcc) in partnership with [BG
-Group](http://www.bg-group.com/) in Brazil. It is a collaborative project
-between [Imperial College London](http://www.imperial.ac.uk), the [Seismic
-Laboratory for Imaging and Modeling](https://www.slim.eos.ubc.ca) at The
-University of British Columbia and [SENAI
-CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html).
-
-**Investigators**
+### Investigators
 
 * Marcos de Aguiar  - SENAI CIMATEC
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principle investigator
@@ -23,7 +15,7 @@ CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.h
 * [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/) - [Software Performance Optimisation research group](https://wwwhomes.doc.ic.ac.uk/~phjk/SPO-Webpages/index.html)
 * [Mike Warner](http://www.imperial.ac.uk/people/m.warner) - Director of [FULLWAVE3d](http://fullwave3d.github.io/)
 
-**Developers**
+### Developers
 
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange)
 * [Mathias Louboutin](https://www.slim.eos.ubc.ca/content/mathias-louboutin)
@@ -32,7 +24,7 @@ CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.h
 * Felippe Vieira Zacarias
 
 
-**Other contributors**
+### Other contributors
 
 * [Christian Jacobs](http://www.christianjacobs.uk)
 * [Paulius Kazakas](https://github.com/sheino)
@@ -41,7 +33,7 @@ CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.h
 * [Shuhao Zhang](https://github.com/Richard-zhang)
 * [Vincenzo Pandolfo](https://github.com/vincepandolfo)
 
-**Collaborations**
+### Collaborations
 
 Wherever possible we use other open source components as building blocks.
 Projects we are collaborating with include:
