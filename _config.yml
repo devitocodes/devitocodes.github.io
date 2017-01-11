@@ -40,5 +40,23 @@ owner:
   avatar: bio-photo.jpg # 160x160 px image for author byline
 disqus-shortname: opescigithubio
 
+# Navigation bar entries and links
+navigation:
+
+- title: Documentation
+  url: /devito
+
+- title: Team
+  url: /team
+
+- title: Publications
+  url: /publications
+
+- title: GitHub
+  url: http://github.com/opesci/devito
+
+- title: Travis
+  url: https://travis-ci.org/opesci/devito/
+
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
