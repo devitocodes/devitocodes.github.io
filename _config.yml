@@ -47,7 +47,7 @@ navigation:
   url: /devito-public
 
 - title: Documentation
-  url: www.opesci.org/devito
+  url: http://www.opesci.org/devito
 
 - title: Team
   url: /team
