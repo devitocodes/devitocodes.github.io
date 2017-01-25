@@ -74,8 +74,7 @@ partnership with [BG Group](http://www.bg-group.com/) in Brazil. It is
 a collaborative project between [Imperial College
 London](http://www.imperial.ac.uk), the [Seismic Laboratory for
 Imaging and Modeling](https://www.slim.eos.ubc.ca) at The University
-of British Columbia and [SENAI
-CIMATEC](http://portais.fieb.org.br/senai/senai-na-sua-cidade/salvador/cimatec.html).
+of British Columbia and [SENAI CIMATEC](http://www.senaicimatec.com.br/).
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
