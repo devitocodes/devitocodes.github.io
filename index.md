@@ -46,12 +46,12 @@ many-core computer architectures.
 
 <div class="col-sm-6 pull-left" markdown="1">
 [Devito](devito) is a code generation framework that utilises
-[SymPy](www.sympy.org) to generate highly optimised finite difference
-solvers from high-level symbolic problem definitions. Devito was
-created as part of the OPESCI project and is intended to generate wave
-propagation kernels for seismic inversion workflows with very little
-development effort. More information and examples can be found
-[here](devito).
+[SymPy](http://www.sympy.org) to generate highly optimised finite
+difference solvers from high-level symbolic problem
+definitions. Devito was created as part of the OPESCI project and is
+intended to generate wave propagation kernels for seismic inversion
+workflows with very little development effort. More information and
+examples can be found [here](devito).
 </div>
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
