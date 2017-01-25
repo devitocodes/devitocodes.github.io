@@ -15,7 +15,7 @@ permalink: /devito-public
 Devito is a prototype Domain-specific Language (DSL) and code
 generation framework for the design of highly optimised finite
 difference kernels for use in inversion methods. Devito utilises
-[SymPy](www.sympy.org) to allow the definition of operators from
+[SymPy](http://www.sympy.org) to allow the definition of operators from
 high-level symbolic equations and generates optimised and
 automatically tuned code specific to a given target architecture.
 
@@ -29,11 +29,11 @@ Symbolic computation is a powerful tool that allows users to:
 #### **Documentation**
 
 Documentation for Devito is available
-[here](http://www.opesci.org/devito-docs/index.html), including
+[here](http://www.opesci.org/devito/index.html), including
 [installation
-instructions](http://www.opesci.org/devito-docs/download.html), a set
-of [tutorials](http://www.opesci.org/devito-docs/tutorials.html) and
-[API documentation](http://www.opesci.org/devito-docs/devito.html).
+instructions](http://www.opesci.org/devito/download.html), a set
+of [tutorials](http://www.opesci.org/devito/tutorials.html) and
+[API documentation](http://www.opesci.org/devito/devito.html).
 In addition, a paper outlining the use of symbolic Python to define
 finite difference operators in Devito can be found
 [here](https://arxiv.org/abs/1609.03361).
@@ -61,7 +61,7 @@ op.apply()
 
 Example code for a 2D diffusion operator from a symbolic
 definition. The full tutorial can be found
-[here](http://www.opesci.org/devito-docs/heat.html).
+[here](http://www.opesci.org/devito/heat.html).
 </div>
 <div class="col-sm-1 pull-left" markdown="1"></div>
 </div>  <!--End row-->
@@ -75,7 +75,7 @@ definition. The full tutorial can be found
 Devito is primarily designed to create wave propagation kernels for
 use in seismic inversion problems. A tutorial for the generation of a
 modelling operator using an acoustic wave equation can be found
-[here](http://www.opesci.org/devito-docs/wave.html) and a paper
+[here](http://www.opesci.org/devito/wave.html) and a paper
 outlining the verification procedures of the acoustic operator can be
 found [here](https://arxiv.org/abs/1608.08658).
 <br/>
