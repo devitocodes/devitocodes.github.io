@@ -8,6 +8,10 @@ permalink: /publications
 
 ### Paper publications
 
+* F. Luporini, D.A. Ham, P.H.J. Kelly. An algorithm for the optimization of finite
+element integration loops. Accepted for publication in ACM Transactions of Mathematical
+Software (TOMS), 2017, [arxiv:1604:05872](https://arxiv.org/abs/1604.05872)
+
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
 P. Kazakas, and G. Gorman. _Devito: Towards a generic Finite Difference DSL using
 Symbolic Python_. Accepted for PyHPC2016, to appear in ACM SIGHPC, 2016,
