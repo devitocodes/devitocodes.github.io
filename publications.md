@@ -27,6 +27,12 @@ to Computers & Geosciences, 2016, [arxiv:1608.03984](https://arxiv.org/abs/1608.
 
 ### Poster presentations
 
+* M. Lange N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
+P. Kazakas and G. Gorman. _Devito: Towards an efficient and sustainable finite
+difference DSL_. Poster presented at SIAM CSE17 PP108 Minisymposterium: Software
+Productivity and Sustainability for CSE and Data Science, 2017,
+[doi:10.6084/m9.figshare.4684852.v1](https://doi.org/10.6084/m9.figshare.4684852.v1)
+
 * M. Lange, C. Jacobs, F. Luporini, L. Mitchell, D. Ham, and G. Gorman. _Seigen:
 Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
 [doi:10.6084/m9.figshare.3798984.v1](https://dx.doi.org/10.6084/m9.figshare.3798984.v1)
