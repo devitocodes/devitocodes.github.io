@@ -40,3 +40,12 @@ Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
 * M. Aguiar, G. Gorman, F. Herrmann, N. Kukreja, M. Lange, M. Louboutin, F. Vieira, _Devito:
 Fast finite difference computation._ Poster accepted at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
+
+### Presentations
+* Charles Yount, Intel Corp. [_Considerations and Techniques for Optimizing HPC Stencil Performance on the Intel® Xeon Phi™ Processor_](presentations/Mon-16-15-Yount.pdf)
+* Navjot Kukreja, Imperial College. [_Symbolic Math for Automated Fast Finite Difference Computations_](presentations/Mon-16-50-Kukreja.pdf)
+* Mathias Louboutin, University of British Columbia. [_Multi-Physics Geophysical Exploration: Raising the Abstraction with Separation of Concerns_](presentations/Mon-17-25-Louboutin.pdf)
+* Philipp Witte, University of British Columbia. [_Large-Scale Workflows for Wave-Equation Based Inversion in Julia_](presentations/Mon-17-50-Witte.pdf)
+* Fabio Luporini, Imperial College. [_Vectorization and Locality Optimizations for Seismic Imagining Methods Through Automated Code Generation_](presentations/Luporini-cse17.pdf)
+
+
