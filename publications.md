@@ -54,6 +54,9 @@ Fast finite difference computation._ Poster accepted at SC 2016
 * Philipp Witte, University of British
   Columbia. [_Large-Scale Workflows for Wave-Equation Based Inversion in Julia_](presentations/Mon-17-50-Witte.pdf)
   Presented at SIAM-CSE 2017 MS84 Domain-Specific Abstractions for Full-Waveform Inversion
-
+* Navjot Kukreja, Imperial
+  College. [_Leveraging symbolic math for rapid development of applications for seismic imaging_](presentations/devito-rice-navjot.pdf)
+  Presented at High performance computing in Oil and Gas at Rice
+  University 2017
 
 
