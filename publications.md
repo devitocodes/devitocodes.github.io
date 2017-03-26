@@ -42,22 +42,22 @@ Fast finite difference computation._ Poster accepted at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
 
 ### Conference Presentations
-* Navjot Kukreja, Imperial College London.
+* N. Kukreja, M. Louboutin, F. Luporini, P. Witte, M. Lange, F. Herrmann and G. Gorman.
   [_Leveraging symbolic math for rapid development of applications for seismic imaging_](presentations/devito-rice-navjot.pdf)
   Presented at High performance computing in Oil and Gas at Rice University 2017
 
-* Fabio Luporini, Imperial College London.
+* F. Luporini, M. Lange, M. Louboutin, N. Kukreja and G.Gorman.
   [_Vectorization and Locality Optimizations for Seismic Imagining Methods Through Automated Code Generation_](presentations/Luporini-cse17.pdf)
   Presented at SIAM-CSE 2017, MS44 Efficiency of High-Order Methods on the 2nd Generation Intel Xeon Phi Processor
 
-* Navjot Kukreja, Imperial College London.
+* N. Kukreja, M. Lange, M. Louboutin, F. Luporini and G. Gorman.
   [_Symbolic Math for Automated Fast Finite Difference Computations_](presentations/Mon-16-50-Kukreja.pdf)
   Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
 
-* Mathias Louboutin, University of British Columbia.
+* M. Louboutin, M. Lange, N. Kukreja, F. Luporini, F. Herrmann and G. Gorman.
   [_Multi-Physics Geophysical Exploration: Raising the Abstraction with Separation of Concerns_](presentations/Mon-17-25-Louboutin.pdf)
   Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
 
-* Philipp Witte, University of British Columbia.
+* P. Witte, M. Louboutin and F. Herrmann.
   [_Large-Scale Workflows for Wave-Equation Based Inversion in Julia_](presentations/Mon-17-50-Witte.pdf)
   Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
