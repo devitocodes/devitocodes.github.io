@@ -61,3 +61,7 @@ Fast finite difference computation._ Poster accepted at SC 2016
 * P. Witte, M. Louboutin and F. Herrmann.
   [_Large-Scale Workflows for Wave-Equation Based Inversion in Julia_](presentations/Mon-17-50-Witte.pdf)
   Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
+
+* M. Lange, N. Kukreja, M. Louboutin, F. Luporini, V. Pandolfo, P. Velesko, P. Kazakas and G. Gorman.
+  [_Devito: Towards a generic Finite Difference DSL using Symbolic Python_](presentations/devito-pyhpc2016.pdf)
+  Presented at [PyHPC 2016](http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/)
