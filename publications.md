@@ -43,25 +43,25 @@ Fast finite difference computation._ Poster accepted at SC 2016
 
 ### Conference Presentations
 * N. Kukreja, M. Louboutin, F. Luporini, P. Witte, M. Lange, F. Herrmann and G. Gorman.
-  [_Leveraging symbolic math for rapid development of applications for seismic imaging_](presentations/devito-rice-navjot.pdf)
-  Presented at High performance computing in Oil and Gas at Rice University 2017
+  _Leveraging symbolic math for rapid development of applications for seismic imaging_
+  Presented at High performance computing in Oil and Gas at Rice University 2017. [[slides](presentations/devito-rice-navjot.pdf)]
 
 * F. Luporini, M. Lange, M. Louboutin, N. Kukreja and G.Gorman.
-  [_Vectorization and Locality Optimizations for Seismic Imagining Methods Through Automated Code Generation_](presentations/Luporini-cse17.pdf)
-  Presented at SIAM-CSE 2017, MS44 Efficiency of High-Order Methods on the 2nd Generation Intel Xeon Phi Processor
+  _Vectorization and Locality Optimizations for Seismic Imagining Methods Through Automated Code Generation_
+  Presented at SIAM-CSE 2017, MS44 Efficiency of High-Order Methods on the 2nd Generation Intel Xeon Phi Processor. [[slides](presentations/Luporini-cse17.pdf)]
 
 * N. Kukreja, M. Lange, M. Louboutin, F. Luporini and G. Gorman.
-  [_Symbolic Math for Automated Fast Finite Difference Computations_](presentations/Mon-16-50-Kukreja.pdf)
-  Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
+  _Symbolic Math for Automated Fast Finite Difference Computations_
+  Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion. [[slides](presentations/Mon-16-50-Kukreja.pdf)]
 
 * M. Louboutin, M. Lange, N. Kukreja, F. Luporini, F. Herrmann and G. Gorman.
-  [_Multi-Physics Geophysical Exploration: Raising the Abstraction with Separation of Concerns_](presentations/Mon-17-25-Louboutin.pdf)
-  Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
+  _Multi-Physics Geophysical Exploration: Raising the Abstraction with Separation of Concerns_
+  Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion. [[slides](presentations/Mon-17-25-Louboutin.pdf)]
 
 * P. Witte, M. Louboutin and F. Herrmann.
-  [_Large-Scale Workflows for Wave-Equation Based Inversion in Julia_](presentations/Mon-17-50-Witte.pdf)
-  Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion
+  _Large-Scale Workflows for Wave-Equation Based Inversion in Julia_
+  Presented at SIAM-CSE 2017, MS84 Domain-Specific Abstractions for Full-Waveform Inversion. [[slides](presentations/Mon-17-50-Witte.pdf)]
 
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, V. Pandolfo, P. Velesko, P. Kazakas and G. Gorman.
-  [_Devito: Towards a generic Finite Difference DSL using Symbolic Python_](presentations/devito-pyhpc2016.pdf)
-  Presented at [PyHPC 2016](http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/)
+  _Devito: Towards a generic Finite Difference DSL using Symbolic Python_
+  Presented at [PyHPC 2016](http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/). [[slides](presentations/devito-pyhpc2016.pdf)]
