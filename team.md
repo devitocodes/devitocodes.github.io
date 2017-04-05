@@ -9,7 +9,7 @@ permalink: /team
 ### Investigators
 
 * Marcos de Aguiar  - SENAI CIMATEC
-* [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principle investigator
+* [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principal investigator
 * [David Ham](http://www.imperial.ac.uk/people/david.ham) - [Firedrake](http://firedrakeproject.org)
 * [Felix Herrmann](https://www.slim.eos.ubc.ca/felix) - [Seismic Laboratory for Imaging and Modeling](https://www.slim.eos.ubc.ca)
 * [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/) - [Software Performance Optimisation research group](https://wwwhomes.doc.ic.ac.uk/~phjk/SPO-Webpages/index.html)
