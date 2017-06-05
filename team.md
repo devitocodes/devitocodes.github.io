@@ -26,6 +26,7 @@ permalink: /team
 
 ### Other contributors
 
+* [Phillipp Witte](https://github.com/philippwitte)
 * [Christian Jacobs](http://www.christianjacobs.uk)
 * [Paulius Kazakas](https://github.com/sheino)
 * [Paulius Velesko](https://github.com/pvelesko)
