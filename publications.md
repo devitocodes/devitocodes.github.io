@@ -22,8 +22,8 @@ automated fast finite difference computation_. Accepted for WOLFHPC’16, to app
 in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 
 * M. Louboutin, M. Lange, N. Kukreja, F. Herrmann, and G. Gorman. _Performance
-prediction of finite-difference solvers for different computer architectures_. Submitted
-to Computers & Geosciences, 2016, [arxiv:1608.03984](https://arxiv.org/abs/1608.03984)
+prediction of finite-difference solvers for different computer architectures_. Accepted
+for publication in Computers & Geosciences, 2016, [doi:10.1016/j.cageo.2017.04.014](http://www.sciencedirect.com/science/article/pii/S0098300416304034)
 
 ### Poster presentations
 
