@@ -33,7 +33,14 @@
         <li>
           <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
         </li>
-        {% endfor %}
+	{% endfor %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+	<li>
+	  <a href="https://opesci-slackin.now.sh" target="_blank">
+	    <img alt="Slack" src="images/slack.png" height="18">
+	    <strong>Slack</strong>
+	  </a>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
