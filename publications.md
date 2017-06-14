@@ -43,7 +43,7 @@ Fast finite difference computation._ Poster accepted at SC 2016
 
 ### Conference Presentations
 * G. Gorman, M. Lange, F. Luporini, M. Louboutin, N. Kukreja,
-P. Witte, F. Hermann.
+P. Witte, C. Yount, F. Herrmann.
 _Automatic code generation - developing high performance propagators
 better, faster and cheaper._
 Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
