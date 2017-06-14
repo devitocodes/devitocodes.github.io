@@ -42,6 +42,12 @@ Fast finite difference computation._ Poster accepted at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
 
 ### Conference Presentations
+* G. Gorman, M. Lange, F. Luporini, M. Louboutin, N. Kukreja,
+P. Witte, F. Hermann.
+_Automatic code generation - developing high performance propagators
+better, faster and cheaper._
+Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
+
 * N. Kukreja, M. Louboutin, F. Luporini, P. Witte, M. Lange, F. Herrmann and G. Gorman.
   _Leveraging symbolic math for rapid development of applications for seismic imaging_
   Presented at High performance computing in Oil and Gas at Rice University 2017. [[slides](presentations/devito-rice-navjot.pdf)]
