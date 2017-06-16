@@ -80,9 +80,11 @@ outlining the verification procedures of the acoustic operator can be
 found [here](https://arxiv.org/abs/1608.08658).
 <br/>
 
-<img src="images/InitFWI.png" alt="Initial model for FWI" style="width:100%;"/>
+<img src="images/TrueFWI.png" alt="True velocity model (Marmousi-ii)" style="width:100%;"/>
 
-<img src="images/FWI.png" alt="FWI result" style="width:100%;"/>
+<img src="images/InitFWI.png" alt="Initial velocity model for FWI" style="width:100%;"/>
+
+<img src="images/FWI.png" alt="FWI inverted velocity model" style="width:100%;"/>
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
