@@ -80,13 +80,13 @@ outlining the verification procedures of the acoustic operator can be
 found [here](https://arxiv.org/abs/1608.08658).
 <br/>
 
-<img src="images/ModelPerturbation.png" alt="ModelPerturbation" style="width:100%;"/>
+<img src="images/InitFWI.png" alt="Initial model for FWI" style="width:100%;"/>
 
-<img src="images/RTM.png" alt="RTM" style="width:100%;"/>
+<img src="images/FWI.png" alt="FWI result" style="width:100%;"/>
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
-<img src="images/DualShot-eps-converted-to.png" alt="DualShot" style="width:90%;"/>
+<img src="images/Dual.png" alt="DualShot" style="width:90%;"/>
 </div>
 </div>  <!--End row-->
 
