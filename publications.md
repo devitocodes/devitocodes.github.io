@@ -70,4 +70,13 @@ Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
 
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, V. Pandolfo, P. Velesko, P. Kazakas and G. Gorman.
   _Devito: Towards a generic Finite Difference DSL using Symbolic Python_
-  Presented at [PyHPC 2016](http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/). [[slides](presentations/devito-pyhpc2016.pdf)]
+  Presented at
+  [PyHPC 2016](http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/). [[slides](presentations/devito-pyhpc2016.pdf)]
+
+### Masters theses
+
+* D. McCormick. _Applying the Polyhedral Model to Tile Time Loops in
+Devito_ [arXiv:1707.02347](https://arxiv.org/abs/1707.02347)
+
+* T. Sun. _OPESCI-FD: Automatic Code Generation Package for Finite
+  Difference Models_ [arXiv:1605.06381](https://arxiv.org/abs/1605.06381)
