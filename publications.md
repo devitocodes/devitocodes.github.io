@@ -42,6 +42,10 @@ Fast finite difference computation._ Poster accepted at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
 
 ### Conference Presentations
+* M. Lange, N. Kukreja, F. Luporini, M. Louboutin, C. Yount, J. Hückelheim and G. Gorman.
+  _Optimised finite difference computation from symbolic equations._
+  Presented at [SciPy 2017](https://scipy2017.scipy.org). [[slides](presentations/devito-scipy17.pdf)] [[video](https://youtu.be/KinmqFTEs94)]
+
 * G. Gorman, M. Lange, F. Luporini, M. Louboutin, N. Kukreja,
 P. Witte, C. Yount, F. Herrmann.
 _Automatic code generation - developing high performance propagators
