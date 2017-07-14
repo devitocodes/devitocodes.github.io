@@ -8,6 +8,12 @@ permalink: /publications
 
 ### Paper publications
 
+* M. Lange, N. Kukreja, F. Luporini, M. Louboutin, C. Yount, J. Hückelheim and G. Gorman.
+  _Optimised finite difference computation from symbolic equations._
+  Accepted for publication in Proceedings of the 15th Python in Science Conference, 2017.
+  [[accepted](http://conference.scipy.org/proceedings/scipy2017/michael_lange.html)]
+  [[arxiv](http://arxiv.org/abs/1707.03776)]
+
 * F. Luporini, D.A. Ham, P.H.J. Kelly. _An algorithm for the optimization of finite
 element integration loops_. Accepted for publication in ACM Transactions of Mathematical
 Software (TOMS), 2017, [arxiv:1604:05872](https://arxiv.org/abs/1604.05872)
