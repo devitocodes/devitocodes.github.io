@@ -15,8 +15,7 @@ permalink: /publications
   [[arxiv](http://arxiv.org/abs/1707.03776)]
 
 * F. Luporini, D.A. Ham, P.H.J. Kelly. _An algorithm for the optimization of finite
-element integration loops_. Accepted for publication in ACM Transactions of Mathematical
-Software (TOMS), 2017, [arxiv:1604:05872](https://arxiv.org/abs/1604.05872)
+element integration loops_. ACM Transactions on Mathematical Software (TOMS) 44.1 (2017): 3. [arxiv:1604:05872](https://arxiv.org/abs/1604.05872)
 
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
 P. Kazakas, and G. Gorman. _Devito: Towards a generic Finite Difference DSL using
