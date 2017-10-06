@@ -46,6 +46,13 @@ Fast finite difference computation._ Poster accepted at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
 
 ### Conference Presentations
+* N. Kukreja, M. Lange, M. Louboutin, F. Luporini, J. Hückelheim,
+  P. Witte, C. Yount, F. Herrmann, G. Gorman _Rapid development of
+  seismic imaging applications using symbolic mathematics_ Presented
+  at 
+  [Third EAGE Workshop on High Performance Computing for Upstream](https://events.eage.org/en/2017/third-eage-workshop-on-high-performance-computing-for-upstream)
+  [[slides]](presentations/eage_hpc_kukreja.pdf)
+  
 * M. Lange, N. Kukreja, F. Luporini, M. Louboutin, C. Yount, J. Hückelheim and G. Gorman.
   _Optimised finite difference computation from symbolic equations._
   Presented at [SciPy 2017](https://scipy2017.scipy.org). [[slides](presentations/devito-scipy17.pdf)] [[video](https://youtu.be/KinmqFTEs94)]
