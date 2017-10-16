@@ -8,6 +8,11 @@ permalink: /publications
 
 ### Paper publications
 
+* J. Hückelheim, Z. Luo, N. Kukreja, M. Lange, G. Gorman, S. Siegel, M. Dwyer, P. Hovland.
+  _Towards Self-Verification in Finite Difference Code Generation._
+  Accepted for publication in In Proceedings of Correctness’17: First International Workshop on Software Correctness for HPC Ap- plications (Correctness’17). ACM, New York, NY
+[[https://doi.org/10.1145/3145344.3145488](https://doi.org/10.1145/3145344.3145488)]
+
 * M. Lange, N. Kukreja, F. Luporini, M. Louboutin, C. Yount, J. Hückelheim and G. Gorman.
   _Optimised finite difference computation from symbolic equations._
   Accepted for publication in Proceedings of the 15th Python in Science Conference, 2017.
