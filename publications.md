@@ -8,6 +8,11 @@ permalink: /publications
 
 ### Paper publications
 
+* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
+  Full-waveform inversion - part 1: forward modeling. Submitted to The Leading Edge for the tutorial section on October 30, 2017., 2017.
+[[https://github.com/seg/tutorials-2017/tree/master/1712_FWI_forward_modeling](https://github.com/seg/tutorials-2017/tree/master/1712_FWI_forward_modeling)]
+
+
 * J. Hückelheim, Z. Luo, N. Kukreja, M. Lange, G. Gorman, S. Siegel, M. Dwyer, P. Hovland.
   _Towards Self-Verification in Finite Difference Code Generation._
   Accepted for publication in In Proceedings of Correctness’17: First International Workshop on Software Correctness for HPC Applications (Correctness’17). ACM, New York, NY
