@@ -55,6 +55,9 @@ navigation:
 - title: Publications
   url: /publications
 
+-title: opportunities
+  url: /opportunities
+
 - title: GitHub
   url: http://github.com/opesci/devito
 
