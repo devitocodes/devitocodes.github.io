@@ -8,7 +8,6 @@ permalink: /opportunities
 
 ### PhD studentships
 We are currently looking for PhD students to join our highly multidisciplinary team to work in research areas such as:
-
 * Domain specific languages
 * Code generation and compiler technologies
 * High performance computing
@@ -22,5 +21,8 @@ Imperial College London offers a number of competitive scholarships you can appl
 * NERC Oil & Gas, deadline TBA
 * President’s PhD Scholarship round 2, deadline 19th of January
 * CSC Scholarships, deadline 31st of January
+
+Example project:
+* [Redundancy, retiming and data flow in compiling finite-difference applications for many core architectures](http://www.imperial.ac.uk/media/imperial-college/faculty-of-engineering/earth-science-and-engineering/phd-opportunities/PhD-proposal---OPESCI.pdf)
 
 If you have any questions then either email g.gorman at imperial.ac.uk or reach out to us on our slack channel.
