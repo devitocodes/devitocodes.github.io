@@ -43,20 +43,18 @@ finite difference operators in Devito can be found
 <div class="col-sm-1 pull-left" markdown="1"></div>
 <div class="col-sm-4 pull-left" markdown="1">
 ```
-from devito import TimeData, Operator
-from sympy.abc import s, h
+from devito import *
+from sympy import solve
 
-u = TimeData(name=’u’, shape=(nx, ny),
-             time_order=1, space_order=2)
+grid = Grid(shape=(nx, ny))
+u = TimeFunction(name='u', grid=grid,
+                 space_order=2)
 u.data[0, :] = initial_data[:]
 
 eqn = Eq(u.dt, a * (u.dx2 + u.dy2))
 stencil = solve(eqn, u.forward)[0]
-op = Operator(
-   stencils=Eq(u.forward, stencil),
-   subs={h: dx, s: dt}, nt=timesteps
-)
-op.apply()
+op = Operator(Eq(u.forward, stencil))
+op(t=timesteps, dt=dt)
 ```
 
 Example code for a 2D diffusion operator from a symbolic
