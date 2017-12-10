@@ -8,7 +8,6 @@ permalink: /team
 
 ### Investigators
 
-* Marcos de Aguiar  - SENAI CIMATEC
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principal investigator
 * [David Ham](http://www.imperial.ac.uk/people/david.ham) - [Firedrake](http://firedrakeproject.org)
 * [Felix Herrmann](https://www.slim.eos.ubc.ca/felix) - [Seismic Laboratory for Imaging and Modeling](https://www.slim.eos.ubc.ca)
@@ -21,8 +20,7 @@ permalink: /team
 * [Mathias Louboutin](https://www.slim.eos.ubc.ca/content/mathias-louboutin)
 * [Fabio Luporini](https://www.doc.ic.ac.uk/~fl1612)
 * [Navjot Kukreja](https://github.com/navjotk)
-* Felippe Vieira Zacarias
-
+* Jan Hückelheim
 
 ### Other contributors
 
@@ -33,6 +31,8 @@ permalink: /team
 * [Peng Peng](https://github.com/pp1336)
 * [Shuhao Zhang](https://github.com/Richard-zhang)
 * [Vincenzo Pandolfo](https://github.com/vincepandolfo)
+* Marcos de Aguiar
+* Felippe Vieira Zacarias
 
 ### Collaborations
 
