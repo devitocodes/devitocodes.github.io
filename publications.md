@@ -8,12 +8,15 @@ permalink: /publications
 
 ### Paper publications
 
-* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
-  Full-waveform inversion - Part 2: adjoint modeling. Submitted to The Leading Edge for the tutorial section on October 30, 2017., 2017.
+* Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. Submited to The Leading Edge.
+[[https://github.com/seg/tutorials-2018/tree/master/1801_FWI_Adjoint_modeling](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Adjoint_Inversion)]
+
+* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. The Leading Edge, Volume 37, Issue 1 (January 2018)
 [[https://github.com/seg/tutorials-2018/tree/master/1801_FWI_Adjoint_modeling](https://github.com/seg/tutorials-2018/tree/master/1801_FWI_Adjoint_modeling)]
+[[https://library.seg.org/doi/abs/10.1190/tle37010069.1](https://library.seg.org/doi/abs/10.1190/tle37010069.1)]
 
 * Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
-  Full-waveform inversion - Part 1: forward modeling. Submitted to The Leading Edge for the tutorial section on October 30, 2017., 2017.
+  Full-waveform inversion - Part 1: forward modeling. The Leading Edge, Volume 36, Issue 12 (December 2017).
 [[https://github.com/seg/tutorials-2017/tree/master/1712_FWI_forward_modeling](https://github.com/seg/tutorials-2017/tree/master/1712_FWI_forward_modeling)]
 [[https://library.seg.org/doi/abs/10.1190/tle36121033.1](https://library.seg.org/doi/abs/10.1190/tle36121033.1)]
 
