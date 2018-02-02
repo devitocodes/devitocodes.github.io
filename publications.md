@@ -10,7 +10,7 @@ permalink: /publications
 
 * Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
-[[https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Adjoint_Inversion](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Adjoint_Inversion)]
+[[https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion)]
 [[https://library.seg.org/doi/abs/10.1190/tle37020142.1](https://library.seg.org/doi/abs/10.1190/tle37020142.1)]
 
 * Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
