@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: OPESCI
+title: Devito
 
-description: Open Performance-portable Seismic Imaging
+description: Devito: Symbolic Finite Difference Computation
 
 # 120x120 px default image used for Twitter summary card
 logo: images/OpesciLogo-twitter-summary-card.png
@@ -14,7 +14,7 @@ locale:
 
 baseurl:
 
-production_url : http://opesci.org
+production_url : http://devitoproject.org
 
 # Jekyll configuration
 
@@ -42,12 +42,6 @@ disqus-shortname: opescigithubio
 
 # Navigation bar entries and links
 navigation:
-
-- title: Devito
-  url: /devito-public
-
-- title: Documentation
-  url: http://www.opesci.org/devito
 
 - title: Team
   url: /team
