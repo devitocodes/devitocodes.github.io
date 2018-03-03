@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: media
 permalink: /
 
 #excerpt: "Be patient - the project is just bootstrapping..."
