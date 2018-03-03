@@ -2,6 +2,7 @@
 layout: default
 permalink: /
 
+#excerpt: "Be patient - the project is just bootstrapping..."
 #title: "Devito: Fast Symbolic Finite Difference Computation"
 
 ---
