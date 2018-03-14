@@ -50,6 +50,11 @@ in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 prediction of finite-difference solvers for different computer architectures_. Computers & Geosciences 105 (2017): 148-157. [doi:10.1016/j.cageo.2017.04.014](http://www.sciencedirect.com/science/article/pii/S0098300416304034)
 
 ### Conference Presentations
+
+* F. Luporini, C. Yount, M. Louboutin, N. Kukreja, P. Witte, T. Burges, M. Lange, P.H .J . Kelly, F. Herrmann, G. Gorman
+_Automated loop generation for high-performance finite differences (and beyond)_
+Presented at [Dagstuhl](https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18111). [[slides](presentations/dagstuhl.pdfi)]
+
 * F. Luporini, C. Yount, M. Louboutin, N. Kukreja, P. Witte, M. Lange, P. Kelly, F. Herrmann, G. Gorman.
 _Devito: Automated high-performance finite differences for geophysics exploration._
  Presented at [IXPUG Europe Spring 2018](https://www.ixpug.org/events/spring2018). [[slides](https://www.ixpug.org/images/docs/IXPUG_Annual_Spring_Conference_2018/04-LUPORINI-Devito.pdf)]
