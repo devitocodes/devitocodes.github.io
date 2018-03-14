@@ -49,22 +49,6 @@ in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 * M. Louboutin, M. Lange, N. Kukreja, F. Herrmann, and G. Gorman. _Performance
 prediction of finite-difference solvers for different computer architectures_. Computers & Geosciences 105 (2017): 148-157. [doi:10.1016/j.cageo.2017.04.014](http://www.sciencedirect.com/science/article/pii/S0098300416304034)
 
-### Poster presentations
-
-* M. Lange N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
-P. Kazakas and G. Gorman. _Devito: Towards an efficient and sustainable finite
-difference DSL_. Poster presented at SIAM CSE17 PP108 Minisymposterium: Software
-Productivity and Sustainability for CSE and Data Science, 2017,
-[doi:10.6084/m9.figshare.4684852.v1](https://doi.org/10.6084/m9.figshare.4684852.v1)
-
-* M. Lange, C. Jacobs, F. Luporini, L. Mitchell, D. Ham, and G. Gorman. _Seigen:
-Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
-[doi:10.6084/m9.figshare.3798984.v1](https://dx.doi.org/10.6084/m9.figshare.3798984.v1)
-
-* M. Aguiar, G. Gorman, F. Herrmann, N. Kukreja, M. Lange, M. Louboutin, F. Vieira, _Devito:
-Fast finite difference computation._ Poster accepted at SC 2016
-[doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
-
 ### Conference Presentations
 * F. Luporini, C. Yount, M. Louboutin, N. Kukreja, P. Witte, M. Lange, P. Kelly, F. Herrmann, G. Gorman.
 _Devito: Automated high-performance finite differences for geophysics exploration._
@@ -123,3 +107,21 @@ Devito_ [arXiv:1707.02347](https://arxiv.org/abs/1707.02347)
 
 * T. Sun. _OPESCI-FD: Automatic Code Generation Package for Finite
   Difference Models_ [arXiv:1605.06381](https://arxiv.org/abs/1605.06381)
+
+### Poster presentations
+
+* M. Lange N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
+P. Kazakas and G. Gorman. _Devito: Towards an efficient and sustainable finite
+difference DSL_. Poster presented at SIAM CSE17 PP108 Minisymposterium: Software
+Productivity and Sustainability for CSE and Data Science, 2017,
+[doi:10.6084/m9.figshare.4684852.v1](https://doi.org/10.6084/m9.figshare.4684852.v1)
+
+* M. Lange, C. Jacobs, F. Luporini, L. Mitchell, D. Ham, and G. Gorman. _Seigen:
+Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
+[doi:10.6084/m9.figshare.3798984.v1](https://dx.doi.org/10.6084/m9.figshare.3798984.v1)
+
+* M. Aguiar, G. Gorman, F. Herrmann, N. Kukreja, M. Lange, M. Louboutin, F. Vieira, _Devito:
+Fast finite difference computation._ Poster accepted at SC 2016
+[doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
+
+
