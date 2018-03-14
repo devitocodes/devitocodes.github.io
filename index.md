@@ -101,7 +101,7 @@ Devito provides a set of automated performance optimizations during code generat
 fully utilise the target hardware without changing the model
 specification:
 
-* Vectoriastion and shared-memory parallelism
+* Vectorisation and shared-memory parallelism
 * Loop blocking and auto-tuning
 * Symbolic optimisations:
     * Common sub-expression elimination (CSE)
