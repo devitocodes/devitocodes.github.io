@@ -6,7 +6,7 @@ permalink: /team
 
 ---
 
-### Contributers
+### Current contributers
 
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principal investigator
 * [Felix Herrmann](https://www.slim.eos.ubc.ca/felix) - [Seismic Laboratory for Imaging and Modeling](https://www.slim.eos.ubc.ca)
@@ -16,7 +16,8 @@ permalink: /team
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange)
 * [Mathias Louboutin](https://www.slim.eos.ubc.ca/content/mathias-louboutin)
 * [Fabio Luporini](https://www.doc.ic.ac.uk/~fl1612)
-* [Vincenzo Pandolfo](https://github.com/vincepandolfo)
-* [Paulius Velesko](https://github.com/pvelesko)
 * [Phillipp Witte](https://github.com/philippwitte)
 
+### Past contributers
+* [Paulius Velesko](https://github.com/pvelesko)
+* [Vincenzo Pandolfo](https://github.com/vincepandolfo)
