@@ -8,9 +8,10 @@ permalink: /team
 
 ### Current contributers
 
+* [Tim Burgess](https://github.com/tjb900)
 * [Gerard Gorman](http://www.imperial.ac.uk/people/g.gorman) - Principal investigator
 * [Felix Herrmann](https://www.slim.eos.ubc.ca/felix) - [Seismic Laboratory for Imaging and Modeling](https://www.slim.eos.ubc.ca)
-* Jan Hückelheim
+* [Jan Hückelheim](https://github.com/jhueckelheim)
 * [Paul Kelly](http://www.doc.ic.ac.uk/~phjk/) - [Software Performance Optimisation research group](https://wwwhomes.doc.ic.ac.uk/~phjk/SPO-Webpages/index.html)
 * [Navjot Kukreja](https://github.com/navjotk)
 * [Michael Lange](http://www.imperial.ac.uk/people/michael.lange)
