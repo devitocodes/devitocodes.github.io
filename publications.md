@@ -67,7 +67,7 @@ Fast finite difference computation._ Poster accepted at SC 2016
 
 ### Conference Presentations
 * F. Luporini, C. Yount, M. Louboutin, N. Kukreja, P. Witte, M. Lange, P. Kelly, F. Herrmann, G. Gorman.
-_DEVITO: Automated high-performance finite differences for geophysics exploration._
+_Devito: Automated high-performance finite differences for geophysics exploration._
  Presented at [IXPUG Europe Spring 2018](https://www.ixpug.org/events/spring2018). [[slides](https://www.ixpug.org/images/docs/IXPUG_Annual_Spring_Conference_2018/04-LUPORINI-Devito.pdf)]
 
 * F. Luporini, M. Lange, N. Kukreja, M. Louboutin, C. Yount, J. Hückelheim and G. Gorman.
