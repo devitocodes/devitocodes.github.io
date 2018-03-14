@@ -97,8 +97,7 @@ found [here](https://arxiv.org/abs/1608.08658).
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
-Devito provides a set of automated performance optimiza-
-tions during code generation that allow user applications to
+Devito provides a set of automated performance optimizations during code generation that allow user applications to
 fully utilise the target hardware without changing the model
 specification:
 
