@@ -118,3 +118,26 @@ cores @ 2.3GHz).
 </div>
 <div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
+
+
+<div class="row" markdown="1">
+<div class="col-sm-12 pull-left" markdown="1">
+### Citing Devito
+</div>
+
+<div class="col-sm-12 pull-left" markdown="1">
+If you publish results using Devito, we would be grateful if you would cite
+the following paper:
+```
+@InProceedings{ michael_lange-proc-scipy-2017,
+  author    = { {M}ichael {L}ange and {N}avjot {K}ukreja and {F}abio {L}uporini and {M}athias {L}ouboutin and {C}harles {Y}ount and {J}an {H}\"uckelheim and {G}erard {J}. {G}orman },
+  title     = { {O}ptimised finite difference computation from symbolic equations },
+  booktitle = { {P}roceedings of the 16th {P}ython in {S}cience {C}onference },
+  pages     = { 89 - 97 },
+  year      = { 2017 },
+  editor    = { {K}aty {H}uff and {D}avid {L}ippa and {D}illon {N}iederhut and {M} {P}acer },
+  doi       = { 10.25080/shinma-7f4c6e7-00d }
+}
+```
+</div>
+</div>  <!--End row-->
