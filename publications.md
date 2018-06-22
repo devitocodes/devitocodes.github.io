@@ -107,6 +107,8 @@ Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
 
 ### Masters theses
 
+* N. Sim. _Optimising finite-difference methods for PDEs through parameterised time-tiling in Devito_ [arXiv:1806.08299](https://arxiv.org/abs/1806.08299)
+
 * D. McCormick. _Applying the Polyhedral Model to Tile Time Loops in
 Devito_ [arXiv:1707.02347](https://arxiv.org/abs/1707.02347)
 
