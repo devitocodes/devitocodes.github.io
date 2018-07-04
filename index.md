@@ -13,7 +13,7 @@ permalink: /
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
-Devito is a prototype Domain-specific Language (DSL) and code
+Devito is a Domain-specific Language (DSL) and code
 generation framework for the design of highly optimised finite
 difference kernels for use in inversion methods. Devito utilises
 [SymPy](http://www.sympy.org) to allow the definition of operators from
