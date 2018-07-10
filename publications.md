@@ -51,6 +51,12 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 ### Conference Presentations
 
+* N. Kukreja,  J. Hückelheim, M. Lange, M. Louboutin, A. Walther,
+S. W. Funke, G. J. Gorman
+_High-level abstractions for checkpointing in PDE-constrained optimisation_
+Presented at
+[International Symposium for Mathematic Programming](https://ismp2018.sciencesconf.org). [[slides](presentations/ismp18_kukreja.pdf)]
+
 * F. Luporini, C. Yount, M. Louboutin, N. Kukreja, P. Witte, T. Burges, M. Lange, P.H .J . Kelly, F. Herrmann, G. Gorman
 _Automated loop generation for high-performance finite differences (and beyond)_
 Presented at [Dagstuhl](https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18111). [[slides](presentations/dagstuhl.pdf)]
