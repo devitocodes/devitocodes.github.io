@@ -8,6 +8,10 @@ permalink: /publications
 
 ### Paper publications
 
+* Fabio Luporini, Michael Lange, Mathias Louboutin, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Gerard J. Gorman, Felix J. Herrmann.
+  Architecture and performance of Devito, a system for automated stencil computation. Submitted to SIAM Journal on Scientific Computing (July 2018)
+[arxiv](https://arxiv.org/abs/1807.03032)
+
 * Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
 [[https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion)]
