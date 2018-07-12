@@ -127,16 +127,18 @@ cores @ 2.3GHz).
 
 <div class="col-sm-12 pull-left" markdown="1">
 If you publish results using Devito, we would be grateful if you would cite
-the following paper:
+the following paper, submitted to the SIAM Journal on Scientific Computing
 ```
-@InProceedings{ michael_lange-proc-scipy-2017,
-  author    = { {M}ichael {L}ange and {N}avjot {K}ukreja and {F}abio {L}uporini and {M}athias {L}ouboutin and {C}harles {Y}ount and {J}an {H}\"uckelheim and {G}erard {J}. {G}orman },
-  title     = { {O}ptimised finite difference computation from symbolic equations },
-  booktitle = { {P}roceedings of the 16th {P}ython in {S}cience {C}onference },
-  pages     = { 89 - 97 },
-  year      = { 2017 },
-  editor    = { {K}aty {H}uff and {D}avid {L}ippa and {D}illon {N}iederhut and {M} {P}acer },
-  doi       = { 10.25080/shinma-7f4c6e7-00d }
+@article{devito-compiler,
+  author    = {{Luporini}, F. and {Lange}, M. and {Louboutin}, M. and {Kukreja}, N. and {H{\"u}ckelheim}, J. and {Yount}, C. and {Witte}, P. and {Kelly}, P.~H.~J. and {Gorman}, G.~J. and {Herrmann}, F.~J.},
+  title     = {Architecture and performance of Devito, a system for automated stencil computation},
+  journal   = {CoRR},
+  volume    = {abs/1807.03032},
+  month     = {jul},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1807.03032},
+  archivePrefix = {arXiv},
+  eprint    = {1807.03032}
 }
 ```
 </div>
