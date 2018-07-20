@@ -126,8 +126,8 @@ cores @ 2.3GHz).
 </div>
 
 <div class="col-sm-12 pull-left" markdown="1">
-If you publish results using Devito, we would be grateful if you would cite
-the following paper, submitted to the SIAM Journal on Scientific Computing
+If you publish results using Devito, we would be grateful if you would cite the
+following paper, submitted to ACM Transactions on Mathematical Software (TOMS)
 ```
 @article{devito-compiler,
   author    = { {Luporini}, F. and {Lange}, M. and {Louboutin}, M. and {Kukreja}, N. and {H{\"u}ckelheim}, J. and {Yount}, C. and {Witte}, P. and {Kelly}, P.~H.~J. and {Gorman}, G.~J. and {Herrmann}, F.~J. },
