@@ -8,19 +8,23 @@ permalink: /publications
 
 ### Paper publications
 
+* Mathias Louboutin, Michael Lange, Fabio Luporini, Navjot Kukreja, Philipp A. Witte, Felix J. Herrmann, Paulius Velesko and Gerard J. Gorman
+  Devito: an embedded domain-specific language for finite differences and geophysical exploration.
+  Submitted to  Geoscientific Model Development  (August 2018)
+
 * Fabio Luporini, Michael Lange, Mathias Louboutin, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Gerard J. Gorman, Felix J. Herrmann.
   Architecture and performance of Devito, a system for automated stencil computation. Submitted to SIAM Journal on Scientific Computing (July 2018)
 [arxiv](https://arxiv.org/abs/1807.03032)
 
-* Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
-  Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
-[[https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion)]
-[[https://library.seg.org/doi/abs/10.1190/tle37020142.1](https://library.seg.org/doi/abs/10.1190/tle37020142.1)]
+* Philipp A. Witte, Mathias Louboutin, Fabio Luporini, Gerard J. Gorman, Felix J. Herrmann.
+  Compressive least-squares migration with on-the-fly Fourier transforms
+  Submitted to Geophysics on June 28, 2018.
+[[https://www.slim.eos.ubc.ca/content/compressive-least-squares-migration-fly-fourier-transforms](https://www.slim.eos.ubc.ca/content/compressive-least-squares-migration-fly-fourier-transforms)]
 
-* Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
-  Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
-[[https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion)]
-[[https://library.seg.org/doi/abs/10.1190/tle37020142.1](https://library.seg.org/doi/abs/10.1190/tle37020142.1)]
+* Philipp A. Witte, Mathias Louboutin, Navjot Kukreja, Fabio Luporini, Michael Lange, Gerard J. Gorman, Felix J. Herrmann.
+  A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia.
+  Submitted to Geophysics on March 1, 2018.
+[[https://www.slim.eos.ubc.ca/content/large-scale-framework-symbolic-implementations-seismic-inversion-algorithms-julia](https://www.slim.eos.ubc.ca/content/large-scale-framework-symbolic-implementations-seismic-inversion-algorithms-julia)]
 
 * Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
