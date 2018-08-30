@@ -70,6 +70,11 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 ### Conference Presentations
 
+* Felix .J. Herrmann, Gerard Gorman, Jan Hückelheim, Keegan Lensink, Paul Kelly, Navjot Kukreja, Henryk Modzelewski, Michael Lange, Mathias Louboutin, Fabio Luporini, Ali SiahKoohi, Phillipp Witte
+_The power of abstraction in Computational Exploration Seismology_
+Presented at
+[Smoky Mountains Computational Sciences & Engineering Conference](https://smc.ornl.gov/). [[slides](presentations/SMC2018.pdf)]
+
 * N. Kukreja,  J. Hückelheim, M. Lange, M. Louboutin, A. Walther,
 S. W. Funke, G. J. Gorman
 _High-level abstractions for checkpointing in PDE-constrained optimisation_
