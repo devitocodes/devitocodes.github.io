@@ -20,6 +20,6 @@ permalink: /team
 * Rhodri Nelson
 
 ### Past contributers
-* [Michael Lange](http://www.imperial.ac.uk/people/michael.lange)
+* [Michael Lange](https://github.com/mlange05)
 * [Paulius Velesko](https://github.com/pvelesko)
 * [Vincenzo Pandolfo](https://github.com/vincepandolfo)
