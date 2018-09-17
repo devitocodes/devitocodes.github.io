@@ -45,7 +45,6 @@ free to talk to us on slack if you have questions - PR's are also welcome.
 <div class="col-sm-4 pull-left" markdown="1">
 ```
 from devito import *
-from sympy import solve
 
 grid = Grid(shape=(nx, ny))
 u = TimeFunction(name='u', grid=grid,
@@ -53,7 +52,7 @@ u = TimeFunction(name='u', grid=grid,
 u.data[0, :] = initial_data[:]
 
 eqn = Eq(u.dt, a * (u.dx2 + u.dy2))
-stencil = solve(eqn, u.forward)[0]
+stencil = solve(eqn, u.forward)
 op = Operator(Eq(u.forward, stencil))
 op(t=timesteps, dt=dt)
 ```
