@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>devito.dimension &mdash; Devito 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Devito
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Example Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devito.html">API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Devito</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../devito.html">devito</a> &raquo;</li>
+        
+      <li>devito.dimension</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for devito.dimension</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.core.cache</span> <span class="k">import</span> <span class="n">cacheit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">cached_property</span> <span class="k">import</span> <span class="n">cached_property</span>
+
+<span class="kn">from</span> <span class="nn">devito.exceptions</span> <span class="k">import</span> <span class="n">InvalidArgument</span>
+<span class="kn">from</span> <span class="nn">devito.types</span> <span class="k">import</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">RIGHT</span><span class="p">,</span> <span class="n">AbstractSymbol</span><span class="p">,</span> <span class="n">Scalar</span>
+<span class="kn">from</span> <span class="nn">devito.logger</span> <span class="k">import</span> <span class="n">debug</span>
+<span class="kn">from</span> <span class="nn">devito.tools</span> <span class="k">import</span> <span class="n">ArgProvider</span><span class="p">,</span> <span class="n">Pickable</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Dimension&#39;</span><span class="p">,</span> <span class="s1">&#39;SpaceDimension&#39;</span><span class="p">,</span> <span class="s1">&#39;TimeDimension&#39;</span><span class="p">,</span> <span class="s1">&#39;DefaultDimension&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SteppingDimension&#39;</span><span class="p">,</span> <span class="s1">&#39;SubDimension&#39;</span><span class="p">,</span> <span class="s1">&#39;ConditionalDimension&#39;</span><span class="p">,</span> <span class="s1">&#39;dimensions&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Dimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.Dimension">[docs]</a><span class="k">class</span> <span class="nc">Dimension</span><span class="p">(</span><span class="n">AbstractSymbol</span><span class="p">,</span> <span class="n">ArgProvider</span><span class="p">):</span>
+
+    <span class="n">is_Dimension</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">is_Space</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_Time</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">is_Default</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_Derived</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_NonlinearDerived</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_Sub</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_Conditional</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_Stepping</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A Dimension is a symbol representing a problem dimension and thus defining a</span>
+<span class="sd">    potential iteration space.</span>
+
+<span class="sd">    :param name: Name of the dimension symbol.</span>
+<span class="sd">    :param spacing: Optional, symbol for the spacing along this dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Dimension</span><span class="o">.</span><span class="n">__xnew_cached_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">spacing</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__new_stage2__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_spacing</span> <span class="o">=</span> <span class="n">spacing</span> <span class="ow">or</span> <span class="n">Scalar</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;h_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="n">__xnew__</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">)</span>
+    <span class="n">__xnew_cached_</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">cacheit</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># TODO: Do dimensions really need a dtype?</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">symbolic_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The symbolic size of this dimension.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Scalar</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size_name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">symbolic_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The symbol defining the iteration start for this dimension.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Scalar</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">symbolic_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The symbol defining the iteration end for this dimension.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Scalar</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">limits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">symbolic_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_end</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_size&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">min_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_m&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">max_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_M&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spacing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spacing</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spacing</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">_hashable_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Dimension</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_hashable_content</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_arg_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a tuple of argument names introduced by this dimension.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arg_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a map of default argument values defined by this dimension.</span>
+
+<span class="sd">        :param start: (Optional) known starting point as provided by</span>
+<span class="sd">                      data-carrying symbols.</span>
+<span class="sd">        :param size: (Optional) known size as provided by data-carrying symbols.</span>
+<span class="sd">        :param alias: (Optional) name under which to store values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="n">alias</span> <span class="ow">or</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">dim</span><span class="o">.</span><span class="n">min_name</span><span class="p">:</span> <span class="n">start</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dim</span><span class="o">.</span><span class="n">max_name</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span> <span class="n">dim</span><span class="o">.</span><span class="n">size_name</span><span class="p">:</span> <span class="n">size</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_arg_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a map of argument values after evaluating user input. If no</span>
+<span class="sd">        user input is provided, get a known value in ``args`` and adjust it</span>
+<span class="sd">        so that no out-of-bounds memory accesses will be performeed. The</span>
+<span class="sd">        adjustment exploits the information in ``interval``, a :class:`Interval`</span>
+<span class="sd">        describing the data space of this dimension. If there is no known value</span>
+<span class="sd">        in ``args``, use a default value.</span>
+
+<span class="sd">        :param args: Dictionary of known argument values.</span>
+<span class="sd">        :param interval: A :class:`Interval` for ``self``.</span>
+<span class="sd">        :param grid: A :class:`Grid`; if ``self`` is a distributed Dimension in</span>
+<span class="sd">                     ``grid``, then the user input is translated into rank-local</span>
+<span class="sd">                     indices.</span>
+<span class="sd">        :param kwargs: Dictionary of user-provided argument overrides.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Fetch user input, and convert it into local values if necessary</span>
+        <span class="n">minv</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">maxv</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">grid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">grid</span><span class="o">.</span><span class="n">is_distributed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">minv</span><span class="p">,</span> <span class="n">maxv</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">distributor</span><span class="o">.</span><span class="n">glb_to_loc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">(</span><span class="n">minv</span><span class="p">,</span> <span class="n">maxv</span><span class="p">))</span>
+
+        <span class="c1"># If not user-provided, use min/max default value, but adjust it</span>
+        <span class="c1"># so as to avoid OOB accesses</span>
+        <span class="n">defaults</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arg_defaults</span><span class="p">()</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">minv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">,</span> <span class="n">defaults</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">])</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span> <span class="o">-=</span> <span class="nb">min</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">minv</span>
+        <span class="k">if</span> <span class="n">maxv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span> <span class="n">defaults</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">])</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">upper</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">maxv</span>
+
+        <span class="k">return</span> <span class="n">values</span>
+
+    <span class="k">def</span> <span class="nf">_arg_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :raises InvalidArgument: If any of the ``self``-related runtime arguments</span>
+<span class="sd">                                 in ``args`` will cause an out-of-bounds access.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidArgument</span><span class="p">(</span><span class="s2">&quot;No runtime value for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">interval</span><span class="o">.</span><span class="n">is_Defined</span> <span class="ow">and</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span> <span class="o">+</span> <span class="n">interval</span><span class="o">.</span><span class="n">lower</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidArgument</span><span class="p">(</span><span class="s2">&quot;OOB detected due to </span><span class="si">%s</span><span class="s2">=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">,</span>
+                                                                 <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidArgument</span><span class="p">(</span><span class="s2">&quot;No runtime value for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">interval</span><span class="o">.</span><span class="n">is_Defined</span> <span class="ow">and</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">+</span> <span class="n">interval</span><span class="o">.</span><span class="n">upper</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidArgument</span><span class="p">(</span><span class="s2">&quot;OOB detected due to </span><span class="si">%s</span><span class="s2">=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span>
+                                                                 <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]))</span>
+
+        <span class="c1"># Allow the specific case of max=min-1, which disables the loop</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidArgument</span><span class="p">(</span><span class="s2">&quot;Illegal max=</span><span class="si">%s</span><span class="s2"> &lt; min=</span><span class="si">%s</span><span class="s2">&quot;</span>
+                                  <span class="o">%</span> <span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]))</span>
+        <span class="k">elif</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">==</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">=</span><span class="si">%d</span><span class="s2"> and </span><span class="si">%s</span><span class="s2">=</span><span class="si">%d</span><span class="s2"> might cause no iterations along Dimension </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">],</span>
+                  <span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># Pickling support</span>
+    <span class="n">_pickle_args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">_pickle_kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spacing&#39;</span><span class="p">]</span>
+    <span class="n">__reduce_ex__</span> <span class="o">=</span> <span class="n">Pickable</span><span class="o">.</span><span class="n">__reduce_ex__</span></div>
+
+
+<div class="viewcode-block" id="SpaceDimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.SpaceDimension">[docs]</a><span class="k">class</span> <span class="nc">SpaceDimension</span><span class="p">(</span><span class="n">Dimension</span><span class="p">):</span>
+
+    <span class="n">is_Space</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol to represent a space dimension that defines the</span>
+<span class="sd">    extent of physical grid. :class:`SpaceDimensions` create dedicated</span>
+<span class="sd">    shortcut notations for spatial derivatives on :class:`Function`</span>
+<span class="sd">    symbols.</span>
+
+<span class="sd">    :param name: Name of the dimension symbol.</span>
+<span class="sd">    :param spacing: Optional, symbol for the spacing along this dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="TimeDimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.TimeDimension">[docs]</a><span class="k">class</span> <span class="nc">TimeDimension</span><span class="p">(</span><span class="n">Dimension</span><span class="p">):</span>
+
+    <span class="n">is_Time</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol to represent a dimension that defines the extent</span>
+<span class="sd">    of time. As time might be used in different contexts, all derived</span>
+<span class="sd">    time dimensions should inherit from :class:`TimeDimension`.</span>
+
+<span class="sd">    :param name: Name of the dimension symbol.</span>
+<span class="sd">    :param spacing: Optional, symbol for the spacing along this dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="DefaultDimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.DefaultDimension">[docs]</a><span class="k">class</span> <span class="nc">DefaultDimension</span><span class="p">(</span><span class="n">Dimension</span><span class="p">):</span>
+
+    <span class="n">is_Default</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol to represent a dimension that has a statically-known size.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        A DefaultDimension carries a value, so it has a mutable state. Hence, it</span>
+<span class="sd">        is not cached.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">Dimension</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_default_value</span> <span class="o">=</span> <span class="n">default_value</span> <span class="ow">or</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">symbolic_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arg_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alias</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="n">alias</span> <span class="ow">or</span> <span class="bp">self</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="ow">or</span> <span class="n">dim</span><span class="o">.</span><span class="n">_default_value</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">dim</span><span class="o">.</span><span class="n">min_name</span><span class="p">:</span> <span class="n">start</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dim</span><span class="o">.</span><span class="n">max_name</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span> <span class="n">dim</span><span class="o">.</span><span class="n">size_name</span><span class="p">:</span> <span class="n">size</span><span class="p">}</span></div>
+
+
+<span class="k">class</span> <span class="nc">DerivedDimension</span><span class="p">(</span><span class="n">Dimension</span><span class="p">):</span>
+
+    <span class="n">is_Derived</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">_keymap</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="sd">&quot;&quot;&quot;Map all seen instance `_properties` to a unique number. This is used</span>
+<span class="sd">    to create unique Dimension names.&quot;&quot;&quot;</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol derived from a ``parent`` Dimension.</span>
+
+<span class="sd">    :param name: Name of the dimension symbol.</span>
+<span class="sd">    :param parent: The parent Dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">__xnew_cached_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__new_stage2__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">Dimension</span><span class="p">)</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="n">parent</span>
+        <span class="c1"># Inherit time/space identifiers</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">is_Time</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">is_Time</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">is_Space</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">is_Space</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="n">__xnew__</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">)</span>
+    <span class="n">__xnew_cached_</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">cacheit</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">))</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_gensuffix</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_keymap</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_keymap</span><span class="p">))</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_genname</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_gensuffix</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">root</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spacing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">spacing</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_hashable_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">_hashable_content</span><span class="p">())</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="p">}</span> <span class="o">|</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">_defines</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_arg_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">_arg_names</span>
+
+    <span class="k">def</span> <span class="nf">_arg_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A :class:`DerivedDimension` performs no runtime checks.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Pickling support</span>
+    <span class="n">_pickle_args</span> <span class="o">=</span> <span class="n">Dimension</span><span class="o">.</span><span class="n">_pickle_args</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;parent&#39;</span><span class="p">]</span>
+    <span class="n">_pickle_kwargs</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<div class="viewcode-block" id="SubDimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension">[docs]</a><span class="k">class</span> <span class="nc">SubDimension</span><span class="p">(</span><span class="n">DerivedDimension</span><span class="p">):</span>
+
+    <span class="n">is_Sub</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol representing a contiguous sub-region of a given</span>
+<span class="sd">    ``parent`` Dimension.</span>
+
+<span class="sd">    :param name: Name of the dimension symbol.</span>
+<span class="sd">    :param parent: Parent dimension from which the SubDimension is created.</span>
+<span class="sd">    :param left: Symbolic expression to provide the left bound.</span>
+<span class="sd">    :param right: Symbolic expression to provide the right bound.</span>
+<span class="sd">    :param thickness: A 2-tuple of 2-tuples, ``((symbol, int), (symbol, int))``,</span>
+<span class="sd">                      representing the thickness of the left and right regions,</span>
+<span class="sd">                      respectively.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">SubDimension</span><span class="o">.</span><span class="n">__xnew_cached_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__new_stage2__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_interval</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_thickness</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">Thickness</span><span class="p">(</span><span class="o">*</span><span class="n">thickness</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="n">__xnew_cached_</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">cacheit</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">))</span>
+
+    <span class="n">Thickness</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Thickness&#39;</span><span class="p">,</span> <span class="s1">&#39;left right&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SubDimension.left"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension.left">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
+        <span class="n">lst</span><span class="p">,</span> <span class="n">rst</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">symbolic_thickness</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span>
+                   <span class="n">left</span><span class="o">=</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span><span class="p">,</span>
+                   <span class="n">right</span><span class="o">=</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span><span class="o">+</span><span class="n">lst</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                   <span class="n">thickness</span><span class="o">=</span><span class="p">((</span><span class="n">lst</span><span class="p">,</span> <span class="n">thickness</span><span class="p">),</span> <span class="p">(</span><span class="n">rst</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="SubDimension.right"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension.right">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
+        <span class="n">lst</span><span class="p">,</span> <span class="n">rst</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">symbolic_thickness</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span>
+                   <span class="n">left</span><span class="o">=</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span><span class="o">-</span><span class="n">rst</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                   <span class="n">right</span><span class="o">=</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span><span class="p">,</span>
+                   <span class="n">thickness</span><span class="o">=</span><span class="p">((</span><span class="n">lst</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">rst</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="SubDimension.middle"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension.middle">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">middle</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">thickness_left</span><span class="p">,</span> <span class="n">thickness_right</span><span class="p">):</span>
+        <span class="n">lst</span><span class="p">,</span> <span class="n">rst</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">symbolic_thickness</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span>
+                   <span class="n">left</span><span class="o">=</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span><span class="o">+</span><span class="n">lst</span><span class="p">,</span>
+                   <span class="n">right</span><span class="o">=</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span><span class="o">-</span><span class="n">rst</span><span class="p">,</span>
+                   <span class="n">thickness</span><span class="o">=</span><span class="p">((</span><span class="n">lst</span><span class="p">,</span> <span class="n">thickness_left</span><span class="p">),</span> <span class="p">(</span><span class="n">rst</span><span class="p">,</span> <span class="n">thickness_right</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="SubDimension.symbolic_thickness"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension.symbolic_thickness">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">symbolic_thickness</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">Scalar</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_ltkn&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+                <span class="n">Scalar</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_rtkn&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">symbolic_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interval</span><span class="o">.</span><span class="n">left</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">symbolic_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interval</span><span class="o">.</span><span class="n">right</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">thickness_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_thickness</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">thickness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_thickness</span>
+
+<div class="viewcode-block" id="SubDimension.offset_left"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension.offset_left">[docs]</a>    <span class="k">def</span> <span class="nf">offset_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># The left extreme of the SubDimension can be related to either the</span>
+        <span class="c1"># start or end of the parent dimension</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">symbolic_thickness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">symbolic_thickness</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thickness_map</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">symbolic_thickness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">symbolic_thickness</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thickness_map</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span></div>
+
+<div class="viewcode-block" id="SubDimension.offset_right"><a class="viewcode-back" href="../../devito.html#devito.dimension.SubDimension.offset_right">[docs]</a>    <span class="k">def</span> <span class="nf">offset_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># The right extreme of the SubDimension can be related to either the</span>
+        <span class="c1"># start or end of the parent dimension</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">symbolic_thickness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">symbolic_thickness</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thickness_map</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">symbolic_thickness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">symbolic_thickness</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thickness_map</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_interval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_thickness</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arg_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">grid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">grid</span><span class="o">.</span><span class="n">is_distributed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">):</span>
+            <span class="c1"># Get local thickness</span>
+            <span class="n">ltkn</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">distributor</span><span class="o">.</span><span class="n">glb_to_loc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span><span class="o">.</span><span class="n">left</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">LEFT</span><span class="p">)</span>
+            <span class="n">rtkn</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">distributor</span><span class="o">.</span><span class="n">glb_to_loc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span><span class="o">.</span><span class="n">right</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">RIGHT</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thickness_map</span><span class="p">,</span> <span class="p">(</span><span class="n">ltkn</span><span class="p">,</span> <span class="n">rtkn</span><span class="p">))}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_arg_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arg_defaults</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># Pickling support</span>
+    <span class="n">_pickle_args</span> <span class="o">=</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">_pickle_args</span> <span class="o">+</span>\
+        <span class="p">[</span><span class="s1">&#39;symbolic_start&#39;</span><span class="p">,</span> <span class="s1">&#39;symbolic_end&#39;</span><span class="p">,</span> <span class="s1">&#39;thickness&#39;</span><span class="p">]</span>
+    <span class="n">_pickle_kwargs</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+
+<div class="viewcode-block" id="ConditionalDimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.ConditionalDimension">[docs]</a><span class="k">class</span> <span class="nc">ConditionalDimension</span><span class="p">(</span><span class="n">DerivedDimension</span><span class="p">):</span>
+
+    <span class="n">is_NonlinearDerived</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">is_Conditional</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol representing a sub-region of a given ``parent`` Dimension.</span>
+<span class="sd">    Unlike a :class:`SubDimension`, a ConditionalDimension does not represent</span>
+<span class="sd">    a contiguous region. The iterations touched by a ConditionalDimension</span>
+<span class="sd">    are expressible in two different ways: ::</span>
+
+<span class="sd">        * ``factor``: an integer indicating the size of the increment.</span>
+<span class="sd">        * ``condition``: an arbitrary SymPy expression depending on ``parent``.</span>
+<span class="sd">                         All iterations for which the expression evaluates to</span>
+<span class="sd">                         True are part of the ``ConditionalDimension`` region.</span>
+
+<span class="sd">    ConditionalDimension needs runtime arguments. The generated C code will require</span>
+<span class="sd">    the size of the dimension to initialize the arrays as e.g:</span>
+
+<span class="sd">        .. code-block:: python</span>
+<span class="sd">           x = grid.dimension[0]</span>
+<span class="sd">           x1 = ConditionalDimension(name=&#39;x1&#39;, parent=x, factor=2)</span>
+<span class="sd">           u1 = TimeFunction(name=&#39;u1&#39;, dimensions=(x1,), size=grid.shape[0]/factor)</span>
+<span class="sd">           # The generated code will look like</span>
+<span class="sd">           float (*restrict u1)[x1_size + 1] =</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        Sometimes the ConditionalDimension itself, rather than its parent, needs</span>
+<span class="sd">        to be used to index into an array. For example, this may happen when an</span>
+<span class="sd">        array is indirectly addressed and the ConditionalDimension&#39;s parent</span>
+<span class="sd">        doesn&#39;t define an affine iteration space. In such a case, one should</span>
+<span class="sd">        create the ConditionalDimension with the flag ``indirect=True``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indirect</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ConditionalDimension</span><span class="o">.</span><span class="n">__xnew_cached_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span>
+                                                   <span class="n">condition</span><span class="p">,</span> <span class="n">indirect</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__new_stage2__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">indirect</span><span class="p">):</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_factor</span> <span class="o">=</span> <span class="n">factor</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_condition</span> <span class="o">=</span> <span class="n">condition</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_indirect</span> <span class="o">=</span> <span class="n">indirect</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="n">__xnew_cached_</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">cacheit</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spacing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">factor</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">spacing</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">factor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_factor</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_factor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">condition</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_condition</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">indirect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indirect</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">indirect</span> <span class="ow">is</span> <span class="kc">True</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_factor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_condition</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_indirect</span><span class="p">)</span>
+
+    <span class="c1"># Pickling support</span>
+    <span class="n">_pickle_kwargs</span> <span class="o">=</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">_pickle_kwargs</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;factor&#39;</span><span class="p">,</span> <span class="s1">&#39;condition&#39;</span><span class="p">,</span> <span class="s1">&#39;indirect&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SteppingDimension"><a class="viewcode-back" href="../../devito.html#devito.dimension.SteppingDimension">[docs]</a><span class="k">class</span> <span class="nc">SteppingDimension</span><span class="p">(</span><span class="n">DerivedDimension</span><span class="p">):</span>
+
+    <span class="n">is_NonlinearDerived</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">is_Stepping</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol that defines the stepping direction of an</span>
+<span class="sd">    :class:`Operator` and implies modulo buffered iteration. This is most</span>
+<span class="sd">    commonly use to represent a timestepping dimension.</span>
+
+<span class="sd">    :param name: Name of the dimension symbol.</span>
+<span class="sd">    :param parent: Parent dimension over which to loop in modulo fashion.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">symbolic_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_start</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">symbolic_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">symbolic_end</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_arg_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">_arg_names</span>
+
+    <span class="k">def</span> <span class="nf">_arg_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a map of default argument values defined by this dimension.</span>
+
+<span class="sd">        :param start: (Optional) known starting point as provided by</span>
+<span class="sd">                      data-carrying symbols.</span>
+<span class="sd">        :param size: (Optional) known size as provided by data-carrying symbols.</span>
+
+<span class="sd">        .. note ::</span>
+
+<span class="sd">            A :class:`SteppingDimension` does not know its end point.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">min_name</span><span class="p">:</span> <span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size_name</span><span class="p">:</span> <span class="n">size</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_arg_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The argument values provided by a :class:`SteppingDimension` are those</span>
+<span class="sd">        of its parent, as it acts as an alias.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">min_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_name</span><span class="p">)</span>
+
+        <span class="c1"># Let the dimension name be an alias for `dim_e`</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">max_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">values</span></div>
+
+
+<span class="k">class</span> <span class="nc">ModuloDimension</span><span class="p">(</span><span class="n">DerivedDimension</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol representing a non-contiguous sub-region of a given</span>
+<span class="sd">    ``parent`` Dimension, which cyclically produces a finite range of values,</span>
+<span class="sd">    such as ``0, 1, 2, 0, 1, 2, 0, ...``.</span>
+
+<span class="sd">    :param parent: Parent dimension from which the ModuloDimension is created.</span>
+<span class="sd">    :param offset: An integer representing an offset from the parent dimension.</span>
+<span class="sd">    :param modulo: The extent of the range.</span>
+<span class="sd">    :param name: (Optional) force a name for this Dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">modulo</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ModuloDimension</span><span class="o">.</span><span class="n">__xnew_cached_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">modulo</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__new_stage2__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">modulo</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_genname</span><span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">modulo</span><span class="p">))</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="n">offset</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_modulo</span> <span class="o">=</span> <span class="n">modulo</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="n">__xnew_cached_</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">cacheit</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">offset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">modulo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modulo</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">symbolic_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">modulo</span>
+
+    <span class="n">symbolic_incr</span> <span class="o">=</span> <span class="n">symbolic_start</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modulo</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arg_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A :class:`ModuloDimension` provides no arguments, so this method</span>
+<span class="sd">        returns an empty dict.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">_arg_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A :class:`ModuloDimension` provides no arguments, so there are</span>
+<span class="sd">        no argument values to be derived.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="c1"># Pickling support</span>
+    <span class="n">_pickle_args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">,</span> <span class="s1">&#39;modulo&#39;</span><span class="p">]</span>
+    <span class="n">_pickle_kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">IncrDimension</span><span class="p">(</span><span class="n">DerivedDimension</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dimension symbol representing a non-contiguous sub-region of a given</span>
+<span class="sd">    ``parent`` Dimension, with one point every ``step`` points. Thus, if</span>
+<span class="sd">    ``step == k``, the dimension represents the sequence ``start, start + k,</span>
+<span class="sd">    start + 2*k, ...``.</span>
+
+<span class="sd">    :param parent: Parent dimension from which the IncrDimension is created.</span>
+<span class="sd">    :param start: An integer representing the starting point of the sequence.</span>
+<span class="sd">    :param step: The distance between two consecutive points.</span>
+<span class="sd">    :param name: (Optional) force a name for this Dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">IncrDimension</span><span class="o">.</span><span class="n">__xnew_cached_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__new_stage2__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_genname</span><span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">))</span>
+        <span class="n">newobj</span> <span class="o">=</span> <span class="n">DerivedDimension</span><span class="o">.</span><span class="n">__xnew__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_start</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="n">newobj</span><span class="o">.</span><span class="n">_step</span> <span class="o">=</span> <span class="n">step</span>
+        <span class="k">return</span> <span class="n">newobj</span>
+
+    <span class="n">__xnew_cached_</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">cacheit</span><span class="p">(</span><span class="n">__new_stage2__</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">symbolic_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">symbolic_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_arg_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A :class:`IncrDimension` provides no arguments, so this method</span>
+<span class="sd">        returns an empty dict.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">_arg_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A :class:`IncrDimension` provides no arguments, so there are</span>
+<span class="sd">        no argument values to be derived.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="c1"># Pickling support</span>
+    <span class="n">_pickle_args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="s1">&#39;symbolic_start&#39;</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">]</span>
+    <span class="n">_pickle_kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="dimensions"><a class="viewcode-back" href="../../devito.html#devito.dimension.dimensions">[docs]</a><span class="k">def</span> <span class="nf">dimensions</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Shortcut for: ::</span>
+
+<span class="sd">        dimensions(&#39;i j k&#39;) -&gt; [Dimension(&#39;i&#39;), Dimension(&#39;j&#39;), Dimension(&#39;k&#39;)]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Dimension</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">names</span><span class="o">.</span><span class="n">split</span><span class="p">())</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Opesci
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
