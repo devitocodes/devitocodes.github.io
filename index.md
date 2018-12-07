@@ -60,7 +60,7 @@ op(t=timesteps, dt=dt)
 Example code for a 2D diffusion operator from a symbolic
 definition. The full tutorial can be found
 [here](/devito/heat.html). In order to get more faimliar with Devito, itis highly recommended
-that you run more tutorials [tutorials](https://www.devitoproject.org/devito/tutorials.html) .  
+that you run more [tutorials](https://www.devitoproject.org/devito/tutorials.html) .  
 </div>
 <div class="col-sm-1 pull-left" markdown="1"></div>
 </div>  <!--End row-->
