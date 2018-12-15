@@ -18,6 +18,7 @@ permalink: /team
 * [Fabio Luporini](https://www.doc.ic.ac.uk/~fl1612)
 * [Phillipp Witte](https://github.com/philippwitte)
 * Rhodri Nelson
+* [George Bisbas](https://www.imperial.ac.uk/people/g.bisbas18)
 
 ### Past contributers
 * [Michael Lange](https://github.com/mlange05)
