@@ -43,6 +43,9 @@ disqus-shortname: opescigithubio
 # Navigation bar entries and links
 navigation:
 
+- title: Documentation
+  url: https://www.opesci.org/devito/
+  
 - title: Team
   url: /team
 
