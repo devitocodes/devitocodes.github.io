@@ -30,7 +30,7 @@ Symbolic computation is a powerful tool that allows users to:
 #### **Documentation**
 
 Documentation for Devito is available
-[here](/devito/index.html), including [installation
+[here](https://www.opesci.org/devito/), including [installation
 instructions](/devito/download.html), a set of
 [tutorials](/devito/tutorials.html) and [API
 documentation](/devito/devito.html).  In addition, a paper
