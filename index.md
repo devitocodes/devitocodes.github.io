@@ -31,9 +31,9 @@ Symbolic computation is a powerful tool that allows users to:
 
 Documentation for Devito is available
 [here](https://www.opesci.org/devito/), including [installation
-instructions](/devito/download.html), a set of
-[tutorials](/devito/tutorials.html) and [API
-documentation](/devito/devito.html).  In addition, a paper
+instructions](https://www.opesci.org/devito/download.html), a set of
+[tutorials](https://www.devitoproject.org/devito/tutorials.html) and [API
+documentation](https://www.opesci.org/devito/userapi.html).  In addition, a paper
 outlining the use of symbolic Python to define finite difference operators in
 Devito can be found [here](https://arxiv.org/abs/1609.03361).  Devito is a fast
 moving project so some of the documentation may lag behind development. Feel
@@ -58,8 +58,8 @@ op(t=timesteps, dt=dt)
 ```
 
 Example code for a 2D diffusion operator from a symbolic definition. The full
-tutorial can be found [here](/devito/heat.html). To get more familiar with Devito,
-we provide a wide selection of [tutorials](https://www.devitoproject.org/devito/tutorials.html).
+tutorial can be found [here](https://nbviewer.jupyter.org/github/opesci/devito/blob/master/examples/seismic/tutorials/01_modelling.ipynb). To get more familiar with Devito,
+we provide a wide selection of [tutorials](https://www.opesci.org/devito/tutorials.html).
 </div>
 <div class="col-sm-1 pull-left" markdown="1"></div>
 </div>  <!--End row-->
