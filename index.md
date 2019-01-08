@@ -32,7 +32,7 @@ Symbolic computation is a powerful tool that allows users to:
 Documentation for Devito is available
 [here](https://www.opesci.org/devito/), including [installation
 instructions](https://www.opesci.org/devito/download.html), a set of
-[tutorials](https://www.devitoproject.org/devito/tutorials.html) and [API
+[tutorials](https://www.opesci.org/devito/tutorials.html) and [API
 documentation](https://www.opesci.org/devito/userapi.html).  In addition, a paper
 outlining the use of symbolic Python to define finite difference operators in
 Devito can be found [here](https://arxiv.org/abs/1609.03361).  Devito is a fast
