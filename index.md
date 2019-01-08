@@ -58,7 +58,7 @@ op(t=timesteps, dt=dt)
 ```
 
 Example code for a 2D diffusion operator from a symbolic definition. The full
-tutorial can be found [here](https://nbviewer.jupyter.org/github/opesci/devito/blob/master/examples/seismic/tutorials/01_modelling.ipynb). To get more familiar with Devito,
+tutorial can be found [here](https://nbviewer.jupyter.org/github/opesci/devito/tree/master/examples/cfd/). To get more familiar with Devito,
 we provide a wide selection of [tutorials](https://www.opesci.org/devito/tutorials.html).
 </div>
 <div class="col-sm-1 pull-left" markdown="1"></div>
@@ -73,7 +73,7 @@ we provide a wide selection of [tutorials](https://www.opesci.org/devito/tutoria
 Devito is primarily designed to create wave propagation kernels for
 use in seismic inversion problems. A tutorial for the generation of a
 modelling operator using an acoustic wave equation can be found
-[here](/devito/wave.html) and a paper
+[here](https://nbviewer.jupyter.org/github/opesci/devito/blob/master/examples/seismic/tutorials/01_modelling.ipynb) and a paper
 outlining the verification procedures of the acoustic operator can be
 found [here](https://arxiv.org/abs/1608.08658).
 <br/>
