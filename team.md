@@ -19,7 +19,7 @@ permalink: /team
 * [Phillipp Witte](https://github.com/philippwitte)
 * Rhodri Nelson
 * [George Bisbas](https://www.imperial.ac.uk/people/g.bisbas18)
-* [Lucas Cavlacante](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4235851H0)
+* [Lucas Cavalcante](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4235851H0)
 * [Maelso Bruno P.N. Pereira](https://www.researchgate.net/profile/Maelso_Pereira)
 * [Vitor Hugo Mickus Rodrigues](https://www.researchgate.net/profile/Vitor_Rodrigues23)
 
