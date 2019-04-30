@@ -62,7 +62,7 @@ navigation:
   url: https://travis-ci.org/opesci/devito/
 
 - title: Twitter
-  url: https://twitter.com/OpesciProject
+  url: https://twitter.com/DevitoCodes
 
 include:
     - _static
