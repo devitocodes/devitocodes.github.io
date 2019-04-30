@@ -24,7 +24,7 @@ permalink: /team
 * [Vitor Hugo Mickus Rodrigues](https://www.researchgate.net/profile/Vitor_Rodrigues23)
 
 
-### Past contributers
+### Past contributors
 * [Michael Lange](https://github.com/mlange05)
 * [Paulius Velesko](https://github.com/pvelesko)
 * [Vincenzo Pandolfo](https://github.com/vincepandolfo)
