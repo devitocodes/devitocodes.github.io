@@ -23,20 +23,20 @@ permalink: /publications
 [[https://www.slim.eos.ubc.ca/content/compressive-least-squares-migration-fly-fourier-transforms](https://www.slim.eos.ubc.ca/content/compressive-least-squares-migration-fly-fourier-transforms)]
 
 * Philipp A. Witte, Mathias Louboutin, Navjot Kukreja, Fabio Luporini, Michael Lange, Gerard J. Gorman, Felix J. Herrmann.
-  A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia. Geophysics, Volume 84, Issue 3.
+  A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia. In Geophysics, Volume 84, Issue 3, May 2019.
 [[https://library.seg.org/doi/abs/10.1190/geo2018-0174.1](https://library.seg.org/doi/abs/10.1190/geo2018-0174.1)]
 
-* Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann.
+* Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
 [[https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion](https://github.com/seg/tutorials-2018/tree/master/1802_FWI_Inversion)]
 [[https://library.seg.org/doi/abs/10.1190/tle37020142.1](https://library.seg.org/doi/abs/10.1190/tle37020142.1)]
 
-* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann.
+* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 2: adjoint modeling. The Leading Edge, Volume 37, Issue 1 (January 2018)
 [[https://github.com/seg/tutorials-2018/tree/master/1801_FWI_Adjoint_modeling](https://github.com/seg/tutorials-2018/tree/master/1801_FWI_Adjoint_modeling)]
 [[https://library.seg.org/doi/abs/10.1190/tle37010069.1](https://library.seg.org/doi/abs/10.1190/tle37010069.1)]
 
-* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann.
+* Mathias Louboutin, Philipp A. Witte, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 1: forward modeling. The Leading Edge, Volume 36, Issue 12 (December 2017).
 [[https://github.com/seg/tutorials-2017/tree/master/1712_FWI_forward_modeling](https://github.com/seg/tutorials-2017/tree/master/1712_FWI_forward_modeling)]
 [[https://library.seg.org/doi/abs/10.1190/tle36121033.1](https://library.seg.org/doi/abs/10.1190/tle36121033.1)]
@@ -95,10 +95,10 @@ _Devito: Automated high-performance finite differences for geophysics exploratio
 * N. Kukreja, M. Lange, M. Louboutin, F. Luporini, J. Hückelheim,
   P. Witte, C. Yount, F. Herrmann, G. Gorman _Rapid development of
   seismic imaging applications using symbolic mathematics_ Presented
-  at
+  at 
   [Third EAGE Workshop on High Performance Computing for Upstream](https://events.eage.org/en/2017/third-eage-workshop-on-high-performance-computing-for-upstream)
   [[slides]](presentations/eage_hpc_kukreja.pdf)
-
+  
 * M. Lange, N. Kukreja, F. Luporini, M. Louboutin, C. Yount, J. Hückelheim and G. Gorman.
   _Optimised finite difference computation from symbolic equations._
   Presented at [SciPy 2017](https://scipy2017.scipy.org). [[slides](presentations/devito-scipy17.pdf)] [[video](https://youtu.be/KinmqFTEs94)]
@@ -159,3 +159,5 @@ Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
 * M. Aguiar, G. Gorman, F. Herrmann, N. Kukreja, M. Lange, M. Louboutin, F. Vieira, _Devito:
 Fast finite difference computation._ Poster accepted at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
+
+
