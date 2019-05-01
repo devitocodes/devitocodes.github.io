@@ -19,13 +19,12 @@ permalink: /publications
 
 * Philipp A. Witte, Mathias Louboutin, Fabio Luporini, Gerard J. Gorman, Felix J. Herrmann.
   Compressive least-squares migration with on-the-fly Fourier transforms
-  Submitted to Geophysics on June 28, 2018.
+  Accepted for publication in Geophysics on April 14, 2019.
 [[https://www.slim.eos.ubc.ca/content/compressive-least-squares-migration-fly-fourier-transforms](https://www.slim.eos.ubc.ca/content/compressive-least-squares-migration-fly-fourier-transforms)]
 
 * Philipp A. Witte, Mathias Louboutin, Navjot Kukreja, Fabio Luporini, Michael Lange, Gerard J. Gorman, Felix J. Herrmann.
-  A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia.
-  Submitted to Geophysics on March 1, 2018.
-[[https://www.slim.eos.ubc.ca/content/large-scale-framework-symbolic-implementations-seismic-inversion-algorithms-julia](https://www.slim.eos.ubc.ca/content/large-scale-framework-symbolic-implementations-seismic-inversion-algorithms-julia)]
+  A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia. In Geophysics, Volume 84, Issue 3, May 2019.
+[[https://library.seg.org/doi/abs/10.1190/geo2018-0174.1](https://library.seg.org/doi/abs/10.1190/geo2018-0174.1)]
 
 * Philipp A. Witte, Mathias Louboutin, Michael Lange, Navjot Kukreja, Fabio Luporini, Gerard Gorman, and Felix J. Herrmann. 
   Full-waveform inversion - Part 3: inversion. The Leading Edge, Volume 37, Issue 2 (January 2018)
