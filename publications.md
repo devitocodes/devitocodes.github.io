@@ -10,8 +10,8 @@ permalink: /publications
 
 * Mathias Louboutin, Michael Lange, Fabio Luporini, Navjot Kukreja, Philipp A. Witte, Felix J. Herrmann, Paulius Velesko and Gerard J. Gorman
   Devito (v3.1.0): an embedded domain-specific language for finite differences and geophysical exploration.
-  Submitted to Geoscientific Model Development (August 2018)
-  [arxiv](https://arxiv.org/abs/1808.01995)
+  Geoscientific Model Development, Volume 12, p 1165-1187, 2019
+[[https://doi.org/10.5194/gmd-12-1165-2019](https://doi.org/10.5194/gmd-12-1165-2019)]
 
 * Fabio Luporini, Michael Lange, Mathias Louboutin, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Gerard J. Gorman, Felix J. Herrmann.
   Architecture and performance of Devito, a system for automated stencil computation. Submitted to SIAM Journal on Scientific Computing (July 2018)
