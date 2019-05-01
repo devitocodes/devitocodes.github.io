@@ -1,18 +1,14 @@
 ---
 layout: default
-permalink: /team
+permalink: /citing
 
 #title: "Next generation subsurface imaging software"
 
 ---
 
 
-<div class="row" markdown="1">
-<div class="col-sm-12 pull-left" markdown="1">
 ### Citing Devito
-</div>
 
-<div class="col-sm-12 pull-left" markdown="1">
 If you publish results using Devito, we would be grateful if you would cite the
 following papers, submitted to ACM Transactions on Mathematical Software (TOMS) and Geoscientific Model Development (GMD):
 
@@ -41,5 +37,3 @@ following papers, submitted to ACM Transactions on Mathematical Software (TOMS) 
   eprint  = { 1808.01995 }
 }
 ```
-</div>
-</div>  <!--End row-->
