@@ -10,7 +10,7 @@ permalink: /citing
 ### Citing Devito
 
 If you publish results using Devito, we would be grateful if you would cite the
-following papers, submitted to ACM Transactions on Mathematical Software (TOMS) and Geoscientific Model Development (GMD):
+following papers.
 
 ```
 @article{devito-compiler,
@@ -24,16 +24,18 @@ following papers, submitted to ACM Transactions on Mathematical Software (TOMS) 
   archivePrefix = { arXiv },
   eprint    = { 1807.03032 }
 }
+```
+
+```
 @article{devito-api,
-  author  = { {Louboutin}, M. and {Lange}, M. and {Luporini}, F. and {Kukreja}, N. and {Witte}, P.~A. and {Herrmann}, F.~J.
-  			  and {Velesko}, P. and {Gorman}, G.~J. },
-  title   = {Devito: an embedded domain-specific language for finite differences and geophysical exploration},
-  journal = { CoRR },
-  volume  = { abs/1808.01995 },
-  month   = { Aug },
-  year    = { 2018 },
-  url     = { https://arxiv.org/abs/1808.01995 },
-  archivePrefix = { arXiv },
-  eprint  = { 1808.01995 }
+  author = {Louboutin, M. and Lange, M. and Luporini, F. and Kukreja, N. and Witte, P. A. and Herrmann, F. J. and Velesko, P. and Gorman, G. J.},
+  title = {Devito (v3.1.0): an embedded domain-specific language for finite differences and geophysical exploration},
+  journal = {Geoscientific Model Development},
+  volume = {12},
+  year = {2019},
+  number = {3},
+  pages = {1165--1187},
+  url = {https://www.geosci-model-dev.net/12/1165/2019/},
+  doi = {10.5194/gmd-12-1165-2019}
 }
 ```
