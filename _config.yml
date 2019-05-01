@@ -49,6 +49,9 @@ navigation:
 - title: Team
   url: /team
 
+- title: Citing
+  url: /citing
+
 - title: Publications
   url: /publications
 
