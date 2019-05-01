@@ -97,14 +97,20 @@ found [here](https://arxiv.org/abs/1608.08658).
 
 <div class="col-sm-6 pull-left" markdown="1">
 Devito provides a set of automated performance optimizations during code generation that allow user applications to
-fully utilise the target hardware without changing the model
-specification:
+fully utilise the target hardware without changing the model specification:
 
-* Vectorisation and shared-memory parallelism
-* Loop blocking and auto-tuning
+* Vectorisation (via OpenMP)
+* Shared-memory parallelism (via OpenMP), including nested parallelism and non-affine loop support
+* Loop blocking, including hierarchical blocking
+* Auto-tuning (e.g., block-shape, threads per parallel region)
 * Symbolic optimisations:
     * Common sub-expression elimination (CSE)
-    * Loop re-writing and expression hoisting
+    * Cross-iteration redundancy elimination (CIRE)
+    * Expression hoisting
+    * Factorization
+
+Devito also supports distributed-memory parallelism via MPI. Several halo-exchange schemes are available; classic
+optimisations such as computation-communication overlap (relying on asynchronous progress engine) are implemented.
 </div>
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
