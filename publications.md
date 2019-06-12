@@ -69,6 +69,11 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 ### Conference Presentations
 
+* F. Luporini, R. Nelson, M. Louboutin, N. Kukreja, G. Bisbas, P. Witte, Amik St-Cyr, C. Yount, T. Burgess, F. Herrmann, G. Gorman
+_Automatic Generation of Production-Grade Hybrid MPI-OpenMP Parallel Wave Propagators using Devito_
+Presented at
+[Platform for Advanced Scientific Computing (PASC 2019) Conference](https://pasc19.pasc-conference.org). [[slides](presentations/pasc2019_luporini.pdf)]
+
 * Felix .J. Herrmann, Gerard Gorman, Jan Hückelheim, Keegan Lensink, Paul Kelly, Navjot Kukreja, Henryk Modzelewski, Michael Lange, Mathias Louboutin, Fabio Luporini, Ali SiahKoohi, Phillipp Witte
 _The power of abstraction in Computational Exploration Seismology_
 Presented at
