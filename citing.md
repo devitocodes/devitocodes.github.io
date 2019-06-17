@@ -14,7 +14,7 @@ following papers.
 
 ```
 @article{devito-compiler,
-  author    = { {Luporini}, F. and {Lange}, M. and {Louboutin}, M. and {Kukreja}, N. and {H{\"u}ckelheim}, J. and {Yount}, C. and {Witte}, P. and {Kelly}, P.~H.~J. and {Gorman}, G.~J. and {Herrmann}, F.~J. },
+  author    = { {Luporini}, F. and {Lange}, M. and {Louboutin}, M. and {Kukreja}, N. and {H{\"u}ckelheim}, J. and {Yount}, C. and {Witte}, P. and {Kelly}, P.~H.~J. and {Herrmann}, F.~J. and {Gorman}, G.~J.},
   title     = { Architecture and performance of Devito, a system for automated stencil computation },
   journal   = { CoRR },
   volume    = { abs/1807.03032 },
