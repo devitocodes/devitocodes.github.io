@@ -141,6 +141,8 @@ Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
 
 ### Masters theses
 
+* V. Pandolfo. _Investigating the OPS intermediate representation to target GPUs in the Devito DSL_ [arXiv:1906.10811](https://arxiv.org/abs/1906.10811)
+
 * N. Sim. _Optimising finite-difference methods for PDEs through parameterised time-tiling in Devito_ [arXiv:1806.08299](https://arxiv.org/abs/1806.08299)
 
 * D. McCormick. _Applying the Polyhedral Model to Tile Time Loops in
