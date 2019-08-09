@@ -153,7 +153,10 @@ Devito_ [arXiv:1707.02347](https://arxiv.org/abs/1707.02347)
 
 ### Poster presentations
 
-* M. Lange N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
+* G. Bisbas, F. Luporini, M. Louboutin, G. Gorman, and P. H.J. Kelly. _Accelerating real-world stencil computations using temporal blocking: handling sparse sources and receivers_. Poster submitted at SC19, 2019,
+[doi:/m9.figshare.9439829.v1](https://doi.org/10.6084/m9.figshare.9439829.v1)
+
+* M. Lange, N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
 P. Kazakas and G. Gorman. _Devito: Towards an efficient and sustainable finite
 difference DSL_. Poster presented at SIAM CSE17 PP108 Minisymposterium: Software
 Productivity and Sustainability for CSE and Data Science, 2017,
