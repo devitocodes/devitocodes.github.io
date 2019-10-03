@@ -69,6 +69,16 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 ### Conference Presentations
 
+*  J. Hückelheim, N. Kukreja, SHK Narayanan, F. Luporini, G. Gorman, P. Hovland
+_Automatic Differentiation for Adjoint Stencil Loops_
+Presented at
+[International Conference on Parallel Programming](https://www.hpcs.cs.tsukuba.ac.jp/icpp2019/). [[slides](presentations/ICPP_2019_presentation.pdf)]
+
+* N. Kukreja,  J. Hückelheim, M. Louboutin, F. Luporini, P. Kelly, P. Hovland, G. J. Gorman
+_Inversion with Devito: Trading off memory and compute with PyRevolve_
+Presented at
+[STMI Workshop at USP](https://www.rcgi.poli.usp.br/stmi-workshop-2019/). [[slides](presentations/USP_PyRevolve.pdf)]
+
 * F. Luporini, R. Nelson, M. Louboutin, N. Kukreja, G. Bisbas, P. Witte, Amik St-Cyr, C. Yount, T. Burgess, F. Herrmann, G. Gorman
 _Automatic Generation of Production-Grade Hybrid MPI-OpenMP Parallel Wave Propagators using Devito_
 Presented at
