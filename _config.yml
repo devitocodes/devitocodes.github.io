@@ -5,10 +5,10 @@ title: Devito
 description: Devito - Symbolic Finite Difference Computation
 
 # 120x120 px default image used for Twitter summary card
-logo: images/OpesciLogo-twitter-summary-card.png
+logo: images/DevitoLogo-twitter-summary-card.png
 
 # 400x250 px default teaser image used in image archive grid
-teaser: images/OpesciLogo-teaser.png
+teaser: images/DevitoLogo-teaser.png
 
 locale:
 
@@ -31,20 +31,20 @@ gems:
 # Site owner
 owner:
   name: Gerard Gorman
-  email: gerard.j.gorman@gmail.com
+  email: g.gorman@imperial.ac.uk
   twitter: gerardjgorman
   google:
     ad-client: 
     ad-slot: 
   bio: 
   avatar: bio-photo.jpg # 160x160 px image for author byline
-disqus-shortname: opescigithubio
+  # disqus-shortname: devitogithubio
 
 # Navigation bar entries and links
 navigation:
 
 - title: Documentation
-  url: https://www.opesci.org/devito/
+  url: https://www.devitoproject.org/devito/
 
 - title: Team
   url: /team
@@ -59,10 +59,10 @@ navigation:
   url: /opportunities
 
 - title: GitHub
-  url: http://github.com/opesci/devito
+  url: http://github.com/devitocodes/devito
 
 - title: Travis
-  url: https://travis-ci.org/opesci/devito/
+  url: https://travis-ci.org/devitocodes/devito/
 
 - title: Twitter
   url: https://twitter.com/DevitoCodes
