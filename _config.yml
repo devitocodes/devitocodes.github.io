@@ -64,8 +64,8 @@ navigation:
 - title: GitHub
   url: http://github.com/devitocodes/devito
 
-- title: Travis
-  url: https://travis-ci.org/devitocodes/devito/
+- title: CI/CD
+  url: https://github.com/devitocodes/devito/actions
 
 - title: Twitter
   url: https://twitter.com/DevitoCodes
