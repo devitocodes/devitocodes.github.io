@@ -46,6 +46,9 @@ navigation:
 - title: Documentation
   url: https://www.devitoproject.org/devito/
 
+- title: Benchmarks
+  url: /benchmarks
+
 - title: Team
   url: /team
 
