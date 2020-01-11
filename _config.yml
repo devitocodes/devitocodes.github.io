@@ -44,7 +44,7 @@ owner:
 navigation:
 
 - title: Documentation
-  url: https://www.devitoproject.org/devito/
+  url: http://devitocodes.github.io/devito/
 
 #- title: Benchmarks
 #  url: /benchmarks
