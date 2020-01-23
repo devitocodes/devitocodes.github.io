@@ -8,10 +8,6 @@ permalink: /publications
 
 ### Paper publications
 
-* Vitor Hugo Mickus Rodrigues, Lucas Cavalcante, Maelso Bruno Pereira, Fabio Luporini, István Reguly, Gerard Gorman, and Samuel Xavier de Souza. "GPU Support for Automatic Generation of Finite-Differences Stencil Kernels." arXiv preprint arXiv:1912.00695 (2019).
-  Accepeted and presented in Latin America High Performance Computing 2019.
-[[arXiv:1912.00695](https://arxiv.org/abs/1912.00695)]
-
 * Fabio Luporini, Mathias Louboutin, Michael Lange, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Felix J. Herrmann, Gerard J. Gorman.
   Architecture and performance of Devito, a system for automated stencil computation. Submitted to ACM Transactions on Mathematical Software (August 2019)
 [[arxiv:1807.03032](https://arxiv.org/abs/1807.03032)]
@@ -72,6 +68,12 @@ in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 prediction of finite-difference solvers for different computer architectures_. Computers & Geosciences 105 (2017): 148-157. [doi:10.1016/j.cageo.2017.04.014](http://www.sciencedirect.com/science/article/pii/S0098300416304034)
 
 ### Conference Presentations
+
+
+* V. H. Mickus-Rodrigues, L. Cavalcante, M. B. Pereira, F. Luporini, I. Reguly, G. Gorman, S. Xavier-de-Souza.
+_GPU Support for Automatic Generation of Finite-Differences Stencil Kernels_ 
+Presented at [[Latin America High Performance Computing 2019](https://www.carla2019.org/)]. 
+[[arXiv:1912.00695](https://arxiv.org/abs/1912.00695)]. [[slides](presentations/devito-ops-carla2019.pdf)]
 
 *  J. Hückelheim, N. Kukreja, SHK Narayanan, F. Luporini, G. Gorman, P. Hovland
 _Automatic Differentiation for Adjoint Stencil Loops_
