@@ -69,6 +69,12 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 ### Conference Presentations
 
+
+* V. H. Mickus-Rodrigues, L. Cavalcante, M. B. Pereira, F. Luporini, I. Reguly, G. Gorman, S. Xavier-de-Souza.
+_GPU Support for Automatic Generation of Finite-Differences Stencil Kernels_ 
+Presented at [[Latin America High Performance Computing 2019](https://www.carla2019.org/)]. 
+[[arXiv:1912.00695](https://arxiv.org/abs/1912.00695)]. [[slides](presentations/devito-ops-carla2019.pdf)]
+
 *  J. Hückelheim, N. Kukreja, SHK Narayanan, F. Luporini, G. Gorman, P. Hovland
 _Automatic Differentiation for Adjoint Stencil Loops_
 Presented at
