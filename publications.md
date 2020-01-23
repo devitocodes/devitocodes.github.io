@@ -8,6 +8,10 @@ permalink: /publications
 
 ### Paper publications
 
+* Vitor Hugo Mickus Rodrigues, Lucas Cavalcante, Maelso Bruno Pereira, Fabio Luporini, István Reguly, Gerard Gorman, and Samuel Xavier de Souza. "GPU Support for Automatic Generation of Finite-Differences Stencil Kernels." arXiv preprint arXiv:1912.00695 (2019).
+  Accepeted and presented in Latin America High Performance Computing 2019.
+[[arXiv:1912.00695](https://arxiv.org/abs/1912.00695)]
+
 * Fabio Luporini, Mathias Louboutin, Michael Lange, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Felix J. Herrmann, Gerard J. Gorman.
   Architecture and performance of Devito, a system for automated stencil computation. Submitted to ACM Transactions on Mathematical Software (August 2019)
 [[arxiv:1807.03032](https://arxiv.org/abs/1807.03032)]
