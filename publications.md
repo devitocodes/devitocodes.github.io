@@ -69,6 +69,9 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 ### Conference Presentations
 
+* F. Luporini, G. Gorman.
+_Automatic code generation for GPUs using Devito_
+Presented at High performance computing in Oil and Gas at Rice University 2020. [[slides](presentations/rice2020-devito-gpu.pdf)]
 
 * V. H. Mickus-Rodrigues, L. Cavalcante, M. B. Pereira, F. Luporini, I. Reguly, G. Gorman, S. Xavier-de-Souza.
 _GPU Support for Automatic Generation of Finite-Differences Stencil Kernels_ 
