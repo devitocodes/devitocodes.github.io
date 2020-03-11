@@ -46,9 +46,6 @@ navigation:
 - title: Documentation
   url: http://devitocodes.github.io/devito/
 
-- title: Benchmarks
-  url: http://devitocodes.github.io/devito-performance/
-
 - title: Team
   url: /team
 
