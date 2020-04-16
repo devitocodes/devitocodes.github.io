@@ -24,7 +24,7 @@ sass:
 permalink: /:categories/:title/
 markdown: kramdown
 highlighter: rouge
-gems:
+plugins:
   - jekyll-sitemap
 
 
