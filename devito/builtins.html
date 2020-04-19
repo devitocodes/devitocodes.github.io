@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Built-in Operators &mdash; Devito v3.4</title>
+  <title>Built-in Operators &mdash; Devito v4.2</title>
   
 
   
@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -54,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Devito v3.4
+            <a href="index.html" class="icon icon-home"> Devito v4.2
           
 
           
@@ -114,7 +114,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Devito v3.4</a>
+          <a href="index.html">Devito v4.2</a>
         
       </nav>
 
@@ -188,7 +188,7 @@ be passed to Eq.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="k">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">assign</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="kn">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">assign</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -255,7 +255,7 @@ accepted. Default mode is ‘reflect’.</p></li>
 
 <dl class="function">
 <dt id="devito.builtins.initialize_function">
-<code class="sig-prename descclassname">devito.builtins.</code><code class="sig-name descname">initialize_function</code><span class="sig-paren">(</span><em class="sig-param">function</em>, <em class="sig-param">data</em>, <em class="sig-param">nbl</em>, <em class="sig-param">mapper=None</em>, <em class="sig-param">mode='constant'</em>, <em class="sig-param">name='padfunc'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devito/builtins.html#initialize_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#devito.builtins.initialize_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">devito.builtins.</code><code class="sig-name descname">initialize_function</code><span class="sig-paren">(</span><em class="sig-param">function</em>, <em class="sig-param">data</em>, <em class="sig-param">nbl</em>, <em class="sig-param">mapper=None</em>, <em class="sig-param">mode='constant'</em>, <em class="sig-param">name='padfunc'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devito/builtins.html#initialize_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#devito.builtins.initialize_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize a Function with the given <code class="docutils literal notranslate"><span class="pre">data</span></code>. <code class="docutils literal notranslate"><span class="pre">data</span></code>
 does <em>not</em> include the <code class="docutils literal notranslate"><span class="pre">nbl</span></code> outer/boundary layers; these are added via padding
 by this function.</p>
@@ -280,17 +280,17 @@ accepted.</p></li>
 <p class="rubric">Examples</p>
 <p>In the following example the <cite>‘interior’</cite> of a function is set to one plus
 the value on the boundary.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="k">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">SubDomain</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">initialize_function</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="kn">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">SubDomain</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">initialize_function</span>
 </pre></div>
 </div>
 <p>Create the computational domain:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span>
 </pre></div>
 </div>
 <p>Create the Function we wish to set along with the data to set it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -298,7 +298,7 @@ the value on the boundary.</p>
 the interior region to one greater than the boundary value. Note that the equation
 is specified on the second (final) grid dimension so that additional equation is
 executed after padding is complete.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lhs</span> <span class="o">=</span> <span class="n">f</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lhs</span> <span class="o">=</span> <span class="n">f</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rhs</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;subdomain&#39;</span><span class="p">:</span> <span class="n">grid</span><span class="o">.</span><span class="n">subdomains</span><span class="p">[</span><span class="s1">&#39;interior&#39;</span><span class="p">]}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mapper</span> <span class="o">=</span> <span class="p">{}</span>
@@ -306,7 +306,7 @@ executed after padding is complete.</p>
 </pre></div>
 </div>
 <p>Call the initialize_function routine:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">initialize_function</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mapper</span><span class="o">=</span><span class="n">mapper</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">initialize_function</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mapper</span><span class="o">=</span><span class="n">mapper</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">data</span>
 <span class="go">Data([[2, 2, 2, 2, 2, 2],</span>
 <span class="go">      [2, 3, 3, 3, 3, 2],</span>
@@ -410,7 +410,7 @@ the inner product corresponds to the dot product.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Devito
+        &copy; Copyright 2016-2020, Devito
 
     </p>
   </div> 

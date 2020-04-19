@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>devito.types.grid &mdash; Devito v3.4</title>
+  <title>devito.types.grid &mdash; Devito v4.2</title>
   
 
   
@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -52,7 +52,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> Devito v3.4
+            <a href="../../../index.html" class="icon icon-home"> Devito v4.2
           
 
           
@@ -104,7 +104,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Devito v3.4</a>
+          <a href="../../../index.html">Devito v4.2</a>
         
       </nav>
 
@@ -153,22 +153,26 @@
            <div itemprop="articleBody">
             
   <h1>Source code for devito.types.grid</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">prod</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">floor</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">prod</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
 
-<span class="kn">from</span> <span class="nn">devito.mpi</span> <span class="k">import</span> <span class="n">Distributor</span>
-<span class="kn">from</span> <span class="nn">devito.tools</span> <span class="k">import</span> <span class="n">ReducerMap</span><span class="p">,</span> <span class="n">as_tuple</span><span class="p">,</span> <span class="n">memoized_meth</span>
-<span class="kn">from</span> <span class="nn">devito.types.args</span> <span class="k">import</span> <span class="n">ArgProvider</span>
-<span class="kn">from</span> <span class="nn">devito.types.constant</span> <span class="k">import</span> <span class="n">Constant</span>
-<span class="kn">from</span> <span class="nn">devito.types.dense</span> <span class="k">import</span> <span class="n">Function</span>
-<span class="kn">from</span> <span class="nn">devito.types.dimension</span> <span class="k">import</span> <span class="p">(</span><span class="n">Dimension</span><span class="p">,</span> <span class="n">SpaceDimension</span><span class="p">,</span> <span class="n">TimeDimension</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">devito.data</span> <span class="kn">import</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">RIGHT</span>
+<span class="kn">from</span> <span class="nn">devito.mpi</span> <span class="kn">import</span> <span class="n">Distributor</span>
+<span class="kn">from</span> <span class="nn">devito.tools</span> <span class="kn">import</span> <span class="n">ReducerMap</span><span class="p">,</span> <span class="n">as_tuple</span><span class="p">,</span> <span class="n">memoized_meth</span>
+<span class="kn">from</span> <span class="nn">devito.types.args</span> <span class="kn">import</span> <span class="n">ArgProvider</span>
+<span class="kn">from</span> <span class="nn">devito.types.constant</span> <span class="kn">import</span> <span class="n">Constant</span>
+<span class="kn">from</span> <span class="nn">devito.types.dense</span> <span class="kn">import</span> <span class="n">Function</span>
+<span class="kn">from</span> <span class="nn">devito.types.dimension</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Dimension</span><span class="p">,</span> <span class="n">SpaceDimension</span><span class="p">,</span> <span class="n">TimeDimension</span><span class="p">,</span>
                                     <span class="n">SteppingDimension</span><span class="p">,</span> <span class="n">SubDimension</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">devito.equation</span> <span class="k">import</span> <span class="n">Eq</span>
+<span class="kn">from</span> <span class="nn">devito.types.equation</span> <span class="kn">import</span> <span class="n">Eq</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grid&#39;</span><span class="p">,</span> <span class="s1">&#39;SubDomain&#39;</span><span class="p">,</span> <span class="s1">&#39;SubDomainSet&#39;</span><span class="p">]</span>
+
+
+<span class="n">GlobalLocal</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;GlobalLocal&#39;</span><span class="p">,</span> <span class="s1">&#39;glb loc&#39;</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="Grid"><a class="viewcode-back" href="../../../grid.html#devito.types.Grid">[docs]</a><span class="k">class</span> <span class="nc">Grid</span><span class="p">(</span><span class="n">ArgProvider</span><span class="p">):</span>
@@ -251,7 +255,7 @@
 
     <span class="n">_default_dimensions</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">time_dimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">subdomains</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">comm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="n">as_tuple</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
@@ -269,10 +273,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">=</span> <span class="n">dimensions</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_distributor</span> <span class="o">=</span> <span class="n">Distributor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">comm</span><span class="p">)</span>
+
         <span class="c1"># Initialize SubDomains</span>
         <span class="n">subdomains</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Domain</span><span class="p">(),</span> <span class="n">Interior</span><span class="p">(),</span> <span class="o">*</span><span class="n">as_tuple</span><span class="p">(</span><span class="n">subdomains</span><span class="p">)))</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">subdomains</span><span class="p">:</span>
-            <span class="n">i</span><span class="o">.</span><span class="n">__subdomain_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">counter</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subdomains</span><span class="p">):</span>
+            <span class="n">i</span><span class="o">.</span><span class="n">__subdomain_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+                                     <span class="n">distributor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_distributor</span><span class="p">,</span> <span class="n">counter</span><span class="o">=</span><span class="n">counter</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_subdomains</span> <span class="o">=</span> <span class="n">subdomains</span>
 
         <span class="n">origin</span> <span class="o">=</span> <span class="n">as_tuple</span><span class="p">(</span><span class="n">origin</span> <span class="ow">or</span> <span class="nb">tuple</span><span class="p">(</span><span class="mf">0.</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
@@ -293,9 +300,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`time_dimension` must be None or of type TimeDimension&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_distributor</span> <span class="o">=</span> <span class="n">Distributor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">comm</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Grid[extent=</span><span class="si">%s</span><span class="s2">, shape=</span><span class="si">%s</span><span class="s2">, dimensions=</span><span class="si">%s</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">extent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span>
         <span class="p">)</span>
@@ -386,7 +391,7 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dimension_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Map between SpaceDimensions and their global/local size.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">d</span><span class="p">:</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Size&#39;</span><span class="p">,</span> <span class="s1">&#39;glb loc&#39;</span><span class="p">)(</span><span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">d</span><span class="p">:</span> <span class="n">GlobalLocal</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape_local</span><span class="p">)}</span>
 
     <span class="nd">@property</span>
@@ -494,51 +499,60 @@
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;A unique name for the SubDomain.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;SubDomain requires a `name`&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__subdomain_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__subdomain_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="c1"># Create the SubDomain&#39;s SubDimensions</span>
         <span class="n">sub_dimensions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">sdshape</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">shape</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Dimension</span><span class="p">):</span>
                 <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                <span class="n">sdshape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="c1"># Case (&#39;middle&#39;, int, int)</span>
                     <span class="n">side</span><span class="p">,</span> <span class="n">thickness_left</span><span class="p">,</span> <span class="n">thickness_right</span> <span class="o">=</span> <span class="n">v</span>
                     <span class="k">if</span> <span class="n">side</span> <span class="o">!=</span> <span class="s1">&#39;middle&#39;</span><span class="p">:</span>
                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Expected side &#39;middle&#39;, not `</span><span class="si">%s</span><span class="s2">`&quot;</span> <span class="o">%</span> <span class="n">side</span><span class="p">)</span>
-                    <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">middle</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">i&#39;</span> <span class="o">%</span> <span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>
-                                                              <span class="n">thickness_left</span><span class="p">,</span>
+                    <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">middle</span><span class="p">(</span><span class="s1">&#39;i</span><span class="si">%d%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+                                                              <span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                                                              <span class="n">k</span><span class="p">,</span> <span class="n">thickness_left</span><span class="p">,</span>
                                                               <span class="n">thickness_right</span><span class="p">))</span>
+                    <span class="n">sdshape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">thickness_left</span><span class="o">-</span><span class="n">thickness_right</span><span class="p">)</span>
                 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                     <span class="n">side</span><span class="p">,</span> <span class="n">thickness</span> <span class="o">=</span> <span class="n">v</span>
                     <span class="k">if</span> <span class="n">side</span> <span class="o">==</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span>
-                        <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">left&#39;</span> <span class="o">%</span> <span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>
-                                                                <span class="n">thickness</span><span class="p">))</span>
+                        <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="s1">&#39;i</span><span class="si">%d%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+                                                                <span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                                                                <span class="n">k</span><span class="p">,</span> <span class="n">thickness</span><span class="p">))</span>
+                        <span class="n">sdshape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thickness</span><span class="p">)</span>
                     <span class="k">elif</span> <span class="n">side</span> <span class="o">==</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span>
-                        <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">right&#39;</span> <span class="o">%</span> <span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>
-                                                                 <span class="n">thickness</span><span class="p">))</span>
+                        <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="s1">&#39;i</span><span class="si">%d%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+                                                                 <span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                                                                 <span class="n">k</span><span class="p">,</span> <span class="n">thickness</span><span class="p">))</span>
+                        <span class="n">sdshape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thickness</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Expected sides &#39;left|right&#39;, not `</span><span class="si">%s</span><span class="s2">`&quot;</span> <span class="o">%</span> <span class="n">side</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sub_dimensions</span><span class="p">)</span>
 
         <span class="c1"># Compute the SubDomain shape</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">_thickness_map</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">is_Sub</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
-                            <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">,</span> <span class="n">shape</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sdshape</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">SubDomain</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">dimensions</span>
 
-    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;SubDomain </span><span class="si">%s</span><span class="s2">[</span><span class="si">%s</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
 
     <span class="fm">__repr__</span> <span class="o">=</span> <span class="fm">__str__</span>
@@ -668,26 +682,87 @@
     <span class="n">implicit_dimension</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;The implicit dimension of the SubDomainSet.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">SubDomainSet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">implicit_dimension</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">n</span> <span class="o">=</span> <span class="n">Dimension</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">implicit_dimension</span> <span class="o">=</span> <span class="n">n</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_n_domains</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bounds&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_bounds</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bounds&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_implicit_exprs</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__subdomain_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__subdomain_finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">distributor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="c1"># Create the SubDomain&#39;s SubDimensions</span>
         <span class="n">sub_dimensions</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
-            <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="n">SubDimension</span><span class="o">.</span><span class="n">middle</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">i_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">implicit_dimension</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
-                                    <span class="n">d</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">sub_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SubDimension</span><span class="o">.</span><span class="n">middle</span>
+                                  <span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">i_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">implicit_dimension</span><span class="o">.</span><span class="n">name</span><span class="p">),</span>
+                                   <span class="n">d</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sub_dimensions</span><span class="p">)</span>
-        <span class="c1"># Compute the SubDomain shape</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">_thickness_map</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">is_Sub</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
-                            <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dimensions</span><span class="p">,</span> <span class="n">shape</span><span class="p">))</span>
+
+        <span class="c1"># Compute the SubDomainSet shapes</span>
+        <span class="n">global_bounds</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_bounds</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">global_bounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_domains</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">global_bounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">d_m</span> <span class="o">=</span> <span class="n">global_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">d_M</span> <span class="o">=</span> <span class="n">global_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">shapes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_domains</span><span class="p">):</span>
+            <span class="n">dshape</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">d_m</span><span class="p">,</span> <span class="n">d_M</span><span class="p">):</span>
+                <span class="k">assert</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="n">M</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+                <span class="n">dshape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">as_tuple</span><span class="p">(</span><span class="n">dshape</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="n">as_tuple</span><span class="p">(</span><span class="n">shapes</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">distributor</span> <span class="ow">and</span> <span class="n">distributor</span><span class="o">.</span><span class="n">is_parallel</span><span class="p">:</span>
+            <span class="c1"># Now create local bounds based on distributor</span>
+            <span class="n">processed</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">dim</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">distributor</span><span class="o">.</span><span class="n">decomposition</span><span class="p">,</span> <span class="n">d_m</span><span class="p">,</span> <span class="n">d_M</span><span class="p">):</span>
+                <span class="n">bounds_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+                <span class="n">bounds_M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+                    <span class="n">lmin</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">glb_min</span> <span class="o">+</span> <span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                    <span class="n">lmax</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">glb_max</span> <span class="o">-</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+                    <span class="c1"># Check if the subdomain doesn&#39;t intersect with the decomposition</span>
+                    <span class="k">if</span> <span class="n">lmin</span> <span class="o">&lt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_min</span> <span class="ow">and</span> <span class="n">lmax</span> <span class="o">&lt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_min</span><span class="p">:</span>
+                        <span class="n">bounds_m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="n">bounds_M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="k">continue</span>
+                    <span class="k">if</span> <span class="n">lmin</span> <span class="o">&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span> <span class="ow">and</span> <span class="n">lmax</span> <span class="o">&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span><span class="p">:</span>
+                        <span class="n">bounds_m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="n">bounds_M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="k">continue</span>
+
+                    <span class="k">if</span> <span class="n">lmin</span> <span class="o">&lt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_min</span><span class="p">:</span>
+                        <span class="n">bounds_m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">elif</span> <span class="n">lmin</span> <span class="o">&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span><span class="p">:</span>
+                        <span class="n">bounds_m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="n">bounds_M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="k">continue</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">bounds_m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">index_glb_to_loc</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">LEFT</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">lmax</span> <span class="o">&lt;</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_min</span><span class="p">:</span>
+                        <span class="n">bounds_m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="n">bounds_M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span>
+                        <span class="k">continue</span>
+                    <span class="k">elif</span> <span class="n">lmax</span> <span class="o">&gt;=</span> <span class="n">d</span><span class="o">.</span><span class="n">loc_abs_max</span><span class="p">:</span>
+                        <span class="n">bounds_M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">bounds_M</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">index_glb_to_loc</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">RIGHT</span><span class="p">)</span>
+
+                <span class="n">processed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bounds_m</span><span class="p">)</span>
+                <span class="n">processed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bounds_M</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span> <span class="o">=</span> <span class="n">as_tuple</span><span class="p">(</span><span class="n">processed</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Not distributed and hence local and global bounds are</span>
+            <span class="c1"># equivalent.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_bounds</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">n_domains</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -695,17 +770,17 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span>
 
-    <span class="k">def</span> <span class="nf">_create_implicit_exprs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_create_implicit_exprs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Left and right bounds must be supplied for each dimension&quot;</span><span class="p">)</span>
         <span class="n">n_domains</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_domains</span>
         <span class="n">i_dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">implicit_dimension</span>
         <span class="n">dat</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c1"># Organise the data contained in &#39;bounds&#39; into a form such that the</span>
         <span class="c1"># associated implicit equations can easily be created.</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span><span class="p">)):</span>
             <span class="n">index</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">j</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -713,13 +788,13 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">fname</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">max_name</span>
             <span class="n">func</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">fname</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_domains</span><span class="p">,</span> <span class="p">),</span> <span class="n">dimensions</span><span class="o">=</span><span class="p">(</span><span class="n">i_dim</span><span class="p">,</span> <span class="p">),</span>
-                            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+                            <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
             <span class="c1"># Check if shorthand notation has been provided:</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
-                <span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_domains</span><span class="p">,),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_domains</span><span class="p">,),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
                 <span class="n">func</span><span class="o">.</span><span class="n">data</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">bounds</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">func</span><span class="o">.</span><span class="n">data</span><span class="p">[:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">func</span><span class="o">.</span><span class="n">data</span><span class="p">[:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_local_bounds</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
             <span class="n">dat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">thickness</span><span class="p">[</span><span class="n">j</span> <span class="o">%</span> <span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">func</span><span class="p">[</span><span class="n">i_dim</span><span class="p">]))</span>
         <span class="k">return</span> <span class="n">as_tuple</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
 </pre></div>
@@ -734,7 +809,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Devito
+        &copy; Copyright 2016-2020, Devito
 
     </p>
   </div> 

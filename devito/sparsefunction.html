@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SparseFunction &mdash; Devito v3.4</title>
+  <title>SparseFunction &mdash; Devito v4.2</title>
   
 
   
@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -54,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Devito v3.4
+            <a href="index.html" class="icon icon-home"> Devito v4.2
           
 
           
@@ -101,6 +101,10 @@
 <li class="toctree-l3"><a class="reference internal" href="sparsetimefunction.html">SparseTimeFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="precsparsefunction.html">PrecomputedSparseFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="precsparsetimefunction.html">PrecomputedSparseTimeFunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vectorfunction.html">VectorFunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vectortimefunction.html">VectorTimeFunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorfunction.html">TensorFunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensortimefunction.html">TensorTimeFunction</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="finite-difference.html">Finite-difference approximations</a></li>
@@ -124,7 +128,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Devito v3.4</a>
+          <a href="index.html">Devito v4.2</a>
         
       </nav>
 
@@ -212,7 +216,7 @@ to take advantage of the memory hierarchy in a NUMA architecture. Refer to
 </dl>
 <p class="rubric">Examples</p>
 <p>Creation</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="k">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">SparseFunction</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="kn">import</span> <span class="n">Grid</span><span class="p">,</span> <span class="n">SparseFunction</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span> <span class="o">=</span> <span class="n">SparseFunction</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sf&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">npoint</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span>
@@ -220,7 +224,7 @@ to take advantage of the memory hierarchy in a NUMA architecture. Refer to
 </pre></div>
 </div>
 <p>Inspection</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span><span class="o">.</span><span class="n">data</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span><span class="o">.</span><span class="n">data</span>
 <span class="go">Data([0., 0.], dtype=float32)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span><span class="o">.</span><span class="n">coordinates</span>
 <span class="go">sf_coords(p_sf, d)</span>
@@ -230,7 +234,7 @@ to take advantage of the memory hierarchy in a NUMA architecture. Refer to
 </pre></div>
 </div>
 <p>Symbolic interpolation routines</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="k">import</span> <span class="n">Function</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">devito</span> <span class="kn">import</span> <span class="n">Function</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">exprs0</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">exprs1</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sf</span><span class="p">)</span>
@@ -347,32 +351,14 @@ If not specified, defaults to <code class="docutils literal notranslate"><span c
 
 <dl class="method">
 <dt id="devito.types.SparseFunction.inject">
-<code class="sig-name descname">inject</code><span class="sig-paren">(</span><em class="sig-param">field</em>, <em class="sig-param">expr</em>, <em class="sig-param">offset=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devito/types/sparse.html#SparseFunction.inject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#devito.types.SparseFunction.inject" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate equations injecting an arbitrary expression into a field.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>field</strong> (<a class="reference internal" href="function.html#devito.types.Function" title="devito.types.Function"><em>Function</em></a>) – Input field into which the injection is performed.</p></li>
-<li><p><strong>expr</strong> (<em>expr-like</em>) – Injected expression.</p></li>
-<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Additional offset from the boundary.</p></li>
-</ul>
-</dd>
-</dl>
+<code class="sig-name descname">inject</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#devito.types.SparseFunction.inject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement an injection operation from a sparse point onto the grid</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="devito.types.SparseFunction.interpolate">
-<code class="sig-name descname">interpolate</code><span class="sig-paren">(</span><em class="sig-param">expr</em>, <em class="sig-param">offset=0</em>, <em class="sig-param">increment=False</em>, <em class="sig-param">self_subs={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/devito/types/sparse.html#SparseFunction.interpolate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#devito.types.SparseFunction.interpolate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate equations interpolating an arbitrary expression into <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>expr</strong> (<em>expr-like</em>) – Input expression to interpolate.</p></li>
-<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Additional offset from the boundary.</p></li>
-<li><p><strong>increment</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, generate increments (Inc) rather than assignments (Eq).</p></li>
-</ul>
-</dd>
-</dl>
+<code class="sig-name descname">interpolate</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#devito.types.SparseFunction.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement an interpolation operation from the grid onto the given sparse points</p>
 </dd></dl>
 
 <dl class="method">
@@ -420,7 +406,7 @@ data written to by an Operator.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016-2019, Devito
+        &copy; Copyright 2016-2020, Devito
 
     </p>
   </div> 
