@@ -114,12 +114,6 @@ optimisations such as computation-communication overlap (relying on asynchronous
 </div>
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
-<div class="col-sm-4 pull-right" markdown="1">
-<img src="images/acoustic_skl8180.png" alt="skl8180" style="width:100%;"/>
-
-Performance of acoustic wave modelling operator with different stencil
-sizes and auto-tuning on single-socket E5-2697 v4 CPU (Broadwell, 16
-cores @ 2.3GHz).
-</div>
+<div class="col-sm-4 pull-right" markdown="1"></div>
 <div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
