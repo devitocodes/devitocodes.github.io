@@ -44,7 +44,7 @@ owner:
 navigation:
 
 - title: Documentation
-  url: /devito
+  url: https://devitocodes.github.io/devito/index.html
 
 - title: Team
   url: /team
