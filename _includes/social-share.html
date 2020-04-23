@@ -8,28 +8,34 @@
   <div class="col-sm-5"></div>
   <div class="col-sm-2">
 
-    <!--- Share on Twitter -->
-    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
-       class="btn btn-social-icon btn-twitter" title="Share on Twitter">
-      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
-    </a>
+  <table style="width:100%">
+    <tr>
+      <!--- Share on Twitter -->
+      <th> 
+      <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
+         class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+        <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      </a>
+      </th>
 
-    <!--- Share on Facebook -->
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-       class="btn btn-social-icon btn-facebook" title="Share on Facebook">
-      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
-    </a>
+      <!--- Share on Facebook -->
+      <th>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+         class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+        <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      </a>
+      </th>
+    </tr>
 
-    <!--- Share on Google Plus -->
-    <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
-       class="btn btn-social-icon btn-google" title="Share on Google+">
-      <span class="fa fa-fw fa-google-plus" aria-hidden="true"></span>
-    </a>
-
-    <!--- Share on LinkedIn -->
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
-       class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
-      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
-    </a>
+    <tr>
+      <!--- Share on LinkedIn -->
+      <th>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
+         class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+        <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+      </a>
+      </th>
+    </tr>
+  </table>
   </div>
 </div>

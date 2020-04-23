@@ -1,14 +1,12 @@
 <footer class="footer">
   <div role="footer" class="container">
-    {% include social-share.html %}
-
-    {% include acknowledgements.html %}
-
-    <div class="row row-padded">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <p class="text-muted credit">&copy; Copyright 2016, Imperial College London and others. </p>
-      </div>
-    </div>
+    <table style="width:100%">
+      <tr>
+        <th>{% include numfocus.html %}</th>
+        <th>{% include social-share.html %}</th>
+        <!-- <th>{% include acknowledgements.html %}</th> -->
+        <th>{% include copyright.html %}</th>
+      </tr>
+    </table>
   </div>
 </footer>

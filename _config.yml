@@ -46,9 +46,6 @@ navigation:
 - title: Documentation
   url: https://devitocodes.github.io/devito/index.html
 
-- title: Team
-  url: /team
-
 - title: Citing
   url: /citing
 
@@ -66,6 +63,9 @@ navigation:
 
 - title: Twitter
   url: https://twitter.com/DevitoCodes
+
+- title: Contact us
+  url: /contact
 
 include:
     - _static
