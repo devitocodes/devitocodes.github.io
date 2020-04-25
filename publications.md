@@ -6,10 +6,15 @@ permalink: /publications
 
 ---
 
+As part of our commitment to open science, the Devito team post preprints of our papers to arXiv as soon as we submit them to conferences or journals. Comments/feedback is always welcome
+as are citations to preprints as it can take a long time for publications to make their way through the peer-review process.
+
 ### Paper publications
 
+* Mathias Louboutin, Fabio Luporini, Philipp Witte, Rhodri Nelson, George Bisbas, Jan Thorbecke, Felix J. Herrmann, Gerard Gorman. Scaling through abstractions -- high-performance vectorial wave simulations for seismic inversion with Devito. Submitted to Supercomputing 2020, [[iarXiv:2004.10519](https://arxiv.org/abs/2004.10519)]
+
 * Fabio Luporini, Mathias Louboutin, Michael Lange, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Felix J. Herrmann, Gerard J. Gorman.
-  Architecture and performance of Devito, a system for automated stencil computation. Submitted to ACM Transactions on Mathematical Software (August 2019)
+  Architecture and performance of Devito, a system for automated stencil computation. Accepted to ACM Transactions on Mathematical Software (submitted August 2019)
 [[arxiv:1807.03032](https://arxiv.org/abs/1807.03032)]
 
 * Mathias Louboutin, Michael Lange, Fabio Luporini, Navjot Kukreja, Philipp A. Witte, Felix J. Herrmann, Paulius Velesko and Gerard J. Gorman
