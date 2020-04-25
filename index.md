@@ -26,19 +26,6 @@ Symbolic computation is a powerful tool that allows users to:
 * Use automated performance optimisation for generated code
 * Adjust stencil discretisation at runtime as required
 * (Re-)development of solver code in hours rather than months
-
-#### **Documentation**
-
-Documentation for Devito is available
-[here](https://www.devitoproject.org/devito/), including [installation
-instructions](https://github.com/devitocodes/devito#installation), a set of
-[tutorials](https://www.devitoproject.org/devito/tutorials.html) and [API
-documentation](https://www.devitoproject.org/devito/userapi.html).  In addition, a paper
-outlining the use of symbolic Python to define finite difference operators in
-Devito can be found [here](https://arxiv.org/abs/1609.03361).  Devito is a fast
-moving project so some of the documentation may lag behind development. Feel
-free to talk to us on slack if you have questions - PR's are also welcome.
-
 </div>
 
 <div class="col-sm-1 pull-left" markdown="1"></div>
