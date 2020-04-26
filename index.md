@@ -7,6 +7,7 @@ permalink: /
 
 ---
 
+
 <div class="row" markdown="1">
 <div class="col-sm-12 pull-left" markdown="1">
 ### **Devito**: Symbolic Finite Difference Computation
