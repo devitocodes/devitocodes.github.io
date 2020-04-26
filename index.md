@@ -16,7 +16,7 @@ permalink: /
 Devito is a Domain-specific Language (DSL) and code
 generation framework for the design of highly optimised finite
 difference kernels for use in inversion methods. Devito utilises
-[SymPy](http://www.sympy.org) to allow the definition of operators from
+[SymPy](https://www.sympy.org) to allow the definition of operators from
 high-level symbolic equations and generates optimised and
 automatically tuned code specific to a given target architecture.
 
