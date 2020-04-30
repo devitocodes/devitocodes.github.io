@@ -66,15 +66,15 @@ outlining the verification procedures of the acoustic operator can be
 found [here](https://arxiv.org/abs/1608.08658).
 <br/>
 
-<img src="images/TrueFWI.jp2" alt="True velocity model (Marmousi-ii)" style="width:100%;"/>
+<img src="images/TrueFWI.jpg" alt="True velocity model (Marmousi-ii)" style="width:100%;"/>
 
-<img src="images/InitFWI.jp2" alt="Initial velocity model for FWI" style="width:100%;"/>
+<img src="images/InitFWI.jpg" alt="Initial velocity model for FWI" style="width:100%;"/>
 
-<img src="images/FWI.jp2" alt="FWI inverted velocity model" style="width:100%;"/>
+<img src="images/FWI.jpg" alt="FWI inverted velocity model" style="width:100%;"/>
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
-<img src="images/Dual.jp2" alt="DualShot" style="width:90%;"/>
+<img src="images/Dual.jpg" alt="DualShot" style="width:90%;"/>
 </div>
 </div>  <!--End row-->
 
