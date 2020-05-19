@@ -61,6 +61,9 @@ navigation:
 - title: CI/CD
   url: https://github.com/devitocodes/devito/actions
 
+- title: Performance
+  url: https://github.com/devitocodes/thematrix
+
 - title: Twitter
   url: https://twitter.com/DevitoCodes
 
