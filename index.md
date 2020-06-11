@@ -47,7 +47,7 @@ op(t=timesteps, dt=dt)
 
 Example code for a 2D diffusion operator from a symbolic definition. The full
 tutorial can be found [here](https://nbviewer.jupyter.org/github/devitocodes/devito/tree/master/examples/cfd/). To get more familiar with Devito,
-we provide a wide selection of [tutorials](https://www.devitoproject.org/devito/tutorials.html).
+please see our latest [tutorials](https://github.com/devitocodes/transform2020/blob/master/README.md).
 </div>
 <div class="col-sm-1 pull-left" markdown="1"></div>
 </div>  <!--End row-->
