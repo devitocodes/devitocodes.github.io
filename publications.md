@@ -15,7 +15,7 @@ as are citations to preprints as it can take a long time for publications to mak
 
 * Fabio Luporini, Mathias Louboutin, Michael Lange, Navjot Kukreja, Jan Hückelheim, Charles Yount, Philipp Witte, Paul H. J. Kelly, Felix J. Herrmann, Gerard J. Gorman.
   Architecture and performance of Devito, a system for automated stencil computation. Accepted to ACM Transactions on Mathematical Software (submitted August 2019)
-[[arxiv:1807.03032](https://arxiv.org/abs/1807.03032)]
+[[https://dl.acm.org/doi/10.1145/3374916](https://dl.acm.org/doi/10.1145/3374916)]
 
 * Mathias Louboutin, Michael Lange, Fabio Luporini, Navjot Kukreja, Philipp A. Witte, Felix J. Herrmann, Paulius Velesko and Gerard J. Gorman
   Devito (v3.1.0): an embedded domain-specific language for finite differences and geophysical exploration.
@@ -177,8 +177,9 @@ Devito_ [arXiv:1707.02347](https://arxiv.org/abs/1707.02347)
 
 ### Poster presentations
 
-* G. Bisbas, F. Luporini, M. Louboutin, G. Gorman, and P. H.J. Kelly. _Accelerating real-world stencil computations using temporal blocking: handling sparse sources and receivers_. Poster submitted at SC19, 2019,
-[doi:/m9.figshare.9439829.v1](https://doi.org/10.6084/m9.figshare.9439829.v1)
+* H. Senger, J. F. de Souza, E.S. Gomi, F. Luporini, and G. Gorman. _Performance of Devito on HPC-Optimised ARM Processors_. Poster presented at SC19, 2019, [[Summary](https://sc19.supercomputing.org/proceedings/tech_poster/poster_files/rpost233s2-file3.pdf)] [[Poster](https://sc19.supercomputing.org/proceedings/tech_poster/poster_files/rpost233s2-file2.pdf)]
+
+* G. Bisbas, F. Luporini, M. Louboutin, G. Gorman, and P. H.J. Kelly. _Accelerating real-world stencil computations using temporal blocking: handling sparse sources and receivers_. Poster presented at SC19, 2019, [[Summary](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file2.pdf)][ [Poster](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file1.pdf)]
 
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
 P. Kazakas and G. Gorman. _Devito: Towards an efficient and sustainable finite
@@ -191,7 +192,7 @@ Seismic modelling through code generation_. Poster presented at SIAM-PP16, 2016,
 [doi:10.6084/m9.figshare.3798984.v1](https://dx.doi.org/10.6084/m9.figshare.3798984.v1)
 
 * M. Aguiar, G. Gorman, F. Herrmann, N. Kukreja, M. Lange, M. Louboutin, F. Vieira, _Devito:
-Fast finite difference computation._ Poster accepted at SC 2016
+Fast finite difference computation._ Poster presented at SC 2016
 [doi:10.6084/m9.figshare.3799500.v1](https://dx.doi.org/10.6084/m9.figshare.3799500.v1)
 
 
