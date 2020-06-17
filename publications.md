@@ -179,7 +179,7 @@ Devito_ [arXiv:1707.02347](https://arxiv.org/abs/1707.02347)
 
 * H. Senger, J. F. de Souza, E.S. Gomi, F. Luporini, and G. Gorman. _Performance of Devito on HPC-Optimised ARM Processors_. Poster presented at SC19, 2019, [[Summary](https://sc19.supercomputing.org/proceedings/tech_poster/poster_files/rpost233s2-file3.pdf)] [[Poster](https://sc19.supercomputing.org/proceedings/tech_poster/poster_files/rpost233s2-file2.pdf)]
 
-* G. Bisbas, F. Luporini, M. Louboutin, G. Gorman, and P. H.J. Kelly. _Accelerating real-world stencil computations using temporal blocking: handling sparse sources and receivers_. Poster presented at SC19, 2019, [[Summary](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file2.pdf)][ [Poster](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file1.pdf)]
+* G. Bisbas, F. Luporini, M. Louboutin, G. Gorman, and P. H.J. Kelly. _Accelerating real-world stencil computations using temporal blocking: handling sparse sources and receivers_. Poster presented at SC19, 2019, [[Summary](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file2.pdf)][[Poster](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file1.pdf)]
 
 * M. Lange, N. Kukreja, M. Louboutin, F. Luporini, F. Vieira, V. Pandolfo, P. Velesko,
 P. Kazakas and G. Gorman. _Devito: Towards an efficient and sustainable finite
