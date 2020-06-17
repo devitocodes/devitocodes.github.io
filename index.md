@@ -31,23 +31,7 @@ Symbolic computation is a powerful tool that allows users to:
 
 <div class="col-sm-1 pull-left" markdown="1"></div>
 <div class="col-sm-4 pull-left" markdown="1">
-```
-from devito import *
-
-grid = Grid(shape=(nx, ny))
-u = TimeFunction(name='u', grid=grid,
-                 space_order=2)
-u.data[0, :] = initial_data[:]
-
-eqn = Eq(u.dt, a * (u.dx2 + u.dy2))
-stencil = solve(eqn, u.forward)
-op = Operator(Eq(u.forward, stencil))
-op(t=timesteps, dt=dt)
-```
-
-Example code for a 2D diffusion operator from a symbolic definition. The full
-tutorial can be found [here](https://nbviewer.jupyter.org/github/devitocodes/devito/tree/master/examples/cfd/). To get more familiar with Devito,
-please see our latest [tutorials](https://github.com/devitocodes/transform2020/blob/master/README.md).
+<iframe width="100%" src="https://www.youtube.com/embed/druSsV_1O6w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="col-sm-1 pull-left" markdown="1"></div>
 </div>  <!--End row-->
