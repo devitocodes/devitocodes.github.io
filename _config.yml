@@ -55,6 +55,9 @@ navigation:
 - title: Opportunities
   url: /opportunities
 
+- title: Book
+  url: https://www.devitoproject.org/devito_book/
+  
 - title: GitHub
   url: http://github.com/devitocodes/devito
 
