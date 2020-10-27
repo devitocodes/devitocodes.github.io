@@ -10,6 +10,7 @@ As part of our commitment to open science, the Devito team post preprints of our
 as are citations to preprints as it can take a long time for publications to make their way through the peer-review process.
 
 ### Paper publications
+* George Bisbas, Fabio Luporini, Mathias Louboutin, Rhodri Nelson, Gerard Gorman, and Paul HJ Kelly. Temporal blocking of finite-difference stencil operators with sparse" off-the-grid" sources. Submitted to IPDPS 2021. [[iarXiv:2010.10248](https://arxiv.org/abs/2010.10248)]
 
 * Mathias Louboutin, Fabio Luporini, Philipp Witte, Rhodri Nelson, George Bisbas, Jan Thorbecke, Felix J. Herrmann, Gerard Gorman. Scaling through abstractions -- high-performance vectorial wave simulations for seismic inversion with Devito. Submitted to Supercomputing 2020, [[iarXiv:2004.10519](https://arxiv.org/abs/2004.10519)]
 
