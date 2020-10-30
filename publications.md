@@ -77,15 +77,15 @@ prediction of finite-difference solvers for different computer architectures_. C
 
 * F. Luporini, R. Nelson, M. Louboutin, G. Bisbas, E. Caunt, G. Gorman
 _Devito: A DSL and compiler for automated generation of production-grade wave propagators_
-Presented at Domain-Specific Languages in High-Performance Computing 2020. [[slides](presentations/DSLinHPC-2020-devito.pdf)][[notebook](presentations/devito-dsl.ipynb)][[figure](presentations/operator-diagram.pdf)]
+Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/DSLinHPC-2020-devito.pdf)][[notebook](presentations/devito-dsl.ipynb)][[figure](presentations/operator-diagram.pdf)]
 
 * G. Bisbas, F. Luporini, M. Louboutin, R. Nelson, G. Gorman, P. Kelly
 _Temporal blocking of finite-difference stencil operators with sparse "off-the-grid" sources in Devito_
-Presented at Domain-Specific Languages in High-Performance Computing 2020. [[slides](presentations/dsl_bisbas2020.pdf)]
+Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/dsl_bisbas2020.pdf)]
 
 * F. Luporini, G. Gorman.
 _Automatic code generation for GPUs using Devito_
-Presented at High performance computing in Oil and Gas at Rice University 2020. [[slides](presentations/rice2020-devito-gpu.pdf)]
+Presented at [High performance computing in Oil and Gas at Rice University 2020](http://rice2020oghpc.rice.edu/). [[slides](presentations/rice2020-devito-gpu.pdf)]
 
 * V. H. Mickus-Rodrigues, L. Cavalcante, M. B. Pereira, F. Luporini, I. Reguly, G. Gorman, S. Xavier-de-Souza.
 _GPU Support for Automatic Generation of Finite-Differences Stencil Kernels_ 
