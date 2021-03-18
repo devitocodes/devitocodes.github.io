@@ -10,7 +10,8 @@ As part of our commitment to open science, the Devito team post preprints of our
 as are citations to preprints as it can take a long time for publications to make their way through the peer-review process.
 
 ### Paper publications
-* George Bisbas, Fabio Luporini, Mathias Louboutin, Rhodri Nelson, Gerard Gorman, and Paul HJ Kelly. Temporal blocking of finite-difference stencil operators with sparse" off-the-grid" sources. Submitted to IPDPS 2021. [[iarXiv:2010.10248](https://arxiv.org/abs/2010.10248)]
+* George Bisbas, Fabio Luporini, Mathias Louboutin, Rhodri Nelson, Gerard Gorman, and Paul HJ Kelly. Temporal blocking of finite-difference stencil operators with sparse" off-the-grid" sources. Accepted at 35th IEEE International Parallel & Distributed Processing Symposium
+. [[iarXiv:2010.10248](https://arxiv.org/abs/2010.10248)]
 
 * Mathias Louboutin, Fabio Luporini, Philipp Witte, Rhodri Nelson, George Bisbas, Jan Thorbecke, Felix J. Herrmann, Gerard Gorman. Scaling through abstractions -- high-performance vectorial wave simulations for seismic inversion with Devito. Submitted to Supercomputing 2020, [[iarXiv:2004.10519](https://arxiv.org/abs/2004.10519)]
 
@@ -74,6 +75,18 @@ in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 prediction of finite-difference solvers for different computer architectures_. Computers & Geosciences 105 (2017): 148-157. [doi:10.1016/j.cageo.2017.04.014](http://www.sciencedirect.com/science/article/pii/S0098300416304034)
 
 ### Conference Presentations
+
+* F. Luporini, R. Nelson, M. Louboutin, G. Bisbas, E. Caunt, G. Gorman
+_Devito: A DSL and compiler for automated generation of production-grade wave propagators_
+Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/DSLinHPC-2020-devito.pdf)][[notebook](presentations/devito-dsl.ipynb)][[figure](presentations/operator-diagram.pdf)]
+
+* F. Luporini, R. Nelson, G.Bisbas, I. Assis, K. Hester, G. Gorman,
+_Devito v4.3: production-grade multi-GPU support_
+Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/fabio_rice2021.pdf)] [Video presentation](https://www.youtube.com/watch?v=AuLzp-4bjfo)
+
+* F. Luporini, R. Nelson, G.Bisbas, I. Assis, K. Hester, G. Gorman,
+_Devito v4.3: production-grade multi-GPU support_
+Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/fabio_rice2021.pdf)] [Video presentation](https://www.youtube.com/watch?v=AuLzp-4bjfo)
 
 * F. Luporini, R. Nelson, M. Louboutin, G. Bisbas, E. Caunt, G. Gorman
 _Devito: A DSL and compiler for automated generation of production-grade wave propagators_
