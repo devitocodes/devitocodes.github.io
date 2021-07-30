@@ -184,6 +184,8 @@ Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
 
 ### Masters theses
 
+* E. Caunt. _Spatially-optimized finite-difference schemes for numerical dispersion suppression in seismic applications_ [arXiv:2107.13525](https://arxiv.org/abs/2107.13525)
+
 * V. Pandolfo. _Investigating the OPS intermediate representation to target GPUs in the Devito DSL_ [arXiv:1906.10811](https://arxiv.org/abs/1906.10811)
 
 * N. Sim. _Optimising finite-difference methods for PDEs through parameterised time-tiling in Devito_ [arXiv:1806.08299](https://arxiv.org/abs/1806.08299)
