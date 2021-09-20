@@ -182,6 +182,9 @@ Presented at EAGE 2017. [[slides](presentations/devito-eage17-overview.pdf)]
   Presented at
   [PyHPC 2016](http://www.dlr.de/sc/desktopdefault.aspx/tabid-11229/19729_read-46082/). [[slides](presentations/devito-pyhpc2016.pdf)]
 
+### PhD theses
+* N. Kukreja. _High-performance backpropagation for structured-grid solvers_ [Spiral (Imperial College London)](https://spiral.imperial.ac.uk/handle/10044/1/88445)
+
 ### Masters theses
 
 * E. Caunt. _Spatially-optimized finite-difference schemes for numerical dispersion suppression in seismic applications_ [arXiv:2107.13525](https://arxiv.org/abs/2107.13525)
