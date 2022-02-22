@@ -14,15 +14,22 @@ following papers.
 
 ```
 @article{devito-compiler,
-  author    = { {Luporini}, F. and {Lange}, M. and {Louboutin}, M. and {Kukreja}, N. and {H{\"u}ckelheim}, J. and {Yount}, C. and {Witte}, P. and {Kelly}, P.~H.~J. and {Herrmann}, F.~J. and {Gorman}, G.~J.},
-  title     = { Architecture and performance of Devito, a system for automated stencil computation },
-  journal   = { CoRR },
-  volume    = { abs/1807.03032 },
-  month     = { jul },
-  year      = { 2018 },
-  url       = { http://arxiv.org/abs/1807.03032 },
-  archivePrefix = { arXiv },
-  eprint    = { 1807.03032 }
+  author = {Luporini, Fabio and Louboutin, Mathias and Lange, Michael and Kukreja, Navjot and Witte, Philipp and H\"{u}ckelheim, Jan and Yount, Charles and Kelly, Paul H. J. and Herrmann, Felix J. and Gorman, Gerard J.},
+  title = {Architecture and Performance of Devito, a System for Automated Stencil Computation},
+  year = {2020},
+  issue_date = {March 2020},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {46},
+  number = {1},
+  issn = {0098-3500},
+  url = {https://doi.org/10.1145/3374916},
+  doi = {10.1145/3374916},
+  journal = {ACM Trans. Math. Softw.},
+  month = {apr},
+  articleno = {6},
+  numpages = {28},
+  keywords = {stencil, domain-specific language, symbolic processing, performance optimization, compiler, structured grid, Finite-difference method}
 }
 ```
 
