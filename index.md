@@ -64,6 +64,23 @@ found [here](https://arxiv.org/abs/1608.08658).
 
 <div class="row" markdown="1">
 <div class="col-sm-12 pull-left" markdown="1">
+### Key Features
+</div>
+
+<div class="col-sm-6 pull-left" markdown="1">
+
+ * A functional language to express finite difference operators.
+ * Straightforward mechanisms to adjust the discretization.
+ * Constructs to express sparse operators (e.g., interpolation), classic linear operators (e.g., convolutions), and tensor contractions.
+ * Seamless support for boundary conditions and adjoint operators.
+ * A flexible API to define custom stencils, sub-domains, sub-sampling, and staggered grids.
+ * Generation of highly optimized parallel code (SIMD vectorization, CPU and GPU parallelism via OpenMP and OpenACC, multi-node parallelism via MPI, blocking, aggressive symbolic transformations for FLOP reduction, etc.).
+ * Distributed NumPy arrays over multi-node (MPI) domain decompositions.
+ * Inspection and customization of the generated code.
+ * Autotuning framework to ease performance tuning.
+ * Smooth integration with popular Python packages such as NumPy, SymPy, Dask, and SciPy, as well as machine learning frameworks such as TensorFlow and PyTorch.
+
+ </div>
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
 <div class="col-sm-4 pull-right" markdown="1"></div>
