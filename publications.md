@@ -74,6 +74,11 @@ in ACM SIGHPC, 2016, [arxiv:1608.08658](https://arxiv.org/abs/1608.08658)
 prediction of finite-difference solvers for different computer architectures_. Computers & Geosciences 105 (2017): 148-157. [doi:10.1016/j.cageo.2017.04.014](http://www.sciencedirect.com/science/article/pii/S0098300416304034)
 
 ### Conference Presentations
+* E. Caunt, R. Nelson, F. Luporini, G. Gorman _Devitoboundary: an open-source tool for topography implementation in finite-difference wavesolvers with Devito_
+Presented at [Energy High Performance Computing at Rice University 2022](http://energyhpc.rice.edu). [[slides](presentations/EHPC_edward_caunt_poster_2022_final.pdf)]
+
+* E. Caunt, R. Nelson, F. Luporini, G. Gorman _An open-source tool for accurate topography implementation within finite-difference wave solvers_
+Presented at [American Geophysical Union Fall Meeting 2021](https://www.agu.org/Fall-Meeting). [[slides](presentations/edward_caunt_agu_2021.pdf)]
 
 * E. Caunt, R. Nelson, F. Luporini, G. Gorman _A flexible, high-level abstraction for topography implementation within finite difference wave solvers_
 Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/edcaunt_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=uOt4TLNabE0)]
