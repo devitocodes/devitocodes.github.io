@@ -64,11 +64,11 @@ navigation:
 - title: FAQ
   url: https://github.com/devitocodes/devito/wiki/FAQ
 
-- title: Twitter
-  url: https://twitter.com/DevitoCodes
-
 - title: Contact us
   url: /contact
+
+- title: Commercial
+  url: https://www.devitocodes.com
 
 include:
     - _static
