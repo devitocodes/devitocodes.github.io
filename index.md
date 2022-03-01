@@ -14,19 +14,19 @@ permalink: /
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
-Devito is a domain-specific Language (DSL) and code
-generation framework for the design of highly optimised finite
-difference kernels for use in inversion methods. Devito utilises
-[SymPy](https://www.sympy.org) to allow the definition of operators from
-high-level symbolic equations and generates optimised and
-automatically tuned code specific to a given target architecture.
+Devito is a Python package to implement optimized stencil computation (e.g.,
+finite differences, image processing, machine learning) from high-level
+symbolic problem definitions. Devito builds on [SymPy](https://www.sympy.org)
+and employs automated code generation and just-in-time compilation to execute
+optimized computational kernels on several computer platforms, including CPUs,
+GPUs, and clusters thereof.
 
 Symbolic computation is a powerful tool that allows users to:
 
 * Build complex solvers from only a few lines of high-level code
 * Use automated performance optimisation for generated code
 * Adjust stencil discretisation at runtime as required
-* (Re-)development of solver code in hours rather than months
+* (Re-)development of solver code in hours/days rather than months
 </div>
 
 <div class="col-sm-1 pull-left" markdown="1"></div>
@@ -64,26 +64,38 @@ found [here](https://arxiv.org/abs/1608.08658).
 
 <div class="row" markdown="1">
 <div class="col-sm-12 pull-left" markdown="1">
-### Optimisation and Performance
+### Key Features
 </div>
 
 <div class="col-sm-6 pull-left" markdown="1">
-Devito provides a set of automated performance optimizations during code generation that allow user applications to
-fully utilise the target hardware without changing the model specification:
 
-* Vectorisation (via OpenMP)
-* Shared-memory parallelism (via OpenMP), including nested parallelism and non-affine loop support
-* Loop blocking, including hierarchical blocking
-* Auto-tuning (e.g., block-shape, threads per parallel region)
-* Symbolic optimisations:
-    * Common sub-expression elimination (CSE)
-    * Cross-iteration redundancy elimination (CIRE)
-    * Expression hoisting
-    * Factorization
+ * A functional language to express finite difference operators.
+ * Straightforward mechanisms to adjust the discretization.
+ * Constructs to express sparse operators (e.g., interpolation), classic linear operators (e.g., convolutions), and tensor contractions.
+ * Seamless support for boundary conditions and adjoint operators.
+ * A flexible API to define custom stencils, sub-domains, sub-sampling, and staggered grids.
+ * Generation of highly optimized parallel code (SIMD vectorization, CPU and GPU parallelism via OpenMP and OpenACC, multi-node parallelism via MPI, blocking, aggressive symbolic transformations for FLOP reduction, etc.).
+ * Distributed NumPy arrays over multi-node (MPI) domain decompositions.
+ * Inspection and customization of the generated code.
+ * Autotuning framework to ease performance tuning.
+ * Smooth integration with popular Python packages such as NumPy, SymPy, Dask, and SciPy, as well as machine learning frameworks such as TensorFlow and PyTorch.
 
-Devito also supports distributed-memory parallelism via MPI. Several halo-exchange schemes are available; classic
-optimisations such as computation-communication overlap (relying on asynchronous progress engine) are implemented.
+ </div>
+
+<div class="col-sm-6 pull-left" markdown="1">
+### (Disclosed) Software using Devito
 </div>
+
+<div class="col-sm-6 pull-left" markdown="1">
+
+ * [JUDI](https://github.com/slimgroup/JUDI.jl) [SLIM group @GeorgiaTech]
+ * Dugwave [Downunder Geosolutions]
+ * [COFII](https://github.com/ChevronETC) [Chevron]
+ * [Stride](https://www.stride.codes) []
+
+</div>
+
+</div>  <!--End row-->
 
 <div class="col-sm-1 pull-right" markdown="1"></div>
 <div class="col-sm-4 pull-right" markdown="1"></div>
