@@ -105,6 +105,6 @@ found [here](https://arxiv.org/abs/1608.08658).
 
 <div class="row" markdown="1">
 <div class="col-sm-12 pull-left" markdown="1">
-&nbsp
+ 
 </div>
 </div>
