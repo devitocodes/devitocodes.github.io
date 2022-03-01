@@ -57,15 +57,9 @@ navigation:
 
 - title: Sponsors
   url: /sponsors
-
-- title: Book
-  url: https://www.devitoproject.org/devito_book/
   
 - title: GitHub
   url: http://github.com/devitocodes/devito
-
-- title: CI/CD
-  url: https://github.com/devitocodes/devito/actions
 
 - title: FAQ
   url: https://github.com/devitocodes/devito/wiki/FAQ
