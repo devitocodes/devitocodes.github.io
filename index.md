@@ -102,3 +102,8 @@ found [here](https://arxiv.org/abs/1608.08658).
 <div class="col-sm-4 pull-right" markdown="1"></div>
 <div class="col-sm-1 pull-right" markdown="1"></div>
 </div>  <!--End row-->
+
+<div class="row" markdown="1">
+<div class="col-sm-12 pull-left" markdown="1">
+&nbsp
+</div>
