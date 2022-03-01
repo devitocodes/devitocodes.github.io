@@ -82,6 +82,21 @@ found [here](https://arxiv.org/abs/1608.08658).
 
  </div>
 
+<div class="col-sm-6 pull-left" markdown="1">
+### (Disclosed) Software using Devito
+</div>
+
+<div class="col-sm-6 pull-left" markdown="1">
+
+ * [JUDI](https://github.com/slimgroup/JUDI.jl) [SLIM group @GeorgiaTech]
+ * Dugwave [Downunder Geosolutions]
+ * [COFII](https://github.com/ChevronETC) [Chevron]
+ * [Stride](https://www.stride.codes) []
+
+</div>
+
+</div>  <!--End row-->
+
 <div class="col-sm-1 pull-right" markdown="1"></div>
 <div class="col-sm-4 pull-right" markdown="1"></div>
 <div class="col-sm-1 pull-right" markdown="1"></div>
