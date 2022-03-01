@@ -15,11 +15,12 @@ This is a 3-year consortium that runs from January 2020-December 2022. The conso
 
 ### Other industry sponsors
 * AMD
+* Chevron
 * DUG
+* Fujitsu
 * Intel
 * Microsoft
 * NVidia
-* Fujitsu
 
 ### Research Council grants
 * [EP/W007789/1](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/W007940/1)
