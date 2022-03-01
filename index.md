@@ -91,7 +91,7 @@ found [here](https://arxiv.org/abs/1608.08658).
 <div class="col-sm-6 pull-left" markdown="1">
 
  * [JUDI](https://github.com/slimgroup/JUDI.jl) [SLIM group @GeorgiaTech]
- * Dugwave [Downunder Geosolutions]
+ * Dugwave [DownUnder GeoSolutions]
  * [COFII](https://github.com/ChevronETC) [Chevron]
  * [Stride](https://www.stride.codes)
  * [xDSL](https://xdsl.dev)
