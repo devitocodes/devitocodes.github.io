@@ -67,7 +67,7 @@ found [here](https://arxiv.org/abs/1608.08658).
 ### Key Features
 </div>
 
-<div markdown="1">
+<div class="col-sm-12 pull-left" markdown="1">
 
  * A functional language to express finite difference operators.
  * Straightforward mechanisms to adjust the discretization.
