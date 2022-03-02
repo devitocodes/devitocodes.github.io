@@ -93,6 +93,7 @@ found [here](https://arxiv.org/abs/1608.08658).
  * [JUDI](https://github.com/slimgroup/JUDI.jl) [SLIM group @GeorgiaTech]
  * Dugwave [DownUnder GeoSolutions]
  * [COFII](https://github.com/ChevronETC) [Chevron]
+ * Imaging AnyWare [ION]
  * [Stride](https://www.stride.codes)
  * [xDSL](https://xdsl.dev)
 
