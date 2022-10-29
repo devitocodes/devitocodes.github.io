@@ -42,15 +42,51 @@ let everyone read and receive kudos for your hard work immediately!
 
 ## 2020
 
+* G. Bisbas, F. Luporini, M. Louboutin, R. Nelson, G. Gorman, P. Kelly _Temporal blocking of finite-difference stencil operators with sparse "off-the-grid" sources in Devito_ Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/dsl_bisbas2020.pdf)]
+
+* Daskalakis, E., Herrmann, F.J. and Kuske, R., 2020. Accelerating sparse recovery by reducing chatter. SIAM Journal on Imaging Sciences, 13(3), pp.1211-1239. [paper](https://epubs.siam.org/doi/pdf/10.1137/19M129111X?casa_token=iWhcE9OXi7YAAAAA:ZMYximdBIhrj57pzkOSgMdmj4lQj2PsYAkZ7Xcj058KdYkt_1amhWT5I2Fj63sZb-BSh04Mh5g)
+
+* Herrmann, J., 2020. H-revolve: a framework for adjoint computation on synchronous hierarchical platforms. ACM Transactions on Mathematical Software (TOMS), 46(2), pp.1-25. [paper](https://dl.acm.org/doi/fullHtml/10.1145/3378672?casa_token=Wm53OcY0kAoAAAAA:JNGVdKdxVTZAnE-tOJSfdXJ8UHVcQGkm0YjKPOV6RagRGMlFR-J2yT0FYiYZNhr6_5FEZIft_E0W)
+
+* N. Kukreja. _High-performance backpropagation for structured-grid solvers_ [phd thesis](https://spiral.imperial.ac.uk/handle/10044/1/88445)
+
+* Louboutin, M., 2020. Modeling for inversion in exploration geophysics (Doctoral dissertation, Georgia Institute of Technology). [phd thesis](https://smartech.gatech.edu/bitstream/handle/1853/62766/LOUBOUTIN-DISSERTATION-2020.pdf?sequence=1)
+
 * Mathias Louboutin, Fabio Luporini, Philipp Witte, Rhodri Nelson, George Bisbas, Jan Thorbecke, Felix J. Herrmann, Gerard Gorman. Scaling through abstractions -- high-performance vectorial wave simulations for seismic inversion with Devito. Submitted to Supercomputing 2020. [[iarXiv:2004.10519](https://arxiv.org/abs/2004.10519)]
+
+* Louboutin, M., Rizzuti, G. and Herrmann, F.J., 2020. Time-domain wavefield reconstruction inversion in a TTI medium. [arXiv:2004.07355](https://arxiv.org/pdf/2004.07355).
+
+* Luporini, F., Louboutin, M., Lange, M., Kukreja, N., Witte, P., Hückelheim, J., Yount, C., Kelly, P.H., Herrmann, F.J. and Gorman, G.J., 2020. Architecture and performance of Devito, a system for automated stencil computation. ACM Transactions on Mathematical Software (TOMS), 46(1), pp.1-28. [paper](https://dl.acm.org/doi/pdf/10.1145/3374916?casa_token=gDHjn5LoF1wAAAAA:Ms5atC-lzk0JE8YSvY8OzCQqJu9von7TQVaN0soXszgxXODkPoLIZP82HGnREm41BIqkimoWc6a4)
 
 * F. Luporini, R. Nelson, M. Louboutin, G. Bisbas, E. Caunt, G. Gorman _Devito: A DSL and compiler for automated generation of production-grade wave propagators_ Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/DSLinHPC-2020-devito.pdf)][[notebook](presentations/devito-dsl.ipynb)][[figure](presentations/operator-diagram.pdf)]
 
-* G. Bisbas, F. Luporini, M. Louboutin, R. Nelson, G. Gorman, P. Kelly _Temporal blocking of finite-difference stencil operators with sparse "off-the-grid" sources in Devito_ Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/dsl_bisbas2020.pdf)]
-
 * F. Luporini, G. Gorman. _Automatic code generation for GPUs using Devito_ Presented at [High performance computing in Oil and Gas at Rice University 2020](http://rice2020oghpc.rice.edu/). [[slides](presentations/rice2020-devito-gpu.pdf)]
 
-* N. Kukreja. _High-performance backpropagation for structured-grid solvers_ [Spiral (Imperial College London)](https://spiral.imperial.ac.uk/handle/10044/1/88445)
+* Margenberg, N., Lessig, C. and Richter, T., 2020. Structure preservation for the deep neural network multigrid solver. [arXiv:2012.05290](https://arxiv.org/pdf/2012.05290)
+
+* Mosser, L., Dubrule, O. and Blunt, M.J., 2020. Stochastic seismic waveform inversion using generative adversarial networks as a geological prior. Mathematical Geosciences, 52(1), pp.53-79. [paper](https://link.springer.com/article/10.1007/s11004-019-09832-6)
+
+* Mojica, O.F. and Maciel, J.S., 2020, October. Seismic modeling from scratch using Devito: A demonstration with a typical Brazilian pre-salt model. In SEG International Exposition and Annual Meeting. OnePetro. [paper](https://onepetro.org/SEGAM/proceedings-abstract/SEG20/3-SEG20/D031S043R003/462635)
+
+* Moura, F.A., Silva, S.A., de Araújo, J.M. and Lucena, L.S., 2020. Progressive matching optimisation method for FWI. Journal of Geophysics and Engineering, 17(2), pp.357-364. [paper](https://academic.oup.com/jge/article/17/2/357/5728715)
+
+* Santos, H., Eikmeier, C. and Volpe, E., 2020, May. New tools for 2D full-waveform inversion: applications on Brazilian Pre-Salt velocity model from Santos Basin. In EGU General Assembly Conference Abstracts (p. 21110). [paper](https://ui.adsabs.harvard.edu/abs/2020EGUGA..2221110S/abstract)
+
+* Siahkoohi, A., Rizzuti, G. and Herrmann, F., 2020, December. A deep-learning based bayesian approach to seismic imaging and uncertainty quantification. In EAGE 2020 Annual Conference & Exhibition Online (Vol. 2020, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [arxiv](https://arxiv.org/pdf/2001.04567)
+
+* Siahkoohi, A., Rizzuti, G. and Herrmann, F.J., 2020. Uncertainty quantification in imaging and automatic horizon tracking—a Bayesian deep-prior based approach. In SEG Technical Program Expanded Abstracts 2020 (pp. 1636-1640). Society of Exploration Geophysicists. [arxiv](https://arxiv.org/pdf/2004.00227)
+
+* Siahkoohi, A., Rizzuti, G. and Herrmann, F.J., 2020. Weak deep priors for seismic imaging. In SEG Technical Program Expanded Abstracts 2020 (pp. 2998-3002). Society of Exploration Geophysicists. [arxiv](https://arxiv.org/pdf/2004.06835)
+
+* Targino, J., Roberts, K., Souza, J., Santos, H., Senger, H., Gioria, R. and Gomi, E., 2020, September. A Deep-Learning inversion method for seismic velocity model building. In First EAGE Conference on Machine Learning in Americas (Vol. 2020, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.researchgate.net/profile/Hermes-Senger/publication/348528486_A_Deep-Learning_inversion_method_for_seismic_velocity_model_building/links/615615c661a8f466708fba72/A-Deep-Learning-inversion-method-for-seismic-velocity-model-building.pdf)
+
+* Witte, P.A., Louboutin, M., Modzelewski, H., Jones, C., Selvage, J. and Herrmann, F.J., 2020. An event-driven approach to serverless seismic imaging in the cloud. IEEE Transactions on Parallel and Distributed Systems, 31(9), pp.2032-2049. [paper](https://ieeexplore.ieee.org/iel7/71/4359390/09044390.pdf?casa_token=m_-kCm-0--IAAAAA:A87bsWxaiHmnWNystClEI3pUFmAp0z1XxTtfzagkTixnR-975j-l6DovIrktJm4oEuz3ap2F)
+
+* Yang, M., 2020. Seismic imaging with extended image volumes and source estimation (Doctoral dissertation, Georgia Institute of Technology). [phd thesis](https://smartech.gatech.edu/bitstream/handle/1853/62832/YANG-DISSERTATION-2020.pdf?sequence=1)
+
+* Yin, Z., Orozco, R., Witte, P., Louboutin, M., Rizzuti, G. and Herrmann, F.J., 2020. Extended source imaging—A unifying framework for seismic and medical imaging. In SEG Technical Program Expanded Abstracts 2020 (pp. 3502-3506). Society of Exploration Geophysicists. [arxiv](https://arxiv.org/pdf/2004.07389)
+
+* Zhan, C., Lee, C.C., Zhang, L. and Chang, Y., 2020. An attempt to decode reverse-time migration through machine learning. In SEG Technical Program Expanded Abstracts 2020 (pp. 1681-1685). Society of Exploration Geophysicists. [paper](https://library.seg.org/doi/abs/10.1190/segam2020-3422819.1)
 
 ## 2019
 
