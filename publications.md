@@ -43,18 +43,24 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Cueto, C., Bates, O., Strong, G., Cudeiro, J., Luporini, F., Agudo, O.C., Gorman, G., Guasch, L. and Tang, M.X., 2021. Stride: a flexible platform for high-performance ultrasound computed tomography. [paper](https://arxiv.org/pdf/2110.03345)
 
+* Desai, A., Xu, Z., Gupta, M., Chandran, A., Vial-Aussavy, A. and Shrivastava, A., 2021. Raw Nav-merge Seismic Data to Subsurface Properties with MLP based Multi-Modal Information Unscrambler. Advances in Neural Information Processing Systems, 34, pp.8740-8752. [paper](https://proceedings.neurips.cc/paper/2021/file/498f2c21688f6451d9f5fd09d53edda7-Paper.pdf)
+
 * Jaimes-Osorio, L.E., Malcolm, A., Zheglova, P., Koene, E.F. and Thomsen, H.R., 2021. Reduced memory implementation of a local elastic finite-difference solver. Geophysics, 86(3), pp.F25-F33. [paper](https://library.seg.org/doi/pdf/10.1190/geo2020-0468.1?casa_token=_Hz-gcBhnJ0AAAAA:uHgHAB3YuB7iqduEjOWssdxWFYDDMDqcGui4EqVdMSEtAY3DWRdA4u9omQ8jslEdjsxP_tvJtw)
 
 * Jaimes-Osorio, L.E. and Malcolm, A., 2021, September. Inversion comparison using an elastic local solver to recover elastic parameters. In First International Meeting for Applied Geoscience & Energy (pp. 256-261). Society of Exploration Geophysicists.[paper](https://library.seg.org/doi/abs/10.1190/segam2021-3564832.1)
+
+* Louboutin, M. and Herrmann, F.J., 2021, September. Ultra-low memory seismic inversion with randomized trace estimation. In First International Meeting for Applied Geoscience & Energy (pp. 787-791). Society of Exploration Geophysicists. [paper](https://arxiv.org/pdf/2104.00794)
+
 
 * F. Luporini, R. Nelson, G.Bisbas, I. Assis, K. Hester, G. Gorman, _Devito v4.3: production-grade multi-GPU support_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/fabio_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=AuLzp-4bjfo)]
 
 * Protopapa, L. and Cueto, C., 2021. Computationally efficient full-waveform inversion of the brain using frequency-adaptive grids and lossy compression. [paper](https://arxiv.org/pdf/2111.04700.pdf)
 
-
 * Qiu, L., 2021. Analysis of seismic inversion with optimal transportation and softplus encoding. Inverse Problems, 37(9), p.095004. [paper](https://iopscience.iop.org/article/10.1088/1361-6420/ac1511/pdf?casa_token=krHcbCKMDtYAAAAA:s6LTBVxzwtHgYyNpRNS6K5oO9s76IVIal7Vlus4DF3L4fmdqUIsIxSPjI0Fo9jT69QR-LxLw)
 
 * Ribeiro, J., Yviquel, H., Técnico-IC-PFG, R. and de Graduação, P.F., 2021. Extending a finite difference domain-specific language to a distributed runtime system. [paper](https://www.ic.unicamp.br/~reltech/PFG/2021/PFG-21-30.pdf)
+
+* Rizzuti, G., Louboutin, M., Wang, R. and Herrmann, F.J., Time-domain Wavefield Reconstruction Inversion for large-scale seismic inversion. [paper](https://slim.gatech.edu/Publications/Public/Conferences/SIAMGS/2021/rizzuti2021SIAMGSwrid/rizzuti2021SIAMGSwrid.pdf)
 
 * Rizzuti, G., Louboutin, M., Wang, R. and Herrmann, F.J., 2021. A dual formulation of wavefield reconstruction inversion for large-scale seismic inversion. Geophysics, 86(6), pp.R879-R893. [paper](https://library.seg.org/doi/pdf/10.1190/geo2020-0743.1?casa_token=V9PChKvfefUAAAAA:wnNh3XKY3XLNSFLfKWOB7lAI_02hBsXarN9b-Ct525nBbe375yahdTPKHx94yMWY_gSgcaGpjA)
 
@@ -64,7 +70,13 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Shin, B.S. and Shutin, D., 2021, June. ADAPT-Then-Combine Full Waveform Inversion for Distributed Subsurface Imaging In Seismic Networks. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4700-4704). IEEE. [paper](https://ieeexplore.ieee.org/iel7/9413349/9413350/09414072.pdf?casa_token=-ZOag9djAzcAAAAA:upoXDgSAgD76ylkQ8i42FlT8wgGOmEdW52KXYTWpNgLO5jn7QACmULvugEqeWAARPk-kl6Iv)
 
+* Sigalingging, A.S., Winardhie, I.S. and Dinanto, E., 2021. Ekstrapolasi Frekuensi Rendah pada Full Waveform Inversion (FWI) dengan menggunakan Deep Learning. Part 1: Validasi data Sintetik. Jurnal Geofisika, 19(2), pp.74-79. [paper](https://jurnal-geofisika.or.id/index.php/jurnal-geofisika/article/download/518/62)
+
+* Xu, Z., Desai, A., Gupta, M., Chandran, A., Vial-Aussavy, A. and Shrivastava, A., 2021. Beyond convolutions: A novel deep learning approach for raw seismic data ingestion. [paper](https://arxiv.org/pdf/2102.13631)
+
 * Yang, M., Graff, M., Kumar, R. and Herrmann, F.J., 2021. Low-rank representation of omnidirectional subsurface extended image volumes. Geophysics, 86(3), pp.S165-S183. [paper](https://library.seg.org/doi/pdf/10.1190/geo2020-0152.1?casa_token=j98-85_IpDgAAAAA:rfDdlFrF-MSfQjUwt-8VTxqaPwwZb9K2hGmURiFD-NsdEs6dMR6Dy-bRkQCGsIXsaxK6_MS1ug)
+
+* Yin, Z., Louboutin, M. and Herrmann, F.J., 2021, October. Compressive time-lapse seismic monitoring of carbon storage and sequestration with the joint recovery model. In SEG/AAPG/SEPM First International Meeting for Applied Geoscience & Energy. OnePetro. [paper](https://arxiv.org/pdf/2104.07173)
 
 * Zhang, Q., Iordanescu, G., Tok, W.H., Brandsberg-Dahl, S., Srinivasan, H.K., Chandra, R., Kukreja, N. and Gorman, G., 2021, September. Hyperwavve: A cloud-native solution for hyperscale seismic imaging on Azure. In First International Meeting for Applied Geoscience & Energy (pp. 782-786). Society of Exploration Geophysicists. [paper](https://library.seg.org/doi/abs/10.1190/segam2021-3594908.1)
 
