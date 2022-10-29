@@ -29,16 +29,44 @@ let everyone read and receive kudos for your hard work immediately!
 
 ## 2021
 
-* E. Caunt, R. Nelson, F. Luporini, G. Gorman _A flexible, high-level abstraction for topography implementation within finite difference wave solvers_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/edcaunt_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=uOt4TLNabE0)]
-
-* E. Caunt, R. Nelson, F. Luporini, G. Gorman _An open-source tool for accurate topography implementation within finite-difference wave solvers_ Presented at [American Geophysical Union Fall Meeting 2021](https://www.agu.org/Fall-Meeting). [[slides](presentations/edward_caunt_agu_2021.pdf)]
-
 * George Bisbas, Fabio Luporini, Mathias Louboutin, Rhodri Nelson, Gerard Gorman, and Paul HJ Kelly. Temporal blocking of finite-difference stencil operators with sparse" off-the-grid" sources. In 2021 IEEE International Parallel and Distributed Processing Symposium (IPDPS) (pp. 497-506). IEEE. [[https://ieeexplore.ieee.org/abstract/document/9460483](https://ieeexplore.ieee.org/abstract/document/9460483)]
 
 * G. Bisbas, F. Luporini, M. Louboutin, R. Nelson, G. Gorman, P. Kelly _Temporal blocking for wave propagation with sparse off-the-grid sources_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/bisbas_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=-yHL9MKla7c)]
 
+* Caunt, E., Nelson, R., Luporini, F. and Gorman, G., 2021, October. Generalised Algorithm and Implementation of Topography Within Finite Difference Wave Solvers. In 82nd EAGE Annual Conference & Exhibition (Vol. 2021, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.202010995)
+
+* E. Caunt, R. Nelson, F. Luporini, G. Gorman _A flexible, high-level abstraction for topography implementation within finite difference wave solvers_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/edcaunt_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=uOt4TLNabE0)]
+
+* E. Caunt, R. Nelson, F. Luporini, G. Gorman _An open-source tool for accurate topography implementation within finite-difference wave solvers_ Presented at [American Geophysical Union Fall Meeting 2021](https://www.agu.org/Fall-Meeting). [[slides](presentations/edward_caunt_agu_2021.pdf)]
+
+* Coelho, G.A.A., UMA ANÁLISE COMPARATIVA ENTRE DIFERENTES TÉCNICAS DE INTERPOLAÇÃO APLICADAS NA FWI UTILIZANDO A DSL DEVITO. [paper](https://doity.com.br/media/doity/submissoes/artigo-0c4ca89ef0807ecf714a4de447af1ac59bbc2137-arquivo_revisado.pdf)
+
+* Cueto, C., Bates, O., Strong, G., Cudeiro, J., Luporini, F., Agudo, O.C., Gorman, G., Guasch, L. and Tang, M.X., 2021. Stride: a flexible platform for high-performance ultrasound computed tomography. [paper](https://arxiv.org/pdf/2110.03345)
+
+* Jaimes-Osorio, L.E., Malcolm, A., Zheglova, P., Koene, E.F. and Thomsen, H.R., 2021. Reduced memory implementation of a local elastic finite-difference solver. Geophysics, 86(3), pp.F25-F33. [paper](https://library.seg.org/doi/pdf/10.1190/geo2020-0468.1?casa_token=_Hz-gcBhnJ0AAAAA:uHgHAB3YuB7iqduEjOWssdxWFYDDMDqcGui4EqVdMSEtAY3DWRdA4u9omQ8jslEdjsxP_tvJtw)
+
+* Jaimes-Osorio, L.E. and Malcolm, A., 2021, September. Inversion comparison using an elastic local solver to recover elastic parameters. In First International Meeting for Applied Geoscience & Energy (pp. 256-261). Society of Exploration Geophysicists.[paper](https://library.seg.org/doi/abs/10.1190/segam2021-3564832.1)
+
 * F. Luporini, R. Nelson, G.Bisbas, I. Assis, K. Hester, G. Gorman, _Devito v4.3: production-grade multi-GPU support_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/fabio_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=AuLzp-4bjfo)]
 
+* Protopapa, L. and Cueto, C., 2021. Computationally efficient full-waveform inversion of the brain using frequency-adaptive grids and lossy compression. [paper](https://arxiv.org/pdf/2111.04700.pdf)
+
+
+* Qiu, L., 2021. Analysis of seismic inversion with optimal transportation and softplus encoding. Inverse Problems, 37(9), p.095004. [paper](https://iopscience.iop.org/article/10.1088/1361-6420/ac1511/pdf?casa_token=krHcbCKMDtYAAAAA:s6LTBVxzwtHgYyNpRNS6K5oO9s76IVIal7Vlus4DF3L4fmdqUIsIxSPjI0Fo9jT69QR-LxLw)
+
+* Ribeiro, J., Yviquel, H., Técnico-IC-PFG, R. and de Graduação, P.F., 2021. Extending a finite difference domain-specific language to a distributed runtime system. [paper](https://www.ic.unicamp.br/~reltech/PFG/2021/PFG-21-30.pdf)
+
+* Rizzuti, G., Louboutin, M., Wang, R. and Herrmann, F.J., 2021. A dual formulation of wavefield reconstruction inversion for large-scale seismic inversion. Geophysics, 86(6), pp.R879-R893. [paper](https://library.seg.org/doi/pdf/10.1190/geo2020-0743.1?casa_token=V9PChKvfefUAAAAA:wnNh3XKY3XLNSFLfKWOB7lAI_02hBsXarN9b-Ct525nBbe375yahdTPKHx94yMWY_gSgcaGpjA)
+
+* Roncoroni, G., Fortini, C., Bortolussi, L., Bienati, N. and Pipan, M., 2021. Synthetic seismic data generation with deep learning. Journal of Applied Geophysics, 190, p.104347. [paper](https://www.sciencedirect.com/science/article/pii/S092698512100094X?casa_token=Li9cI_6hvRkAAAAA:dV4HZN9CWKOQ9KoB3xVtOjQxCgb2JvTSkK-b8wE7Mymcir-WIsTgy1u_TThZ08fvmbKOdYxf8w)
+
+* Shekar, B., 2021. Full waveform inversion with random shot selection using adaptive gradient descent. Journal of Earth System Science, 130(4), pp.1-13. [paper](https://arxiv.org/pdf/2005.09899)
+
+* Shin, B.S. and Shutin, D., 2021, June. ADAPT-Then-Combine Full Waveform Inversion for Distributed Subsurface Imaging In Seismic Networks. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4700-4704). IEEE. [paper](https://ieeexplore.ieee.org/iel7/9413349/9413350/09414072.pdf?casa_token=-ZOag9djAzcAAAAA:upoXDgSAgD76ylkQ8i42FlT8wgGOmEdW52KXYTWpNgLO5jn7QACmULvugEqeWAARPk-kl6Iv)
+
+* Yang, M., Graff, M., Kumar, R. and Herrmann, F.J., 2021. Low-rank representation of omnidirectional subsurface extended image volumes. Geophysics, 86(3), pp.S165-S183. [paper](https://library.seg.org/doi/pdf/10.1190/geo2020-0152.1?casa_token=j98-85_IpDgAAAAA:rfDdlFrF-MSfQjUwt-8VTxqaPwwZb9K2hGmURiFD-NsdEs6dMR6Dy-bRkQCGsIXsaxK6_MS1ug)
+
+* Zhang, Q., Iordanescu, G., Tok, W.H., Brandsberg-Dahl, S., Srinivasan, H.K., Chandra, R., Kukreja, N. and Gorman, G., 2021, September. Hyperwavve: A cloud-native solution for hyperscale seismic imaging on Azure. In First International Meeting for Applied Geoscience & Energy (pp. 782-786). Society of Exploration Geophysicists. [paper](https://library.seg.org/doi/abs/10.1190/segam2021-3594908.1)
 
 ## 2020
 
@@ -96,7 +124,9 @@ let everyone read and receive kudos for your hard work immediately!
 
 * G. Bisbas, F. Luporini, M. Louboutin, G. Gorman, and P. H.J. Kelly. _Accelerating real-world stencil computations using temporal blocking: handling sparse sources and receivers_. Poster presented at SC19, 2019, [[paper](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file2.pdf), [poster](https://sc19.supercomputing.org/proceedings/src_poster/poster_files/spostg116s2-file1.pdf)]
 
-* Caunt, E., 2019, June. Spatially-Optimized Finite-Difference Schemes for Numerical Dispersion Suppression: an Implementation Using Symbolic Computation. In 81st EAGE Conference and Exhibition 2019 (Vol. 2019, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://arxiv.org/abs/2107.13525)
+* Caunt, E., 2019, June. Spatially-Optimized Finite-Difference Schemes for Numerical Dispersion Suppression: an Implementation Using Symbolic Computation. In 81st EAGE Conference and Exhibition 2019 (Vol. 2019, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.201900660?crawler=true)
+
+* Caunt, E., 2021. Spatially-optimized finite-difference schemes for numerical dispersion suppression in seismic applications. [MSci thesis](https://arxiv.org/pdf/2107.13525)
 
 * Devoti, F., Parera, C., Lieto, A., Moro, D., Lipari, V., Bestagini, P. and Tubaro, S., 2019, September. Wavefield compression for seismic imaging via convolutional neural networks. In SEG International Exposition and Annual Meeting. OnePetro. [paper](https://re.public.polimi.it/bitstream/11311/1171203/1/SEG_Wavefield_Compression.pdf)
 
@@ -151,7 +181,8 @@ let everyone read and receive kudos for your hard work immediately!
 * Yang, M., Graff, M., Kumar, R. and Herrmann, F.J., 2019, September. Low-rank representation of subsurface extended image volumes with power iterations. In SEG International Exposition and Annual Meeting. OnePetro. [slides](https://slim.gatech.edu/Publications/Public/Conferences/SEG/2019/yang2019SEGlrr/yang2019SEGlrr_pres.pdf)
 
 ## 2018
-Gorman, G., Luporini, F., Kukreja, N., Louboutin, M., St-Cyr, A., Souza, B. and Herrmann, F., 2018, September. Devito: Fast and Scalable Full-Waveform Inversion Without the Excruciating Pain. In First EAGE Workshop on High Performance Computing for Upstream in Latin America (Vol. 2018, No. 1, pp. 1-1). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.201803085)
+
+* Gorman, G., Luporini, F., Kukreja, N., Louboutin, M., St-Cyr, A., Souza, B. and Herrmann, F., 2018, September. Devito: Fast and Scalable Full-Waveform Inversion Without the Excruciating Pain. In First EAGE Workshop on High Performance Computing for Upstream in Latin America (Vol. 2018, No. 1, pp. 1-1). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.201803085)
 
 * Felix .J. Herrmann, Gerard Gorman, Jan Hückelheim, Keegan Lensink, Paul Kelly, Navjot Kukreja, Henryk Modzelewski, Michael Lange, Mathias Louboutin, Fabio Luporini, Ali SiahKoohi, Phillipp Witte _The power of abstraction in Computational Exploration Seismology_ Presented at [Smoky Mountains Computational Sciences & Engineering Conference](https://smc.ornl.gov/). [[slides](presentations/SMC2018.pdf)]
 
