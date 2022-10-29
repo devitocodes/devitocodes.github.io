@@ -25,7 +25,46 @@ let everyone read and receive kudos for your hard work immediately!
 
 ## 2022
 
+* Belucci, B., 2022. Modelamento sısmico por diferenças finitas: aplicaçao do pacote Devito para resoluçao da equaçao da onda1 (Doctoral dissertation, Universidade Estadual de Campinas). [paper]()
+
+* Berti, S., Aleardi, M. and Stucchi, E., A BAYESIAN APPROACH TO FULL-WAVEFORM INVERSION: PRELIMINARY RESULTS. [paper](https://www.researchgate.net/profile/Sean_Berti/publication/361741746_A_BAYESIAN_APPROACH_TO_FULL-WAVEFORM_INVERSION_PRELIMINARY_RESULTS/links/62c2f42a9a17145f5f45ee05/A-BAYESIAN-APPROACH-TO-FULL-WAVEFORM-INVERSION-PRELIMINARY-RESULTS.pdf)
+
+* Botelho, S., Mukherjee, S., Rao, V. and Adavani, S., 2022, August. Deep learning software accelerators for full-waveform inversion. In Second International Meeting for Applied Geoscience & Energy (pp. 3681-3685). Society of Exploration Geophysicists and American Association of Petroleum Geologists. [paper](https://library.seg.org/doi/pdf/10.1190/image2022-w17-01.1)
+
 * E. Caunt, R. Nelson, F. Luporini, G. Gorman _Devitoboundary: an open-source tool for topography implementation in finite-difference wavesolvers with Devito_ Presented at [Energy High Performance Computing at Rice University 2022](http://energyhpc.rice.edu). [[slides](presentations/EHPC_edward_caunt_poster_2022_final.pdf)]
+
+* Cueto, C., Guasch, L., Luporini, F., Bates, O., Strong, G., Agudo, O.C., Cudeiro, J., Kelly, P., Gorman, G. and Tang, M.X., 2022, April. Tomographic ultrasound modelling and imaging with Stride and Devito. In Medical Imaging 2022: Ultrasonic Imaging and Tomography (p. PC1203805). SPIE. [paper](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/PC12038/PC1203805/Tomographic-ultrasound-modelling-and-imaging-with-Stride-and-Devito/10.1117/12.2611072.short)
+
+* Cueto, C., Bates, O., Strong, G., Cudeiro, J., Luporini, F., Agudo, Ò.C., Gorman, G., Guasch, L. and Tang, M.X., 2022. Stride: A flexible software platform for high-performance ultrasound computed tomography. Computer Methods and Programs in Biomedicine, 221, p.106855. [paper](ihttps://www.sciencedirect.com/science/article/pii/S0169260722002371)
+
+* Dolci, D.I., Silva, F.A., Peixoto, P.S. and Volpe, E.V., 2022. Effectiveness and computational efficiency of absorbing boundary conditions for full-waveform inversion. Geoscientific Model Development Discussions, pp.1-36. [paper](https://gmd.copernicus.org/preprints/gmd-2022-48/gmd-2022-48.pdf)
+
+* Gorman, G., Luporini, F., St-Cyr, A., Loddoch, A., Souza, A., Hester, K., Witte, P., Dupros, F. and Araya, M., 2022, September. HPC18-Open Benchmarking Platform for Data Inversion Methods. In Sixth EAGE High Performance Computing Workshop (Vol. 2022, No. 1, pp. 1-3). European Association of Geoscientists & Engineers. [abstract](https://www.earthdoc.org/content/papers/10.3997/2214-4609.2022615022)
+
+
+* Hugues, M. and Tadepalli, S., 2022, September. HPC08-Performance and Best Practices to Run Finite Difference Kernel in the Cloud using Devito. In Sixth EAGE High Performance Computing Workshop (Vol. 2022, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.2022615016)
+
+* Jesus, L., Nogueira, P., Speglich, J. and Boratto, M., 2022. GPU Performance analysis for viscoacoustic wave equations using fast stencil computation from the symbolic specification. [paper](https://www.researchsquare.com/article/rs-2039437/latest.pdf)
+
+* Kukreja, N., Hückelheim, J., Louboutin, M., Washbourne, J., Kelly, P.H. and Gorman, G.J., 2022. Lossy checkpoint compression in full waveform inversion: a case study with ZFPv0. 5.5 and the overthrust model. Geoscientific Model Development, 15(9), pp.3815-3829. [paper](https://gmd.copernicus.org/articles/15/3815/2022/)
+
+* Ladino, O.M., Pestana, R. and Souza, A., 2022, June. An Efficient Implementation of Least-Squares Reverse Time Migration Based on Stable Pseudo-Acoustic Tti Wave Equation. In 83rd EAGE Annual Conference & Exhibition (Vol. 2022, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.202210281)
+
+* Louboutin, M., Witte, P., Siahkoohi, A., Rizzuti, G., Yin, Z., Orozco, R. and Herrmann, F.J., 2022, August. Accelerating innovation with software abstractions for scalable computational geophysics. In Second International Meeting for Applied Geoscience & Energy (pp. 1482-1486). Society of Exploration Geophysicists and American Association of Petroleum Geologists. [paper](https://arxiv.org/pdf/2203.15038)
+
+* Orozco, R., Louboutin, M. and Herrmann, F.J., 2022. Memory Efficient Invertible Neural Networks for 3D Photoacoustic Imaging. arXiv preprint arXiv:2204.11850. [paper](https://arxiv.org/pdf/2204.11850)
+
+* Ovadia, O., Kahana, A. and Turkel, E., 2022. A Convolutional Dispersion Relation Preserving Scheme for the Acoustic Wave Equation. [paper](https://arxiv.org/pdf/2205.10825)
+
+* Siahkoohi, A., Orozco, R., Rizzuti, G. and Herrmann, F.J., 2022. Wave-equation-based inversion with amortized variational Bayesian inference. arXiv preprint arXiv:2203.15881. [paper](https://arxiv.org/pdf/2203.15881)
+
+* Siahkoohi, A., Rizzuti, G. and Herrmann, F.J., 2022. Deep Bayesian inference for seismic imaging with tasks. Geophysics, 87(5), pp.S281-S302. [paper](https://library.seg.org/doi/pdf/10.1190/geo2021-0666.1?casa_token=ng8gtRxI5TEAAAAA:iXPnelqVUXZ_IuLP--lNc7PGMfj0Ra86TGBhV0ctsJJQU1qaiBoPlsmdFoddAfeKk5xiBG10qA)
+
+* Tong, J., Wang, X., Ren, J., Lin, M., Li, J., Sun, H., Yin, F., Liang, L. and Liu, Y., 2022. Transcranial Ultrasound Imaging with Decomposition Descent Learning based Full Waveform Inversion. IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control. [papers](https://ieeexplore.ieee.org/iel7/58/7307696/09931166.pdf?casa_token=5rEWP022pC4AAAAA:3BkZvYfLbbK3_eaCLAtAYdrYTSwQnqkcAj2hMCOzp5w6EhhjgJT0pfcddyKR4yAmGjJMP9yz)
+
+* Wellmann, F., Virgo, S., Escallon, D., de la Varga, M., Jüstel, A., Wagner, F.M., Kowalski, J., Zhao, H., Fehling, R. and Chen, Q., 2022. Open AR-Sandbox: A haptic interface for geoscience education and outreach. Geosphere, 18(2), pp.732-749. [paper](https://pubs.geoscienceworld.org/gsa/geosphere/article-pdf/18/2/732/5576191/732.pdf)
+
+* Zhan, C., Zhang, L., Zhao, X., Lee, C.C. and Huang, S., 2022. Neural Architecture Search for Inversion. [paper](https://arxiv.org/pdf/2201.01772)
 
 ## 2021
 
@@ -54,6 +93,8 @@ let everyone read and receive kudos for your hard work immediately!
 
 * F. Luporini, R. Nelson, G.Bisbas, I. Assis, K. Hester, G. Gorman, _Devito v4.3: production-grade multi-GPU support_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/fabio_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=AuLzp-4bjfo)]
 
+* Jaimes Osorio, L.E., 2021. Wavefield reconstruction, inversion and imaging using local solvers (Doctoral dissertation, Memorial University of Newfoundland). [phd thesis](https://research.library.mun.ca/15229/1/thesis.pdf)
+
 * Protopapa, L. and Cueto, C., 2021. Computationally efficient full-waveform inversion of the brain using frequency-adaptive grids and lossy compression. [paper](https://arxiv.org/pdf/2111.04700.pdf)
 
 * Qiu, L., 2021. Analysis of seismic inversion with optimal transportation and softplus encoding. Inverse Problems, 37(9), p.095004. [paper](https://iopscience.iop.org/article/10.1088/1361-6420/ac1511/pdf?casa_token=krHcbCKMDtYAAAAA:s6LTBVxzwtHgYyNpRNS6K5oO9s76IVIal7Vlus4DF3L4fmdqUIsIxSPjI0Fo9jT69QR-LxLw)
@@ -69,6 +110,8 @@ let everyone read and receive kudos for your hard work immediately!
 * Shekar, B., 2021. Full waveform inversion with random shot selection using adaptive gradient descent. Journal of Earth System Science, 130(4), pp.1-13. [paper](https://arxiv.org/pdf/2005.09899)
 
 * Shin, B.S. and Shutin, D., 2021, June. ADAPT-Then-Combine Full Waveform Inversion for Distributed Subsurface Imaging In Seismic Networks. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4700-4704). IEEE. [paper](https://ieeexplore.ieee.org/iel7/9413349/9413350/09414072.pdf?casa_token=-ZOag9djAzcAAAAA:upoXDgSAgD76ylkQ8i42FlT8wgGOmEdW52KXYTWpNgLO5jn7QACmULvugEqeWAARPk-kl6Iv)
+
+* Siahkoohi, A. and Herrmann, F.J., 2021, September. Learning by example: fast reliability-aware seismic imaging with normalizing flows. In First International Meeting for Applied Geoscience & Energy (pp. 1580-1585). Society of Exploration Geophysicists. [paper](https://arxiv.org/pdf/2104.06255)
 
 * Sigalingging, A.S., Winardhie, I.S. and Dinanto, E., 2021. Ekstrapolasi Frekuensi Rendah pada Full Waveform Inversion (FWI) dengan menggunakan Deep Learning. Part 1: Validasi data Sintetik. Jurnal Geofisika, 19(2), pp.74-79. [paper](https://jurnal-geofisika.or.id/index.php/jurnal-geofisika/article/download/518/62)
 
