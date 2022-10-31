@@ -14,6 +14,8 @@ build up the community. Therefore, we encourage everyone to contribute to this
 list by submitting a pull request to the [Devito website
 repository](https://github.com/devitocodes/devitocodes.github.io).
 
+If you are the Julia user, the [https://slim.gatech.edu](https://slim.gatech.edu) team (the developers of [JUDI](https://github.com/slimgroup/JUDI.jl)) also has links to the GitHub repo's with the corresponding software for all their publications. 
+
 If you are writing a paper, [please remember to cite Devito](/citing). Also, tag
 @devitocodes on twitter for a retweet!
 
@@ -41,6 +43,7 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Gorman, G., Luporini, F., St-Cyr, A., Loddoch, A., Souza, A., Hester, K., Witte, P., Dupros, F. and Araya, M., 2022, September. HPC18-Open Benchmarking Platform for Data Inversion Methods. In Sixth EAGE High Performance Computing Workshop (Vol. 2022, No. 1, pp. 1-3). European Association of Geoscientists & Engineers. [abstract](https://www.earthdoc.org/content/papers/10.3997/2214-4609.2022615022)
 
+* Thomas J Grady II and Rishi Khan and Mathias Louboutin and Ziyi Yin and Philipp A Witte and Ranveer Chandra and Russell J Hewett and Felix J Herrmann _Towards Large-Scale Learned Solvers for Parametric PDEs with Model-Parallel Fourier Neural Operators_ arXiv preprint arXiv:2204.01205, 2022 [paper](https://arxiv.org/abs/2204.01205)
 
 * Hugues, M. and Tadepalli, S., 2022, September. HPC08-Performance and Best Practices to Run Finite Difference Kernel in the Cloud using Devito. In Sixth EAGE High Performance Computing Workshop (Vol. 2022, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.2022615016)
 
@@ -50,15 +53,23 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Ladino, O.M., Pestana, R. and Souza, A., 2022, June. An Efficient Implementation of Least-Squares Reverse Time Migration Based on Stable Pseudo-Acoustic Tti Wave Equation. In 83rd EAGE Annual Conference & Exhibition (Vol. 2022, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.202210281)
 
+* Oscar López and Rajiv Kumar and Nick Moldoveanu and Felix Herrmann _Graph spectrum based seismic survey design_ arXiv preprint arXiv:2202.04623, 2022 [paper](https://arxiv.org/abs/2202.04623)
+
 * Louboutin, M., Witte, P., Siahkoohi, A., Rizzuti, G., Yin, Z., Orozco, R. and Herrmann, F.J., 2022, August. Accelerating innovation with software abstractions for scalable computational geophysics. In Second International Meeting for Applied Geoscience & Energy (pp. 1482-1486). Society of Exploration Geophysicists and American Association of Petroleum Geologists. [paper](https://arxiv.org/pdf/2203.15038)
+
+* Mathias Louboutin and F Herrmann _Enabling wave-based inversion on GPUs with randomized trace estimation_ 83rd EAGE Annual Conference & Exhibition 2022 (1), 1-5, 2022 [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.202210531)
 
 * Orozco, R., Louboutin, M. and Herrmann, F.J., 2022. Memory Efficient Invertible Neural Networks for 3D Photoacoustic Imaging. arXiv preprint arXiv:2204.11850. [paper](https://arxiv.org/pdf/2204.11850)
 
 * Ovadia, O., Kahana, A. and Turkel, E., 2022. A Convolutional Dispersion Relation Preserving Scheme for the Acoustic Wave Equation. [paper](https://arxiv.org/pdf/2205.10825)
 
+* Ali Siahkoohi and Mathias Louboutin and Felix J Herrmann _Velocity continuation with Fourier neural operators for accelerated uncertainty quantification_ arXiv preprint arXiv:2203.14386, 2022 [paper](https://arxiv.org/abs/2203.14386)
+
 * Siahkoohi, A., Orozco, R., Rizzuti, G. and Herrmann, F.J., 2022. Wave-equation-based inversion with amortized variational Bayesian inference. arXiv preprint arXiv:2203.15881. [paper](https://arxiv.org/pdf/2203.15881)
 
 * Siahkoohi, A., Rizzuti, G. and Herrmann, F.J., 2022. Deep Bayesian inference for seismic imaging with tasks. Geophysics, 87(5), pp.S281-S302. [paper](https://library.seg.org/doi/pdf/10.1190/geo2021-0666.1?casa_token=ng8gtRxI5TEAAAAA:iXPnelqVUXZ_IuLP--lNc7PGMfj0Ra86TGBhV0ctsJJQU1qaiBoPlsmdFoddAfeKk5xiBG10qA)
+
+* Ali Siahkoohi and Gabrio Rizzuti and Rafael Orozco and Felix J Herrmann _Reliable amortized variational inference with physics-based latent distribution correction_ arXiv preprint arXiv:2207.11640, 2022 [paper](https://arxiv.org/abs/2207.11640)
 
 * Tong, J., Wang, X., Ren, J., Lin, M., Li, J., Sun, H., Yin, F., Liang, L. and Liu, Y., 2022. Transcranial Ultrasound Imaging with Decomposition Descent Learning based Full Waveform Inversion. IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control. [papers](https://ieeexplore.ieee.org/iel7/58/7307696/09931166.pdf?casa_token=5rEWP022pC4AAAAA:3BkZvYfLbbK3_eaCLAtAYdrYTSwQnqkcAj2hMCOzp5w6EhhjgJT0pfcddyKR4yAmGjJMP9yz)
 
@@ -66,7 +77,11 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Zhan, C., Zhang, L., Zhao, X., Lee, C.C. and Huang, S., 2022. Neural Architecture Search for Inversion. [paper](https://arxiv.org/pdf/2201.01772)
 
+* Ziyi Yin and Ali Siahkoohi and Mathias Louboutin and Felix J Herrmann _Learned coupled inversion for carbon sequestration monitoring and forecasting with Fourier neural operators_ arXiv preprint arXiv:2203.14396, 2022 [paper](https://arxiv.org/abs/2203.14396)
+
 ## 2021
+
+* Ali M Alfaraj and Eric Verschuur and Felix J Herrmann _Residual statics correction without NMO—A rank-based approach_ First International Meeting for Applied Geoscience & Energy, 2565-2569, 2021 [paper](https://library.seg.org/doi/abs/10.1190/segam2021-3583455.1)
 
 * George Bisbas, Fabio Luporini, Mathias Louboutin, Rhodri Nelson, Gerard Gorman, and Paul HJ Kelly. Temporal blocking of finite-difference stencil operators with sparse" off-the-grid" sources. In 2021 IEEE International Parallel and Distributed Processing Symposium (IPDPS) (pp. 497-506). IEEE. [[https://ieeexplore.ieee.org/abstract/document/9460483](https://ieeexplore.ieee.org/abstract/document/9460483)]
 
@@ -90,14 +105,19 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Louboutin, M. and Herrmann, F.J., 2021, September. Ultra-low memory seismic inversion with randomized trace estimation. In First International Meeting for Applied Geoscience & Energy (pp. 787-791). Society of Exploration Geophysicists. [paper](https://arxiv.org/pdf/2104.00794)
 
-
 * F. Luporini, R. Nelson, G.Bisbas, I. Assis, K. Hester, G. Gorman, _Devito v4.3: production-grade multi-GPU support_ Presented at [High performance computing in Oil and Gas at Rice University 2021](http://rice2021oghpc.rice.edu/). [[slides](presentations/fabio_rice2021.pdf)] [[video](https://www.youtube.com/watch?v=AuLzp-4bjfo)]
 
+* Mathias Louboutin and Ali Siahkoohi and Rongrong Wang and Felix J Herrmann _Low-memory stochastic backpropagation with multi-channel randomized trace estimation_ arXiv preprint arXiv:2106.06998, 2021 [paper](https://arxiv.org/abs/2106.06998)
+
 * Jaimes Osorio, L.E., 2021. Wavefield reconstruction, inversion and imaging using local solvers (Doctoral dissertation, Memorial University of Newfoundland). [phd thesis](https://research.library.mun.ca/15229/1/thesis.pdf)
+
+* Rafael Orozco and Ali Siahkoohi and Gabrio Rizzuti and Tristan van Leeuwen and Felix Johan Herrmann _Photoacoustic imaging with conditional priors from normalizing flows_ NeurIPS 2021 Workshop on Deep Learning and Inverse Problems, 2021 [paper](https://openreview.net/forum?id=woi1OTvROO1)
 
 * Protopapa, L. and Cueto, C., 2021. Computationally efficient full-waveform inversion of the brain using frequency-adaptive grids and lossy compression. [paper](https://arxiv.org/pdf/2111.04700.pdf)
 
 * Qiu, L., 2021. Analysis of seismic inversion with optimal transportation and softplus encoding. Inverse Problems, 37(9), p.095004. [paper](https://iopscience.iop.org/article/10.1088/1361-6420/ac1511/pdf?casa_token=krHcbCKMDtYAAAAA:s6LTBVxzwtHgYyNpRNS6K5oO9s76IVIal7Vlus4DF3L4fmdqUIsIxSPjI0Fo9jT69QR-LxLw)
+
+* Yuxiao Ren and Philipp A Witte and Ali Siahkoohi and Mathias Louboutin and Ziyi Yin and Felix J Herrmann _Seismic Velocity Inversion and Uncertainty Quantification Using Conditional Normalizing Flows_ AGU Fall Meeting 2021, 2021 [paper](https://slim.gatech.edu/Publications/Public/Conferences/AGU/2021/ren2021AGUsvi/ren2021AGUsvi_pres.pdf)
 
 * Ribeiro, J., Yviquel, H., Técnico-IC-PFG, R. and de Graduação, P.F., 2021. Extending a finite difference domain-specific language to a distributed runtime system. [paper](https://www.ic.unicamp.br/~reltech/PFG/2021/PFG-21-30.pdf)
 
@@ -107,11 +127,15 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Roncoroni, G., Fortini, C., Bortolussi, L., Bienati, N. and Pipan, M., 2021. Synthetic seismic data generation with deep learning. Journal of Applied Geophysics, 190, p.104347. [paper](https://www.sciencedirect.com/science/article/pii/S092698512100094X?casa_token=Li9cI_6hvRkAAAAA:dV4HZN9CWKOQ9KoB3xVtOjQxCgb2JvTSkK-b8wE7Mymcir-WIsTgy1u_TThZ08fvmbKOdYxf8w)
 
+* Hamideh Sanavi and Peyman P Moghaddam and Felix J Herrmann _True amplitude depth migration using curvelets_ Geophysics 86 (4), S299-S310, 2021 [paper](https://library.seg.org/doi/abs/10.1190/geo2019-0307.1)
+
 * Shekar, B., 2021. Full waveform inversion with random shot selection using adaptive gradient descent. Journal of Earth System Science, 130(4), pp.1-13. [paper](https://arxiv.org/pdf/2005.09899)
 
 * Shin, B.S. and Shutin, D., 2021, June. ADAPT-Then-Combine Full Waveform Inversion for Distributed Subsurface Imaging In Seismic Networks. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4700-4704). IEEE. [paper](https://ieeexplore.ieee.org/iel7/9413349/9413350/09414072.pdf?casa_token=-ZOag9djAzcAAAAA:upoXDgSAgD76ylkQ8i42FlT8wgGOmEdW52KXYTWpNgLO5jn7QACmULvugEqeWAARPk-kl6Iv)
 
 * Siahkoohi, A. and Herrmann, F.J., 2021, September. Learning by example: fast reliability-aware seismic imaging with normalizing flows. In First International Meeting for Applied Geoscience & Energy (pp. 1580-1585). Society of Exploration Geophysicists. [paper](https://arxiv.org/pdf/2104.06255)
+
+* Ali Siahkoohi and Gabrio Rizzuti and Mathias Louboutin and Philipp A Witte and Felix J Herrmann _Preconditioned training of normalizing flows for variational inference in inverse problems_ arXiv preprint arXiv:2101.03709, 2021 [paper](https://arxiv.org/abs/2101.03709)
 
 * Sigalingging, A.S., Winardhie, I.S. and Dinanto, E., 2021. Ekstrapolasi Frekuensi Rendah pada Full Waveform Inversion (FWI) dengan menggunakan Deep Learning. Part 1: Validasi data Sintetik. Jurnal Geofisika, 19(2), pp.74-79. [paper](https://jurnal-geofisika.or.id/index.php/jurnal-geofisika/article/download/518/62)
 
@@ -121,9 +145,15 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Yin, Z., Louboutin, M. and Herrmann, F.J., 2021, October. Compressive time-lapse seismic monitoring of carbon storage and sequestration with the joint recovery model. In SEG/AAPG/SEPM First International Meeting for Applied Geoscience & Energy. OnePetro. [paper](https://arxiv.org/pdf/2104.07173)
 
+* Yijun Zhang and Felix J. Herrmann _Improved seismic survey design by maximizing the spectral gap with global optimization_ 2021 ML4Seismic meeting, 2021
+
 * Zhang, Q., Iordanescu, G., Tok, W.H., Brandsberg-Dahl, S., Srinivasan, H.K., Chandra, R., Kukreja, N. and Gorman, G., 2021, September. Hyperwavve: A cloud-native solution for hyperscale seismic imaging on Azure. In First International Meeting for Applied Geoscience & Energy (pp. 782-786). Society of Exploration Geophysicists. [paper](https://library.seg.org/doi/abs/10.1190/segam2021-3594908.1)
 
+* Yijun Zhang and Felix J Herrmann _A practical workflow for land seismic wavefield recovery with weighted matrix factorization_ SEG/AAPG/SEPM First International Meeting for Applied Geoscience & Energy, 2021 [paper](https://onepetro.org/SEGAM/proceedings-abstract/IMAGE21/1-IMAGE21/D011S007R001/471235)
+
 ## 2020
+
+* Ali M Alfaraj and Eric Verschuur and Felix J Herrmann _Non-surface-consistent short-wavelength statics correction for dense and subsampled data: A rank-based approach_ SEG Technical Program Expanded Abstracts 2020, 2784-2788, 2020 [paper](https://library.seg.org/doi/abs/10.1190/segam2020-3426918.1)
 
 * G. Bisbas, F. Luporini, M. Louboutin, R. Nelson, G. Gorman, P. Kelly _Temporal blocking of finite-difference stencil operators with sparse "off-the-grid" sources in Devito_ Presented at [Domain-Specific Languages in High-Performance Computing 2020](https://efop362.itk.ppke.hu/conferences/from-da-to-hpc/). [[slides](presentations/dsl_bisbas2020.pdf)]
 
@@ -153,6 +183,8 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Moura, F.A., Silva, S.A., de Araújo, J.M. and Lucena, L.S., 2020. Progressive matching optimisation method for FWI. Journal of Geophysics and Engineering, 17(2), pp.357-364. [paper](https://academic.oup.com/jge/article/17/2/357/5728715)
 
+* Gabrio Rizzuti and Mathias Louboutin and Rongrong Wang and Felix J Herrmann _Time-domain wavefield reconstruction inversion for large-scale seismics_ 82nd EAGE Annual Conference & Exhibition 2020 (1), 1-5, 2020 [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.202011401)
+
 * Santos, H., Eikmeier, C. and Volpe, E., 2020, May. New tools for 2D full-waveform inversion: applications on Brazilian Pre-Salt velocity model from Santos Basin. In EGU General Assembly Conference Abstracts (p. 21110). [paper](https://ui.adsabs.harvard.edu/abs/2020EGUGA..2221110S/abstract)
 
 * Siahkoohi, A., Rizzuti, G. and Herrmann, F., 2020, December. A deep-learning based bayesian approach to seismic imaging and uncertainty quantification. In EAGE 2020 Annual Conference & Exhibition Online (Vol. 2020, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [arxiv](https://arxiv.org/pdf/2001.04567)
@@ -161,17 +193,27 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Siahkoohi, A., Rizzuti, G. and Herrmann, F.J., 2020. Weak deep priors for seismic imaging. In SEG Technical Program Expanded Abstracts 2020 (pp. 2998-3002). Society of Exploration Geophysicists. [arxiv](https://arxiv.org/pdf/2004.06835)
 
+* Ali Siahkoohi and Gabrio Rizzuti and Philipp A Witte and Felix J Herrmann _Faster uncertainty quantification for inverse problems with conditional normalizing flows_ arXiv preprint arXiv:2007.07985, 2020 [paper](https://arxiv.org/abs/2007.07985)
+
 * Targino, J., Roberts, K., Souza, J., Santos, H., Senger, H., Gioria, R. and Gomi, E., 2020, September. A Deep-Learning inversion method for seismic velocity model building. In First EAGE Conference on Machine Learning in Americas (Vol. 2020, No. 1, pp. 1-5). European Association of Geoscientists & Engineers. [paper](https://www.researchgate.net/profile/Hermes-Senger/publication/348528486_A_Deep-Learning_inversion_method_for_seismic_velocity_model_building/links/615615c661a8f466708fba72/A-Deep-Learning-inversion-method-for-seismic-velocity-model-building.pdf)
 
 * Witte, P.A., Louboutin, M., Modzelewski, H., Jones, C., Selvage, J. and Herrmann, F.J., 2020. An event-driven approach to serverless seismic imaging in the cloud. IEEE Transactions on Parallel and Distributed Systems, 31(9), pp.2032-2049. [paper](https://ieeexplore.ieee.org/iel7/71/4359390/09044390.pdf?casa_token=m_-kCm-0--IAAAAA:A87bsWxaiHmnWNystClEI3pUFmAp0z1XxTtfzagkTixnR-975j-l6DovIrktJm4oEuz3ap2F)
 
 * Yang, M., 2020. Seismic imaging with extended image volumes and source estimation (Doctoral dissertation, Georgia Institute of Technology). [phd thesis](https://smartech.gatech.edu/bitstream/handle/1853/62832/YANG-DISSERTATION-2020.pdf?sequence=1)
 
+* Mengmeng Yang and Zhilong Fang and Philipp Witte and Felix J Herrmann _Time‐domain sparsity promoting least‐squares reverse time migration with source estimation_ Geophysical Prospecting 68 (9), 2697-2711, 2020 [paper](https://www.earthdoc.org/content/journals/10.1111/1365-2478.13021)
+
 * Yin, Z., Orozco, R., Witte, P., Louboutin, M., Rizzuti, G. and Herrmann, F.J., 2020. Extended source imaging—A unifying framework for seismic and medical imaging. In SEG Technical Program Expanded Abstracts 2020 (pp. 3502-3506). Society of Exploration Geophysicists. [arxiv](https://arxiv.org/pdf/2004.07389)
 
-* Zhan, C., Lee, C.C., Zhang, L. and Chang, Y., 2020. An attempt to decode reverse-time migration through machine learning. In SEG Technical Program Expanded Abstracts 2020 (pp. 1681-1685). Society of Exploration Geophysicists. [paper](https://library.seg.org/doi/abs/10.1190/segam2020-3422819.1)
+* Zhan, C., Lee, C.C., Zhang, L. and Chang, Y., 2020. An attempt to decode reverse-time migration through machine learning. In SEG Technical Program Expanded Abstracts 2020 (pp.1681-1685). Society of Exploration Geophysicists. [paper](https://library.seg.org/doi/abs/10.1190/segam2020-3422819.1)
+
+* Mi Zhang and Ali Siahkoohi and Felix J Herrmann _Transfer learning in large-scale ocean bottom seismic wavefield reconstruction_ SEG International Exposition and Annual Meeting, 2020 [paper](https://onepetro.org/SEGAM/proceedings-abstract/SEG20/3-SEG20/D031S058R003/462549)
+
+* Yijun Zhang and Shashin Sharan and Oscar Lopez and Felix J Herrmann _Wavefield recovery with limited-subspace weighted matrix factorizations_ SEG International Exposition and Annual Meeting, 2020 [paper](https://onepetro.org/SEGAM/proceedings-abstract/SEG20/3-SEG20/D031S044R006/462655)
 
 ## 2019
+
+* AM Alfaraj and M Almubarak and FJ Herrmann _Correcting for short-wavelength statics with low rank approximation_ 81st EAGE Conference and Exhibition 2019 2019 (1), 1-5, 2019 [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.201901205)
 
 * Assis, I.A.S.D., 2019. Intra-node and Inter-node load balancing and other scalable approaches for high-performance seismic processing. [paper](https://repositorio.ufrn.br/bitstream/123456789/28353/1/Intranodeinternode_Assis_2019.pdf)
 
@@ -183,15 +225,25 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Caunt, E., 2021. Spatially-optimized finite-difference schemes for numerical dispersion suppression in seismic applications. [MSci thesis](https://arxiv.org/pdf/2107.13525)
 
+* Curt Da Silva and Felix Herrmann _A unified 2D/3D large-scale software environment for nonlinear inverse problems_ ACM Transactions on Mathematical Software (TOMS) 45 (1), 1-35, 2019 [paper](https://dl.acm.org/doi/abs/10.1145/3291042)
+
 * Devoti, F., Parera, C., Lieto, A., Moro, D., Lipari, V., Bestagini, P. and Tubaro, S., 2019, September. Wavefield compression for seismic imaging via convolutional neural networks. In SEG International Exposition and Annual Meeting. OnePetro. [paper](https://re.public.polimi.it/bitstream/11311/1171203/1/SEG_Wavefield_Compression.pdf)
 
+* Tim Eipert and Felix Herrmann and Christoph Wick and Frank Puppe and Andreas Haug _Editor support for digital editions of medieval monophonic music_ Proceedings of the 2nd International Workshop on Reading Music Systems, 4-7, 2019 [paper](https://www.academia.edu/download/61176530/worms-2019-proceedings-monodi20191110-82221-g4tcw9.pdf)
+
 * EINSIEDLER, H.C., COMPARAÇÃO DE MÉTODOS DE OTIMIZAÇÃO PARA SOLUÇÃO DO PROBLEMA DE INVERSÃO DA FORMA DE ONDA COMPLETA. [paper](http://dot.uff.br/wp-content/uploads/sites/476/2021/08/328-DISSERT-Hans-2019.pdf)
+
+* Felix J Herrmann and Ali Siahkoohi and Gabrio Rizzuti _Learned imaging with constraints and uncertainty quantification_ arXiv preprint arXiv:1909.06473, 2019 [paper](https://arxiv.org/abs/1909.06473)
 
 *  J. Hückelheim, N. Kukreja, SHK Narayanan, F. Luporini, G. Gorman, P. Hovland _Automatic Differentiation for Adjoint Stencil Loops_ Presented at [International Conference on Parallel Programming](https://www.hpcs.cs.tsukuba.ac.jp/icpp2019/). [[slides](presentations/ICPP_2019_presentation.pdf)]
 
 * N. Kukreja,  J. Hückelheim, M. Louboutin, F. Luporini, P. Kelly, P. Hovland, G. J. Gorman _Inversion with Devito: Trading off memory and compute with PyRevolve_ Presented at [STMI Workshop at USP](https://www.rcgi.poli.usp.br/stmi-workshop-2019/). [[slides](presentations/USP_PyRevolve.pdf)]
 
 * Kukreja, N., Hückelheim, J., Louboutin, M., Hovland, P. and Gorman, G., 2019, August. Combining checkpointing and data compression to accelerate adjoint-based optimization problems. In European Conference on Parallel Processing (pp. 87-100). Springer, Cham.[paper](https://arxiv.org/pdf/1810.05268)
+
+* Rajiv Kumar and Marie Graff and Ivan Vasconcelos and Felix J Herrmann _Target‐oriented imaging using extended image volumes: a low‐rank factorization approach_ Geophysical Prospecting 67 (5), 1312-1328, 2019 [paper](https://www.earthdoc.org/content/journals/10.1111/1365-2478.12779)
+
+* Rajiv Kumar and Bram Willemsen and Felix J Herrmann and Alison Malcolm _Enabling numerically exact local solver for waveform inversion—A low-rank approach_ Computational Geosciences 23 (4), 829-847, 2019 [paper](https://link.springer.com/article/10.1007/s10596-019-09832-9)
 
 * F. Luporini, R. Nelson, M. Louboutin, N. Kukreja, G. Bisbas, P. Witte, Amik St-Cyr, C. Yount, T. Burgess, F. Herrmann, G. Gorman _Automatic Generation of Production-Grade Hybrid MPI-OpenMP Parallel Wave Propagators using Devito_ Presented at [Platform for Advanced Scientific Computing (PASC 2019) Conference](https://pasc19.pasc-conference.org). [[slides](presentations/pasc2019_luporini.pdf)]
 
@@ -213,7 +265,13 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Peters, B. and Herrmann, F.J., 2019. Algorithms and software for projections onto intersections of convex and non-convex sets with applications to inverse problems. [paper](https://arxiv.org/pdf/1902.09699)
 
+* Bas Peters and Felix J Herrmann _Generalized Minkowski sets for the regularization of inverse problems_ arXiv preprint arXiv:1903.03942, 2019 [paper](https://arxiv.org/abs/1903.03942)
+
+* Bas Peters and Brendan R Smithyman and Felix J Herrmann _Projection methods and applications for seismic nonlinear inverse problems with multiple constraints_ Geophysics 84 (2), R251-R269, 2019 [paper](https://library.seg.org/doi/abs/10.1190/geo2018-0192.1)
+
 * Rizzuti, G., Louboutin, M., Wang, R., Daskalakis, E. and Herrmann, F., 2019, September. A dual formulation for time-domain wavefield reconstruction inversion. In SEG International Exposition and Annual Meeting. OnePetro. [slides](https://pdfs.semanticscholar.org/41c6/6ce50625c866635813c0aab5ac61d9174038.pdf)
+
+* Gabrio Rizzuti and Ali Siahkoohi and Felix J Herrmann _Learned iterative solvers for the Helmholtz equation_ 81st EAGE Conference and Exhibition 2019 2019 (1), 1-5, 2019 [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.201901542)
 
 * Rodrigues, V.H.M., Cavalcante, L., Pereira, M.B., Luporini, F., Reguly, I., Gorman, G. and Souza, S.X.D., 2019, September. GPU Support for Automatic Generation of Finite-Differences Stencil Kernels. In Latin American High Performance Computing Conference (pp. 230-244). Springer, Cham. [paper](https://arxiv.org/pdf/1912.00695)
 
@@ -223,7 +281,13 @@ let everyone read and receive kudos for your hard work immediately!
 
 * Siahkoohi, A., Louboutin, M. and Herrmann, F.J., 2019. The importance of transfer learning in seismic modeling and imaging. Geophysics, 84(6), pp.A47-A52. [paper](https://library.seg.org/doi/full/10.1190/geo2019-0056.1?casa_token=1YBQbc1BVTcAAAAA:WFPExqnA89JWzkSHGejjqPjlSH6wqOnQr-mLBUzj8Ru-l_QMxow7XZ6p_Ruwf2i0YH0h5E2SYA)
 
+* Ali Siahkoohi and Dirk J Verschuur and Felix J Herrmann _Surface-related multiple elimination with deep learning_ SEG International Exposition and Annual Meeting, 2019 [paper](https://onepetro.org/SEGAM/proceedings-abstract/SEG19/4-SEG19/D043S151R005/105531)
+
+* Ali Siahkoohi and Rajiv Kumar and Felix J Herrmann _Deep-learning based ocean bottom seismic wavefield recovery_ SEG Technical Program Expanded Abstracts 2019, 2232-2237, 2019 [paper](https://library.seg.org/doi/abs/10.1190/segam2019-3216632.1)
+
 * Silva, C.D. and Herrmann, F., 2019. A unified 2D/3D large-scale software environment for nonlinear inverse problems. ACM Transactions on Mathematical Software (TOMS), 45(1), pp.1-35. [paper](https://dl.acm.org/doi/pdf/10.1145/3291042?casa_token=6fJW6fnogboAAAAA:1GZ5x5x8ExFZnhAWuxz5qNYJR1B2Viflja6YK23rKneSwycMmVTgpnrrn10kOlSoCJxIwCg1vh-o)
+
+* Shashin Sharan and Rongrong Wang and Felix J Herrmann _Fast sparsity-promoting microseismic source estimation_ Geophysical Journal International 216 (1), 164-181, 2019 [paper](https://academic.oup.com/gji/article-abstract/216/1/164/5123712)
 
 * Philipp A. Witte, Mathias Louboutin, Navjot Kukreja, Fabio Luporini, Michael Lange, Gerard J. Gorman, Felix J. Herrmann. A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia. In Geophysics, Volume 84, Issue 3, May 2019. [[https://library.seg.org/doi/abs/10.1190/geo2018-0174.1](https://library.seg.org/doi/abs/10.1190/geo2018-0174.1)]
 
@@ -234,6 +298,8 @@ let everyone read and receive kudos for your hard work immediately!
 * Witte, P.A., Louboutin, M., Modzelewski, H., Jones, C., Selvage, J. and Herrmann, F.J., 2019. Event-driven workflows for large-scale seismic imaging in the cloud. In SEG Technical Program Expanded Abstracts 2019 (pp. 3984-3988). Society of Exploration Geophysicists. [paper](https://pdfs.semanticscholar.org/cb0a/80a6efba0f220386afe56733ad72c281a630.pdf)
 
 * Yang, M., Graff, M., Kumar, R. and Herrmann, F.J., 2019, September. Low-rank representation of subsurface extended image volumes with power iterations. In SEG International Exposition and Annual Meeting. OnePetro. [slides](https://slim.gatech.edu/Publications/Public/Conferences/SEG/2019/yang2019SEGlrr/yang2019SEGlrr_pres.pdf)
+
+* Yijun Zhang and Shashin Sharan and Felix J Herrmann _High-frequency wavefield recovery with weighted matrix factorizations_ SEG Technical Program Expanded Abstracts 2019, 3959-3963, 2019 [paper](https://library.seg.org/doi/abs/10.1190/segam2019-3215103.1)
 
 ## 2018
 
