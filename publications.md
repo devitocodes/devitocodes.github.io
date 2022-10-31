@@ -27,6 +27,8 @@ let everyone read and receive kudos for your hard work immediately!
 
 ## 2022
 
+* Jean-Francois Aubry, Oscar Bates, Christian Boehm, Kim Butts Pauly, Douglas Christensen, Carlos Cueto, Pierre Gelat, Lluis Guasch, Jiri Jaros, Yun Jing, Rebecca Jones, Ningrui Li, Patrick Marty, Hazael Montanaro, Esra Neufeld, Samuel Pichardo, Gianmarco Pinton, Aki Pulkkinen, Antonio Stanziola, Axel Thielscher, Bradley Treeby, Elwin van't Wout _Benchmark problems for transcranial ultrasound simulation: Intercomparison of compressional wave models_ [arXiv preprint arXiv:2202.04552](https://arxiv.org/abs/2202.04552)
+
 * Belucci, B., 2022. Modelamento sısmico por diferenças finitas: aplicaçao do pacote Devito para resoluçao da equaçao da onda1 (Doctoral dissertation, Universidade Estadual de Campinas). [paper]()
 
 * Berti, S., Aleardi, M. and Stucchi, E., A BAYESIAN APPROACH TO FULL-WAVEFORM INVERSION: PRELIMINARY RESULTS. [paper](https://www.researchgate.net/profile/Sean_Berti/publication/361741746_A_BAYESIAN_APPROACH_TO_FULL-WAVEFORM_INVERSION_PRELIMINARY_RESULTS/links/62c2f42a9a17145f5f45ee05/A-BAYESIAN-APPROACH-TO-FULL-WAVEFORM-INVERSION-PRELIMINARY-RESULTS.pdf)
@@ -34,6 +36,10 @@ let everyone read and receive kudos for your hard work immediately!
 * Botelho, S., Mukherjee, S., Rao, V. and Adavani, S., 2022, August. Deep learning software accelerators for full-waveform inversion. In Second International Meeting for Applied Geoscience & Energy (pp. 3681-3685). Society of Exploration Geophysicists and American Association of Petroleum Geologists. [paper](https://library.seg.org/doi/pdf/10.1190/image2022-w17-01.1)
 
 * E. Caunt, R. Nelson, F. Luporini, G. Gorman _Devitoboundary: an open-source tool for topography implementation in finite-difference wavesolvers with Devito_ Presented at [Energy High Performance Computing at Rice University 2022](http://energyhpc.rice.edu). [[slides](presentations/EHPC_edward_caunt_poster_2022_final.pdf)]
+
+* Javier Cudeiro-Blanco, Carlos Cueto, Oscar Bates, George Strong, Tom Robins, Matthieu Toulemonde, Mike Warner, Meng-Xing Tang, Oscar Calderón Agudo, Lluis Guasch, _Design and Construction of a Low-Frequency Ultrasound Acquisition Device for 2-D Brain Imaging Using Full-Waveform Inversion_ 
+Ultrasound in Medicine & Biology, Volume 48, Issue 10, 2022, Pages 1995-2008 [paper](https://www.sciencedirect.com/science/article/pii/S0301562922004100)
+
 
 * Cueto, C., Guasch, L., Luporini, F., Bates, O., Strong, G., Agudo, O.C., Cudeiro, J., Kelly, P., Gorman, G. and Tang, M.X., 2022, April. Tomographic ultrasound modelling and imaging with Stride and Devito. In Medical Imaging 2022: Ultrasonic Imaging and Tomography (p. PC1203805). SPIE. [paper](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/PC12038/PC1203805/Tomographic-ultrasound-modelling-and-imaging-with-Stride-and-Devito/10.1117/12.2611072.short)
 
@@ -138,6 +144,10 @@ let everyone read and receive kudos for your hard work immediately!
 * Ali Siahkoohi and Gabrio Rizzuti and Mathias Louboutin and Philipp A Witte and Felix J Herrmann _Preconditioned training of normalizing flows for variational inference in inverse problems_ arXiv preprint arXiv:2101.03709, 2021 [paper](https://arxiv.org/abs/2101.03709)
 
 * Sigalingging, A.S., Winardhie, I.S. and Dinanto, E., 2021. Ekstrapolasi Frekuensi Rendah pada Full Waveform Inversion (FWI) dengan menggunakan Deep Learning. Part 1: Validasi data Sintetik. Jurnal Geofisika, 19(2), pp.74-79. [paper](https://jurnal-geofisika.or.id/index.php/jurnal-geofisika/article/download/518/62)
+
+* J Washbourne, S Kaplan, M Merino, U Albertin, A Sekar, C Manuel, S Mishra, M Chenette, A Loddoch _Chevron Optimization Framework for Imaging and Inversion (Cofii)–Open-source Julia Language Framework for Seismic Inversion_, 82nd EAGE Annual Conference & Exhibition. [paper](https://www.earthdoc.org/content/papers/10.3997/2214-4609.202113077)
+
+* John Washbourne, Sam Kaplan, Miguel Merino, Uwe Albertin, Anusha Sekar, Chris Manuel, Scott Mishra, Matthew Chenette, Alex Loddoch _Chevron optimization framework for imaging and inversion (COFII)—An open source and cloud friendly Julia language framework for seismic modeling and inversion_ First International Meeting for Applied Geoscience & Energy [paper](https://library.seg.org/doi/abs/10.1190/segam2021-3594362.1)
 
 * Xu, Z., Desai, A., Gupta, M., Chandran, A., Vial-Aussavy, A. and Shrivastava, A., 2021. Beyond convolutions: A novel deep learning approach for raw seismic data ingestion. [paper](https://arxiv.org/pdf/2102.13631)
 
