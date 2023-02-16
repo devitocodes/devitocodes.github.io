@@ -2,7 +2,7 @@
 
 title: Devito
 
-description: Devito - Symbolic Finite Difference Computation
+description: Devito - DSL and compiler framework for automated finite-differences and stencil computation
 
 # 120x120 px default image used for Twitter summary card
 logo: images/DevitoLogo-twitter-summary-card.png
@@ -62,7 +62,7 @@ navigation:
   url: http://github.com/devitocodes/devito
 
 - title: FAQ
-  url: https://github.com/devitocodes/devito/wiki/FAQ
+  url: https://github.com/devitocodes/devito/blob/master/FAQ.md
 
 - title: Contact us
   url: /contact
