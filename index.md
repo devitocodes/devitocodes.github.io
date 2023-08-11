@@ -90,10 +90,11 @@ found [here](https://arxiv.org/abs/1608.08658).
 
 <div class="col-sm-6 pull-left" markdown="1">
 
- * [JUDI](https://github.com/slimgroup/JUDI.jl) [SLIM group @GeorgiaTech]
- * Dugwave [DownUnder GeoSolutions]
- * [COFII](https://github.com/ChevronETC) [Chevron]
+ * [COFII](https://github.com/ChevronETC) - [Chevron](https://www.chevron.com/)
+ * [DUG Wave](https://dug.com/model-building-with-dug-wave-full-waveform-inversion/) - [DownUnder GeoSolutions](https://dug.com/)
  * Imaging AnyWare [ION]
+ * [JUDI](https://github.com/slimgroup/JUDI.jl) [SLIM group @GeorgiaTech]
+ * [Neurotech Development Kit (NDK)](https://agencyenterprise.github.io/neurotechdevkit/)
  * [Stride](https://www.stride.codes)
  * [xDSL](https://xdsl.dev)
 
